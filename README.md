@@ -70,3 +70,18 @@ Note that the kernel says `Python 3.12.8` as it inherits from the venv, so it wi
 4. Select the branch you want to deploy, then click **Deploy Branch**.
 5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button **Open App** at the top of the page to access your App.
 6. If the slug size is too large, then add large files not required for the app to the `.slugignore` file.
+
+
+cite dataset
+
+Citation
+If you use this dataset in your work, please cite it as follows:
+
+@misc{rabie_el_kharoua_2024,
+title={Alzheimer's Disease Dataset},
+url={https://www.kaggle.com/dsv/8668279},
+DOI={10.34740/KAGGLE/DSV/8668279},
+publisher={Kaggle},
+author={Rabie El Kharoua},
+year={2024}
+}
