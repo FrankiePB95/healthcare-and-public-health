@@ -44,5 +44,3 @@ def page_summary_body():
     3. Explore visualizations and insights
     4. Generate reports and predictions
     """)
-
-    edit this page
