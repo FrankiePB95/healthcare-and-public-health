@@ -41,5 +41,5 @@ app.add_page("Home", home_page)
 
 
 
-# Run the app;
+# Run the app
 app.run()
