@@ -2,7 +2,7 @@ import streamlit as st
 from app_pages.multi_page import MultiPage
 
 # Import your page functions here
-from app_pages.pages.page_summary import page_summary_body
+from app_pages.page_summary import page_summary_body
 # from app_pages.pages.page_data_exploration import page_data_exploration_body
 # from app_pages.pages.page_analysis import page_analysis_body
 
@@ -34,5 +34,9 @@ def home_page():
 
 app.add_page("Home", home_page)
 
+
+
 # Run the app
 app.run()
+
+edit this page
