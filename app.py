@@ -34,7 +34,10 @@ def home_page():
 
 app.add_page("Home", home_page)
 
+from app_pages.dashboard import dashboard_body
 
+app = MultiPage(app_name="Dashboard App")  
+app.add_page("Alzheimer's Disease", dashboard_body)
 
 # Run the app
 app.run()
