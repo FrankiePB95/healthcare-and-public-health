@@ -3,6 +3,7 @@ from app_pages.multi_page import MultiPage
 
 # Import your page functions here
 from app_pages.page_summary import page_summary_body
+from app_pages.dashboard import dashboard_body
 # from app_pages.pages.page_data_exploration import page_data_exploration_body
 # from app_pages.pages.page_analysis import page_analysis_body
 
@@ -23,6 +24,7 @@ st.write("Navigate using the sidebar to explore different sections of the dashbo
 
 # Add your app pages here
 app.add_page("Project Summary", page_summary_body)
+app.add_page("Alzheimer's Disease", dashboard_body)
 # app.add_page("Data Exploration", page_data_exploration_body)
 # app.add_page("Analysis Results", page_analysis_body)
 
@@ -34,12 +36,10 @@ def home_page():
 
 app.add_page("Home", home_page)
 
-from app_pages.dashboard import dashboard_body
 
-app = MultiPage(app_name="Dashboard App")  
-app.add_page("Alzheimer's Disease", dashboard_body)
 
-# Run the app
+
+
+
+# Run the app;
 app.run()
-
-edit this page
