@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import matplotlib.pyplot as plt
 
 # Load the data
 df = pd.read_csv("inputs/alzheimers_disease_data.csv")
@@ -24,3 +25,15 @@ def dashboard_body():
     st.dataframe(df.describe())
     
     st.info("This is a basic dashboard for Alzheimer's Disease data analysis. Add more visualizations and analysis as needed.")
+
+def scatter(df):
+    fig = plt.figure(figsize=(10,8))
+    ax = plt.axes(prejection="3d")
+
+    x = df["age"]
+    y = df["bmi"]
+    z = df["physical activity"]
+
+    ax.scatter(x, y, z)
+    st.pyplot(fig)
+
