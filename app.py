@@ -16,7 +16,7 @@ st.set_page_config(
 )
 
 # Create instance of the app
-app = MultiPage(app_name="Dashboard App")
+app = MultiPage()
 
 # Title of the main page
 st.title("Healthcare and Public Health Analytics")
