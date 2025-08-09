@@ -59,6 +59,9 @@ def stacked(df):
         st.error(f"Error creating stacked bar chart: {str(e)}")
         st.write("Available columns:", df.columns.tolist())
 
+def parallel(df):
+    fig = px.parallel_coordinates(df, color="Smoking", dimensions = ["Age", "Gender", "BMI", "Children", "CardiovascularDisease", "PhysicalActivity"])
+    st.plotly_chart(fig)
 
 def dashboard_body():
     st.title("Dashboard")
@@ -81,7 +84,8 @@ def dashboard_body():
 
     st.write("Scatter plot of age, BMI and physical activity")
     scatter(df) 
-    stacked(df)  
+    stacked(df)
+    parallel(df) 
 
 
 
