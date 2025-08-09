@@ -2,9 +2,7 @@ import streamlit as st
 
 
 def page_summary_body():
-    """
-    Contents of the Project Summary page
-    """
+    st.title("Summary")
     st.header("Project Summary")
     
     st.write("### Project Overview")
