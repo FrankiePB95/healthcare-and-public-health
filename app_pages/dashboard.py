@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 
-# Load the data
 df = pd.read_csv("inputs/alzheimers_disease_data.csv")
 
 def scatter(df):
@@ -15,6 +15,11 @@ def scatter(df):
 
     ax.scatter(x, y, z)
     st.pyplot(fig)
+
+def stacked(df):
+
+df.groupby[("Smoking", "CardiovascularDisease")].size().unstack().plot(kind="bar", stacked=True)
+    st.pyplot(plt)
 
 def dashboard_body():
     st.title("Dashboard")
