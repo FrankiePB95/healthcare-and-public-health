@@ -7,11 +7,11 @@ df = pd.read_csv("inputs/alzheimers_disease_data.csv")
 
 def scatter(df):
     fig = plt.figure(figsize=(10,8))
-    ax = plt.axes(prejection="3d")
+    ax = plt.axes(projection="3d")
 
-    x = df["age"]
-    y = df["bmi"]
-    z = df["physical activity"]
+    x = df["Age"]
+    y = df["BMI"]
+    z = df["PhysicalActivity"]
 
     ax.scatter(x, y, z)
     st.pyplot(fig)
@@ -34,7 +34,7 @@ def dashboard_body():
     st.info("This is a basic dashboard for Alzheimer's Disease data analysis. Add more visualizations and analysis as needed.")
 
 
-    st.write("Scatter plot of age, BMI and phyaical activity")
+    st.write("Scatter plot of age, BMI and physical activity")
     scatter(df)
 
 
