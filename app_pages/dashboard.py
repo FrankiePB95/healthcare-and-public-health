@@ -60,7 +60,7 @@ def stacked(df):
         st.write("Available columns:", df.columns.tolist())
 
 def parallel(df):
-    fig = px.parallel_coordinates(df, color="Smoking", dimensions = ["Age", "Gender", "BMI", "Children", "CardiovascularDisease", "PhysicalActivity"])
+    fig = px.parallel_coordinates(df, color="Smoking", dimensions = ["Age", "Gender", "BMI", "Ethnicity", "CardiovascularDisease", "PhysicalActivity"])
     st.plotly_chart(fig)
 
 def dashboard_body():
