@@ -34,7 +34,7 @@ def stacked(df):
         # Create a copy of the dataframe and replace 0 with "yes" for the relevant columns
         df_modified = df.copy()
         
-        # Replace 0 with "no" and 1 with "yes" (assuming binary encoding)
+        # Replace 0 with "no" and 1 with "yes"
         if "Smoking" in df_modified.columns:
             df_modified["Smoking"] = df_modified["Smoking"].replace({0: "No", 1: "Yes"})
         if "CardiovascularDisease" in df_modified.columns:
@@ -80,8 +80,8 @@ def dashboard_body():
 
 
     st.write("Scatter plot of age, BMI and physical activity")
-    scatter(df)
-    stacked(df)    
+    scatter(df) 
+    stacked(df)  
 
 
 
