@@ -14,12 +14,6 @@ kaggle.json
 .ipynb_checkpoints/
 */.ipynb_checkpoints/
 
-# Environment variables
-.env
-*.env
-.env.local
-.env.*.local
-
 # IDE files
 .vscode/
 .idea/
