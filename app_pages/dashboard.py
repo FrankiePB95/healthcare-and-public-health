@@ -3,28 +3,37 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
+import matplotlib as mb
 
 df = pd.read_csv("inputs/alzheimers_disease_data.csv")
 
 def scatter(df):
     try:
-        fig = plt.figure(figsize=(10, 8))
+        # Create matplotlib figure (non-interactive for Streamlit)
+        fig = plt.figure(figsize=(14, 12))
         ax = plt.axes(projection="3d")
 
         x = df["Age"]
         y = df["BMI"]
         z = df["PhysicalActivity"]
 
-        ax.scatter(x, y, z, alpha=0.6)
+        # Create scatter plot with color mapping for better identification
+        scatter_plot = ax.scatter(x, y, z, alpha=0.6, c=range(len(df)), cmap='viridis')
         ax.set_xlabel("Age")
         ax.set_ylabel("BMI")
         ax.set_zlabel("Physical Activity")
         ax.set_title("3D Scatter Plot: Age, BMI, and Physical Activity")
-            
-        st.pyplot(fig)
+        
+        plt.tight_layout()
+        st.pyplot(fig, use_container_width=True)
+        
+        return fig
+        
     except Exception as e:
         st.error(f"Error creating 3D scatter plot: {str(e)}")
         st.write("Available columns:", df.columns.tolist())
+        return None
+
 
 def stacked(df):
     try:
@@ -83,7 +92,7 @@ def dashboard_body():
 
 
     st.write("Scatter plot of age, BMI and physical activity")
-    scatter(df) 
+    scatter(df)
     stacked(df)
     parallel(df) 
 
