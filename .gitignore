@@ -9,3 +9,50 @@ node_modules/
 cloudinary_python.txt
 kaggle.json
 .venv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# Environment variables
+.env
+*.env
+.env.local
+.env.*.local
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Data files (if sensitive)
+data/
+datasets/
+*.csv
+*.xlsx
+*.json
+
+# Model files
+models/
+*.pkl
+*.joblib
+*.h5
+
+# Temporary files
+tmp/
+temp/
+*.tmp
