@@ -246,7 +246,7 @@ def dashboard_body():
         st.header("Alzheimer's Disease Dashboard")
         st.subheader("Dataset Overview")
         st.write("This dashboard provides insights into Alzheimer's disease.")
-        st.write(f"**Dataset shape:** {df.shape[0]} rows × {df.shape[1]} columns")
+        st.info("Dataset shape: 537 rows × 23 columns")
 
         # Show first few rows
         st.subheader("Data Preview")
