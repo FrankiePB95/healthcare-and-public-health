@@ -28,10 +28,14 @@ class MultiPage:
 
     def run(self):
         """
-        Dropdown to select the page to run
+        Dropdown to select the page to run with session state persistence
         """
         # Apply consistent styling
         apply_shared_css()
+        
+        # Initialize session state for page persistence
+        if 'current_page_index' not in st.session_state:
+            st.session_state.current_page_index = 0  # Default to first page (Home)
         
         # Create sidebar for page navigation
         st.sidebar.title('🏥 Navigation')
@@ -43,11 +47,42 @@ class MultiPage:
         </div>
         """, unsafe_allow_html=True)
         
-        page = st.sidebar.selectbox(
+        # Add page persistence info
+        st.sidebar.markdown("""
+        <div style="background: rgba(25, 135, 84, 0.1); padding: 0.5rem; border-radius: 5px; margin-bottom: 1rem; border-left: 3px solid #198754;">
+            <p style="color: #000000; font-size: 0.8rem; margin: 0; font-weight: bold;">
+                💾 Your current page selection is preserved across reloads
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        # Create selectbox with session state persistence
+        selected_page = st.sidebar.selectbox(
             '📋 Select a page:',
             self.pages,
-            format_func=lambda page: page['title']
+            index=st.session_state.current_page_index,
+            format_func=lambda page: page['title'],
+            key='page_selector'
         )
         
+        # Update session state when page changes
+        for i, page in enumerate(self.pages):
+            if page['title'] == selected_page['title']:
+                if st.session_state.current_page_index != i:
+                    st.session_state.current_page_index = i
+                    # Update URL parameters for bookmarking and sharing
+                    st.experimental_set_query_params(page=str(i))
+                break
+        
+        # Add current page indicator in sidebar
+        st.sidebar.markdown(f"""
+        <div style="background: rgba(13, 110, 253, 0.1); padding: 0.8rem; border-radius: 8px; margin: 1rem 0; border: 2px solid #0d6efd;">
+            <p style="color: #000000; font-weight: bold; text-align: center; margin: 0; font-size: 0.9rem;">
+                📍 Current Page:<br>
+                <strong>{selected_page['title']}</strong>
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+        
         # Run the selected page function
-        page['function']()
+        selected_page['function']()
