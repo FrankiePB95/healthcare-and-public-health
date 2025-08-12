@@ -28,24 +28,24 @@ def page_summary_body():
     </div>
     """, unsafe_allow_html=True)
     
-    st.write("### 🔑 Key Features")
+    st.markdown('<h3 style="color: #000000; font-weight: bold;">🔑 <span style="text-decoration: underline; text-decoration-color: #000000; text-decoration-thickness: 2px;">Key Features</span></h3>', unsafe_allow_html=True)
     
     # Use a single container with inline styling - most reliable approach
     with st.container():
         st.markdown("""
         <div style="background: rgba(52, 98, 171, 0.85); padding: 1.5rem; border-radius: 15px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); margin: 1rem 0; border: 3px solid rgba(100, 100, 120, 0.8); color: white;">
-            <h4 style="color: white; margin-top: 0;">🔍 Data Exploration</h4>
+            <h4 style="color: white; margin-top: 0; font-weight: bold;">🔍 Data Exploration</h4>
             <p style="color: white;">Interactive visualizations of health data with advanced statistical analysis</p>
-            <h4 style="color: white;">📈 Statistical Analysis</h4>
+            <h4 style="color: white; font-weight: bold;">📈 Statistical Analysis</h4>
             <p style="color: white;">Comprehensive statistical insights including normality tests, t-tests, and correlation analysis</p>
-            <h4 style="color: white;">🤖 Machine Learning</h4>
+            <h4 style="color: white; font-weight: bold;">🤖 Machine Learning</h4>
             <p style="color: white;">Predictive modeling for health outcomes with risk assessment algorithms</p>
-            <h4 style="color: white;">📊 Interactive Dashboard</h4>
+            <h4 style="color: white; font-weight: bold;">📊 Interactive Dashboard</h4>
             <p style="color: white;">Real-time monitoring and reporting with 3D visualizations and clinical insights</p>
         </div>
         """, unsafe_allow_html=True)
     
-    st.write("### 💻 Technology Stack")
+    st.markdown('<h3 style="color: #000000; font-weight: bold;">💻 <span style="text-decoration: underline; text-decoration-color: #000000; text-decoration-thickness: 2px;">Technology Stack</span></h3>', unsafe_allow_html=True)
     col1, col2 = st.columns(2)
     
     with col1:
@@ -74,7 +74,7 @@ def page_summary_body():
         </div>
         """, unsafe_allow_html=True)
     
-    st.write("### 🚀 Getting Started")
+    st.markdown('<h3 style="color: #000000; font-weight: bold;">🚀 <span style="text-decoration: underline; text-decoration-color: #000000; text-decoration-thickness: 2px;">Getting Started</span></h3>', unsafe_allow_html=True)
     
     # Use Streamlit columns with colored backgrounds
     col1, col2 = st.columns(2)

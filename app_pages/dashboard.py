@@ -221,8 +221,8 @@ def risk_assessment_dashboard():
     fig_heatmap.update_layout(
         title=dict(font=dict(size=16, color="#000000", family="Arial Black")),
         font=dict(size=12, color="#000000", family="Arial", weight="bold"),
-        xaxis=dict(titlefont=dict(size=14, color="#000000", family="Arial Black")),
-        yaxis=dict(titlefont=dict(size=14, color="#000000", family="Arial Black")),
+        xaxis=dict(title=dict(font=dict(size=14, color="#000000", family="Arial Black"))),
+        yaxis=dict(title=dict(font=dict(size=14, color="#000000", family="Arial Black"))),
         plot_bgcolor="rgba(255, 255, 255, 0.1)",
         paper_bgcolor="rgba(255, 255, 255, 0.1)"
     )
@@ -376,7 +376,7 @@ def dashboard_body():
         with col2:
             st.metric(
                 label="📊 Clinical Features", 
-                value="23",
+                value="10",
                 delta="Biomarkers"
             )
         with col3:
