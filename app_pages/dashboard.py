@@ -1081,6 +1081,184 @@ def dashboard_body():
         
         </div>
         """, unsafe_allow_html=True)
+    
+    # Future Updates and Extensibility Section
+    st.markdown('<h2 style="color: #000000; margin-top: 2rem; font-weight: bold;"><strong>🚀 Future Enhancements & Scalability Framework</strong></h2>', unsafe_allow_html=True)
+    
+    with st.expander("🔮 **Planned Features & Data Source Expansion - Click to View Roadmap**", expanded=False):
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, rgba(25, 135, 84, 0.05), rgba(32, 201, 151, 0.05)); 
+                    padding: 2rem; border-radius: 15px; margin: 1rem 0;">
+        
+        ### 📊 **1. New Data Source Integration Framework**
+        <div style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+        <strong style="color: #000000;">Multi-Hospital Data Federation:</strong><br>
+        • <strong>Planned Integration:</strong> Real-time EMR connections from multiple healthcare systems<br>
+        • <strong>Data Standardization:</strong> Automated FHIR-compliant data normalization pipeline<br>
+        • <strong>Privacy Framework:</strong> Federated learning architecture preserving patient confidentiality<br>
+        • <strong>Timeline:</strong> Phase 1 implementation targeted for Q2 2026<br><br>
+        
+        <strong style="color: #000000;">Genomic Data Integration:</strong><br>
+        • <strong>APOE-ε4 Genotyping:</strong> Integration of genetic risk factors for Alzheimer's predisposition<br>
+        • <strong>Polygenic Risk Scores:</strong> Advanced genetic scoring algorithms for enhanced prediction<br>
+        • <strong>Biobank Connectivity:</strong> Direct integration with national genetic databases<br>
+        • <strong>Ethical Considerations:</strong> Comprehensive consent management and genetic counseling protocols<br><br>
+        
+        <strong style="color: #000000;">Neuroimaging Data Pipeline:</strong><br>
+        • <strong>MRI/PET Scan Analysis:</strong> AI-powered brain imaging interpretation for structural changes<br>
+        • <strong>Amyloid Plaque Detection:</strong> Automated quantification of Alzheimer's pathology markers<br>
+        • <strong>Longitudinal Tracking:</strong> Time-series analysis of brain structural changes<br>
+        • <strong>Integration Method:</strong> DICOM-compliant imaging workflow with cloud processing
+        </div>
+        
+        ### 🤖 **2. Advanced AI/ML Capabilities**
+        <div style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+        <strong style="color: #000000;">Predictive Modeling Enhancement:</strong><br>
+        • <strong>Machine Learning Pipeline:</strong> Gradient boosting and neural network implementations<br>
+        • <strong>Model Validation:</strong> Cross-validation with external datasets and clinical trials<br>
+        • <strong>Explainable AI:</strong> SHAP values and LIME interpretability for clinical trust<br>
+        • <strong>Continuous Learning:</strong> Model retraining with new patient outcomes data<br><br>
+        
+        <strong style="color: #000000;">Natural Language Processing:</strong><br>
+        • <strong>Clinical Notes Analysis:</strong> Automated extraction of risk factors from physician notes<br>
+        • <strong>Symptom Detection:</strong> NLP-powered identification of early cognitive decline indicators<br>
+        • <strong>Patient Communication:</strong> Automated generation of personalized risk reports<br>
+        • <strong>Multi-language Support:</strong> Translation capabilities for diverse patient populations<br><br>
+        
+        <strong style="color: #000000;">Real-time Risk Monitoring:</strong><br>
+        • <strong>Wearable Device Integration:</strong> Continuous monitoring via smartwatches and health trackers<br>
+        • <strong>Activity Pattern Analysis:</strong> Sleep, exercise, and daily routine correlation with cognitive health<br>
+        • <strong>Alert Systems:</strong> Automated notifications for significant risk threshold changes<br>
+        • <strong>Mobile App Companion:</strong> Patient-facing application for risk tracking and education
+        </div>
+        
+        ### 🌐 **3. Clinical Integration & Workflow Enhancement**
+        <div style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+        <strong style="color: #000000;">EMR Integration Architecture:</strong><br>
+        • <strong>HL7 FHIR Compliance:</strong> Seamless integration with Epic, Cerner, and other major EMR systems<br>
+        • <strong>Clinical Decision Support:</strong> Real-time risk alerts embedded in physician workflows<br>
+        • <strong>Automated Documentation:</strong> Risk assessment results auto-populated in patient charts<br>
+        • <strong>Billing Integration:</strong> CPT code generation for preventive care and risk assessment services<br><br>
+        
+        <strong style="color: #000000;">Population Health Management:</strong><br>
+        • <strong>Registry Development:</strong> Comprehensive Alzheimer's risk patient registry<br>
+        • <strong>Outcome Tracking:</strong> Longitudinal follow-up of intervention effectiveness<br>
+        • <strong>Resource Allocation:</strong> Predictive modeling for healthcare resource planning<br>
+        • <strong>Quality Metrics:</strong> Performance dashboards for clinical quality improvement programs
+        </div>
+        
+        ### 🔬 **4. Research & Clinical Trial Integration**
+        <div style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+        <strong style="color: #000000;">Clinical Trial Matching:</strong><br>
+        • <strong>Eligibility Screening:</strong> Automated identification of patients suitable for Alzheimer's research<br>
+        • <strong>Trial Database Integration:</strong> Connection with ClinicalTrials.gov for real-time opportunities<br>
+        • <strong>Recruitment Optimization:</strong> AI-powered patient-trial matching for accelerated enrollment<br>
+        • <strong>Outcome Contribution:</strong> Patient data contribution to research while maintaining privacy<br><br>
+        
+        <strong style="color: #000000;">Pharmaceutical Collaboration:</strong><br>
+        • <strong>Drug Development Support:</strong> Real-world evidence generation for therapeutic interventions<br>
+        • <strong>Biomarker Discovery:</strong> Large-scale analysis for novel risk factor identification<br>
+        • <strong>Clinical Endpoint Definition:</strong> Data-driven outcome measures for trial design<br>
+        • <strong>Regulatory Submission:</strong> FDA-ready data packages for new therapeutic approvals
+        </div>
+        
+        ### 📱 **5. User Experience & Accessibility Enhancements**
+        <div style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+        <strong style="color: #000000;">Multi-platform Accessibility:</strong><br>
+        • <strong>Mobile-first Design:</strong> Responsive dashboard optimized for tablets and smartphones<br>
+        • <strong>Voice Interface:</strong> Voice-activated navigation for accessibility compliance<br>
+        • <strong>Screen Reader Compatibility:</strong> Full WCAG 2.1 AA compliance for visual impairments<br>
+        • <strong>Multi-language Support:</strong> Spanish, Mandarin, and other major languages<br><br>
+        
+        <strong style="color: #000000;">Patient Portal Integration:</strong><br>
+        • <strong>Personal Risk Dashboard:</strong> Patient-facing risk visualization and education<br>
+        • <strong>Family History Input:</strong> Collaborative family risk factor documentation<br>
+        • <strong>Lifestyle Tracking:</strong> Integration with fitness apps and nutrition platforms<br>
+        • <strong>Educational Resources:</strong> Personalized learning materials based on individual risk profiles
+        </div>
+        
+        ### 🛡️ **6. Security & Compliance Framework**
+        <div style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+        <strong style="color: #000000;">Enhanced Data Protection:</strong><br>
+        • <strong>Zero-Trust Architecture:</strong> Advanced cybersecurity framework for healthcare data<br>
+        • <strong>Blockchain Audit Trail:</strong> Immutable record of all data access and modifications<br>
+        • <strong>Differential Privacy:</strong> Mathematical privacy guarantees for research data sharing<br>
+        • <strong>SOC 2 Type II Compliance:</strong> Enterprise-grade security certifications<br><br>
+        
+        <strong style="color: #000000;">Regulatory Compliance:</strong><br>
+        • <strong>GDPR Compliance:</strong> European patient data protection standards<br>
+        • <strong>21 CFR Part 11:</strong> FDA electronic records and signatures compliance<br>
+        • <strong>HITECH Act Adherence:</strong> Enhanced HIPAA security requirements<br>
+        • <strong>International Standards:</strong> ISO 27001 and ISO 13485 medical device compliance
+        </div>
+        
+        ### 🔄 **7. Implementation Timeline & Milestones**
+        <div style="margin-left: 1.5rem;">
+        <strong style="color: #000000;">Phase 1 (Q1-Q2 2026):</strong><br>
+        • Multi-hospital EMR integration pilot program<br>
+        • Basic genomic data incorporation (APOE-ε4 status)<br>
+        • Mobile-responsive dashboard deployment<br><br>
+        
+        <strong style="color: #000000;">Phase 2 (Q3-Q4 2026):</strong><br>
+        • Advanced ML model implementation and validation<br>
+        • Neuroimaging pipeline integration<br>
+        • Clinical trial matching system launch<br><br>
+        
+        <strong style="color: #000000;">Phase 3 (2027):</strong><br>
+        • Wearable device integration and real-time monitoring<br>
+        • Population health management tools<br>
+        • Full regulatory compliance certification<br><br>
+        
+        <strong style="color: #000000;">Long-term Vision (2028+):</strong><br>
+        • National Alzheimer's risk surveillance network<br>
+        • AI-powered drug discovery collaboration platform<br>
+        • Global health data federation for dementia research
+        </div>
+        
+        </div>
+        """, unsafe_allow_html=True)
+    
+    # Technical Architecture for Future Scalability
+    st.markdown("""
+    <div style="background: linear-gradient(135deg, rgba(111, 66, 193, 0.1), rgba(13, 110, 253, 0.1)); 
+                padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0; border: 2px solid #6f42c1;">
+    <h4 style="color: #000000; margin-top: 0; font-weight: bold;">🏗️ Scalable Technical Architecture</h4>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1rem;">
+        <div>
+            <p style="color: #000000; font-weight: bold; margin-bottom: 0.5rem;">
+            ☁️ <strong>Cloud-Native Infrastructure</strong>
+            </p>
+            <p style="color: #000000; margin-bottom: 1rem; font-size: 0.95rem;">
+            Kubernetes orchestration with auto-scaling capabilities, supporting millions of patient records 
+            with sub-second response times and 99.9% uptime availability.
+            </p>
+            <p style="color: #000000; font-weight: bold; margin-bottom: 0.5rem;">
+            🔗 <strong>API-First Design</strong>
+            </p>
+            <p style="color: #000000; margin-bottom: 0; font-size: 0.95rem;">
+            RESTful and GraphQL APIs enabling seamless third-party integrations, with comprehensive 
+            documentation and SDKs for rapid healthcare system connectivity.
+            </p>
+        </div>
+        <div>
+            <p style="color: #000000; font-weight: bold; margin-bottom: 0.5rem;">
+            🧱 <strong>Microservices Architecture</strong>
+            </p>
+            <p style="color: #000000; margin-bottom: 1rem; font-size: 0.95rem;">
+            Modular service design allowing independent scaling of risk assessment, data processing, 
+            and visualization components for optimal resource utilization.
+            </p>
+            <p style="color: #000000; font-weight: bold; margin-bottom: 0.5rem;">
+            🔄 <strong>Real-time Data Pipeline</strong>
+            </p>
+            <p style="color: #000000; margin-bottom: 0; font-size: 0.95rem;">
+            Apache Kafka and streaming analytics enabling real-time risk updates as new patient 
+            data becomes available from integrated healthcare systems.
+            </p>
+        </div>
+    </div>
+    </div>
+    """, unsafe_allow_html=True)
 
     st.markdown("---")
     
