@@ -237,25 +237,25 @@ def risk_assessment_dashboard():
     return df
 
 def dashboard_body():
-    # Custom CSS for dark theme with black text
+    # Custom CSS for dark theme with blue gradients and deeper tones
     st.markdown("""
     <style>
-    /* Dark theme background with gradients */
+    /* Lighter dark theme background with blue gradients */
     .stApp {
-        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        background: linear-gradient(135deg, #2c3e50 0%, #3498db 50%, #5dade2 100%);
         background-attachment: fixed;
         color: #000000;
     }
     
-    /* Content container styling - dark theme */
+    /* Content container styling - deeper grey tones */
     .main .block-container {
-        background: rgba(240, 240, 245, 0.95);
+        background: rgba(220, 220, 230, 0.95);
         border-radius: 15px;
         padding: 2rem;
         margin-top: 2rem;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         backdrop-filter: blur(10px);
-        border: 1px solid rgba(100, 100, 120, 0.3);
+        border: 1px solid rgba(150, 150, 170, 0.4);
     }
     
     /* Header styling - black text */
@@ -268,10 +268,10 @@ def dashboard_body():
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     }
     
-    /* Subheader styling - black text */
+    /* Subheader styling - black text with blue accents */
     h2, h3 {
         color: #000000 !important;
-        border-bottom: 2px solid #40407a;
+        border-bottom: 2px solid #3498db;
         padding-bottom: 0.5rem;
         margin-top: 2rem;
     }
@@ -281,16 +281,16 @@ def dashboard_body():
         color: #000000 !important;
     }
     
-    /* Tab styling - dark theme with black text */
+    /* Tab styling - blue theme with black text */
     .stTabs [data-baseweb="tab-list"] {
         gap: 2px;
-        background: linear-gradient(90deg, #2c2c54, #40407a);
+        background: linear-gradient(90deg, #3498db, #5dade2);
         border-radius: 10px;
         padding: 0.5rem;
     }
     
     .stTabs [data-baseweb="tab"] {
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.2);
         border-radius: 8px;
         color: #000000 !important;
         font-weight: bold;
@@ -300,14 +300,14 @@ def dashboard_body():
     }
     
     .stTabs [aria-selected="true"] {
-        background: rgba(240, 240, 245, 0.9) !important;
+        background: rgba(200, 200, 215, 0.9) !important;
         color: #000000 !important;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
     
-    /* Info box styling - dark theme with black text */
+    /* Info box styling - blue theme with black text */
     .stAlert > div {
-        background: linear-gradient(135deg, #74b9ff, #0984e3);
+        background: linear-gradient(135deg, #3498db, #5dade2);
         color: #000000 !important;
         border: none;
         border-radius: 10px;
@@ -315,33 +315,33 @@ def dashboard_body():
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
     
-    /* Expander styling - dark theme with black text */
+    /* Expander styling - blue theme with black text */
     .streamlit-expanderHeader {
-        background: linear-gradient(90deg, #74b9ff, #0984e3);
+        background: linear-gradient(90deg, #3498db, #5dade2);
         color: #000000 !important;
         border-radius: 8px;
         font-weight: bold;
     }
     
     .streamlit-expanderContent {
-        background: rgba(240, 240, 245, 0.8);
+        background: rgba(200, 200, 215, 0.8);
         border-radius: 8px;
-        border: 1px solid #74b9ff;
+        border: 1px solid #3498db;
         color: #000000 !important;
     }
     
-    /* DataFrame styling - dark theme */
+    /* DataFrame styling - deeper grey tones */
     .stDataFrame {
-        background: rgba(240, 240, 245, 0.9);
+        background: rgba(200, 200, 215, 0.9);
         border-radius: 10px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         overflow: hidden;
         color: #000000 !important;
     }
     
-    /* Metric cards styling - dark theme with black text */
+    /* Metric cards styling - blue theme with black text */
     [data-testid="metric-container"] {
-        background: linear-gradient(135deg, #74b9ff, #0984e3);
+        background: linear-gradient(135deg, #3498db, #5dade2);
         border: none;
         padding: 1rem;
         border-radius: 10px;
@@ -361,20 +361,20 @@ def dashboard_body():
         color: #000000 !important;
     }
     
-    /* Custom card styling - dark theme with black text */
+    /* Custom card styling - deeper grey tones with black text */
     .custom-card {
-        background: rgba(240, 240, 245, 0.8);
+        background: rgba(200, 200, 215, 0.85);
         padding: 1.5rem;
         border-radius: 15px;
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
         margin: 1rem 0;
-        border-left: 5px solid #40407a;
-        border: 1px solid rgba(100, 100, 120, 0.3);
+        border-left: 5px solid #3498db;
+        border: 1px solid rgba(150, 150, 170, 0.4);
     }
     
-    /* Button styling - dark theme with black text */
+    /* Button styling - blue theme with black text */
     .stButton > button {
-        background: linear-gradient(135deg, #74b9ff, #0984e3);
+        background: linear-gradient(135deg, #3498db, #5dade2);
         color: #000000 !important;
         border: none;
         border-radius: 25px;
@@ -387,36 +387,36 @@ def dashboard_body():
     .stButton > button:hover {
         transform: translateY(-2px);
         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-        background: linear-gradient(135deg, #0984e3, #74b9ff);
+        background: linear-gradient(135deg, #5dade2, #3498db);
     }
     
-    /* Sidebar styling - dark theme */
+    /* Sidebar styling - lighter theme */
     .css-1d391kg {
-        background: linear-gradient(180deg, #1a1a2e, #16213e);
+        background: linear-gradient(180deg, #2c3e50, #3498db);
     }
     
     /* Input and select styling - black text */
     .stSelectbox > div > div {
-        background: rgba(240, 240, 245, 0.8);
+        background: rgba(200, 200, 215, 0.8);
         color: #000000 !important;
-        border: 1px solid #40407a;
+        border: 1px solid #3498db;
     }
     
-    /* Success/Warning/Error message styling - black text */
+    /* Success/Warning/Error message styling - blue theme with black text */
     .stSuccess {
-        background: linear-gradient(135deg, #00b894, #00a085);
+        background: linear-gradient(135deg, #27ae60, #2ecc71);
         border-radius: 10px;
         color: #000000 !important;
     }
     
     .stWarning {
-        background: linear-gradient(135deg, #fdcb6e, #e17055);
+        background: linear-gradient(135deg, #f39c12, #e67e22);
         border-radius: 10px;
         color: #000000 !important;
     }
     
     .stError {
-        background: linear-gradient(135deg, #e17055, #fdcb6e);
+        background: linear-gradient(135deg, #e74c3c, #c0392b);
         border-radius: 10px;
         color: #000000 !important;
     }
@@ -452,8 +452,8 @@ def dashboard_body():
     /* Code styling */
     code {
         color: #000000 !important;
-        background: rgba(240, 240, 245, 0.8);
-        border: 1px solid rgba(100, 100, 120, 0.3);
+        background: rgba(200, 200, 215, 0.8);
+        border: 1px solid rgba(150, 150, 170, 0.4);
     }
     </style>
     """, unsafe_allow_html=True)
@@ -477,7 +477,7 @@ def dashboard_body():
     
     with st.expander("🔍 Click here for comprehensive usage instructions", expanded=False):
         st.markdown("""
-        <div style="background: linear-gradient(135deg, rgba(116, 185, 255, 0.1), rgba(9, 132, 227, 0.1)); 
+        <div style="background: linear-gradient(135deg, rgba(52, 152, 219, 0.2), rgba(93, 173, 226, 0.2)); 
                     padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
         
         ### 📊 **General Analytics Tab**
@@ -573,9 +573,9 @@ def dashboard_body():
 
         st.markdown("---")
 
-        # Enhanced Data Preview Section - Dark Theme with Black Text
+        # Enhanced Data Preview Section - Blue Theme with Black Text
         st.markdown("""
-        <div style="background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(155, 89, 182, 0.1)); 
+        <div style="background: linear-gradient(135deg, rgba(52, 152, 219, 0.2), rgba(93, 173, 226, 0.2)); 
                     padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
             <h3 style="color: #000000; margin-top: 0;">🔍 Clinical Data Preview</h3>
             <p style="color: #000000;">Sample patient records showing key demographic and clinical parameters</p>
@@ -586,9 +586,9 @@ def dashboard_body():
         df_display.columns = df_display.columns.str.replace('_', ' ')
         st.dataframe(df_display, use_container_width=True)
         
-        # Enhanced Statistics Section - Dark Theme with Black Text
+        # Enhanced Statistics Section - Blue Theme with Black Text
         st.markdown("""
-        <div style="background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(26, 188, 156, 0.1)); 
+        <div style="background: linear-gradient(135deg, rgba(52, 152, 219, 0.2), rgba(93, 173, 226, 0.2)); 
                     padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
             <h3 style="color: #000000; margin-top: 0;">📈 Statistical Summary</h3>
             <p style="color: #000000;">Descriptive statistics for numerical clinical variables</p>
