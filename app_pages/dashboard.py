@@ -291,7 +291,7 @@ def dashboard_body():
         font-weight: bold;
     }
     
-    /* Header styling - black text with underlines */
+    /* Header styling - black text, no default underlines (applied selectively in HTML) */
     h1 {
         color: #000000 !important;
         text-align: center;
@@ -299,22 +299,24 @@ def dashboard_body():
         font-size: 3rem !important;
         margin-bottom: 1rem;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-        text-decoration: underline;
-        text-decoration-color: #1565c0;
-        text-decoration-thickness: 3px;
         font-weight: 900;
     }
     
-    /* Subheader styling - black text with blue accents and underlines */
+    h1 .emoji, h1 span[role="img"] {
+        text-decoration: none !important;
+    }
+    
+    /* Subheader styling - black text, no default underlines (applied selectively in HTML) */
     h2, h3 {
         color: #000000 !important;
         border-bottom: 3px solid #1565c0;
         padding-bottom: 0.5rem;
         margin-top: 2rem;
-        text-decoration: underline;
-        text-decoration-color: #1565c0;
-        text-decoration-thickness: 2px;
         font-weight: bold;
+    }
+    
+    h2 .emoji, h2 span[role="img"], h3 .emoji, h3 span[role="img"] {
+        text-decoration: none !important;
     }
     
     /* All text elements - bold black text */
@@ -522,7 +524,7 @@ def dashboard_body():
         font-weight: bold;
     }
     
-    /* Plotly chart styling - add borders to infographics */
+    /* Plotly chart styling - add borders to infographics, no underlines */
     .js-plotly-plot, .plotly {
         border: 3px solid rgba(100, 100, 120, 0.8) !important;
         border-radius: 10px !important;
@@ -537,23 +539,39 @@ def dashboard_body():
         border-radius: 5px !important;
         border: 1px solid rgba(100, 100, 120, 0.6) !important;
     }
+    
+    /* Remove underlines from images and charts */
+    img, .js-plotly-plot *, .plotly *, canvas, svg {
+        text-decoration: none !important;
+    }
+    
+    /* Remove underlines from icons and emojis */
+    .stMarkdown span, .stText span, p span, div span, h1 span, h2 span, h3 span {
+        text-decoration: none !important;
+    }
+    
+    /* Specific emoji and icon styling - no underlines */
+    .emoji, [role="img"], .icon {
+        text-decoration: none !important;
+        display: inline-block;
+    }
     </style>
     """, unsafe_allow_html=True)
     
-    # Enhanced title with black text, bold styling, and underline
+    # Enhanced title with black text, bold styling, and black underline - icons separate from underlined text
     st.markdown("""
     <div style="text-align: center; padding: 2rem 0;">
-        <h1 style="color: #000000; font-size: 3rem; margin-bottom: 0.5rem; font-weight: 900; text-decoration: underline; text-decoration-color: #1565c0; text-decoration-thickness: 3px;">🏥 Healthcare Analytics Dashboard</h1>
+        <h1 style="color: #000000; font-size: 3rem; margin-bottom: 0.5rem; font-weight: 900;">🏥 <span style="text-decoration: underline; text-decoration-color: #000000; text-decoration-thickness: 3px;">Healthcare Analytics Dashboard</span></h1>
         <p style="font-size: 1.2rem; color: #000000; margin-top: 0; font-weight: bold;">
             Advanced Alzheimer's Disease Risk Assessment & Clinical Insights
         </p>
     </div>
     """, unsafe_allow_html=True)
     
-    # Enhanced Usage Instructions with dark theme and bold black text
+    # Enhanced Usage Instructions with dark theme and bold black text - icons separate from underlined text
     st.markdown("""
     <div class="custom-card">
-        <h3 style="color: #000000; margin-top: 0; font-weight: bold; text-decoration: underline; text-decoration-color: #1565c0; text-decoration-thickness: 2px;">📋 Dashboard Navigation Guide</h3>
+        <h3 style="color: #000000; margin-top: 0; font-weight: bold;">📋 <span style="text-decoration: underline; text-decoration-color: #000000; text-decoration-thickness: 2px;">Dashboard Navigation Guide</span></h3>
     </div>
     """, unsafe_allow_html=True)
     
@@ -622,10 +640,10 @@ def dashboard_body():
     tab1, tab2 = st.tabs(["📊 General Analytics", "🏥 Risk Assessment & Early Detection"])
     
     with tab1:
-        # Enhanced General Analytics Tab - Dark Theme with Bold Black Text
+        # Enhanced General Analytics Tab - Dark Theme with Bold Black Text - icons separate from underlined text
         st.markdown("""
         <div class="custom-card">
-            <h2 style="color: #000000; margin-top: 0; font-weight: bold; text-decoration: underline; text-decoration-color: #1565c0; text-decoration-thickness: 2px;">📊 Alzheimer's Disease Research Analytics</h2>
+            <h2 style="color: #000000; margin-top: 0; font-weight: bold;">📊 <span style="text-decoration: underline; text-decoration-color: #000000; text-decoration-thickness: 2px;">Alzheimer's Disease Research Analytics</span></h2>
             <p style="font-size: 1.1rem; color: #000000; margin-bottom: 0; font-weight: bold;">
                 Comprehensive clinical dataset analysis for cognitive health research
             </p>
@@ -655,11 +673,11 @@ def dashboard_body():
 
         st.markdown("---")
 
-        # Enhanced Data Preview Section - Blue Theme with Bold Black Text and Borders
+        # Enhanced Data Preview Section - Blue Theme with Bold Black Text and Borders - icons separate from underlined text
         st.markdown("""
         <div style="background: linear-gradient(135deg, rgba(21, 101, 192, 0.3), rgba(25, 118, 210, 0.3)); 
                     padding: 1.5rem; border-radius: 10px; margin: 1rem 0; border: 3px solid rgba(100, 100, 120, 0.8); font-weight: bold;">
-            <h3 style="color: #000000; margin-top: 0; font-weight: bold; text-decoration: underline; text-decoration-color: #1565c0; text-decoration-thickness: 2px;">🔍 Clinical Data Preview</h3>
+            <h3 style="color: #000000; margin-top: 0; font-weight: bold;">🔍 <span style="text-decoration: underline; text-decoration-color: #000000; text-decoration-thickness: 2px;">Clinical Data Preview</span></h3>
             <p style="color: #000000; font-weight: bold;">Sample patient records showing key demographic and clinical parameters</p>
         </div>
         """, unsafe_allow_html=True)
@@ -668,11 +686,11 @@ def dashboard_body():
         df_display.columns = df_display.columns.str.replace('_', ' ')
         st.dataframe(df_display, use_container_width=True)
         
-        # Enhanced Statistics Section - Blue Theme with Bold Black Text and Borders
+        # Enhanced Statistics Section - Blue Theme with Bold Black Text and Borders - icons separate from underlined text
         st.markdown("""
         <div style="background: linear-gradient(135deg, rgba(21, 101, 192, 0.3), rgba(25, 118, 210, 0.3)); 
                     padding: 1.5rem; border-radius: 10px; margin: 1rem 0; border: 3px solid rgba(100, 100, 120, 0.8); font-weight: bold;">
-            <h3 style="color: #000000; margin-top: 0; font-weight: bold; text-decoration: underline; text-decoration-color: #1565c0; text-decoration-thickness: 2px;">📈 Statistical Summary</h3>
+            <h3 style="color: #000000; margin-top: 0; font-weight: bold;">📈 <span style="text-decoration: underline; text-decoration-color: #000000; text-decoration-thickness: 2px;">Statistical Summary</span></h3>
             <p style="color: #000000; font-weight: bold;">Descriptive statistics for numerical clinical variables</p>
         </div>
         """, unsafe_allow_html=True)
@@ -684,11 +702,11 @@ def dashboard_body():
         st.dataframe(df_stats, use_container_width=True)
     
     with tab2:
-        # Enhanced Risk Assessment Tab - Dark Theme with Bold Black Text
+        # Enhanced Risk Assessment Tab - Dark Theme with Bold Black Text - Centered - icons separate from underlined text
         st.markdown("""
-        <div class="custom-card">
-            <h2 style="color: #000000; margin-top: 0; font-weight: bold; text-decoration: underline; text-decoration-color: #1565c0; text-decoration-thickness: 2px;">🏥 Advanced Risk Assessment & Clinical Decision Support</h2>
-            <p style="font-size: 1.1rem; color: #000000; margin-bottom: 0; font-weight: bold;">
+        <div class="custom-card" style="text-align: center;">
+            <h2 style="color: #000000; margin-top: 0; font-weight: bold; text-align: center;">🏥 <span style="text-decoration: underline; text-decoration-color: #000000; text-decoration-thickness: 2px;">Advanced Risk Assessment & Clinical Decision Support</span></h2>
+            <p style="font-size: 1.1rem; color: #000000; margin-bottom: 0; font-weight: bold; text-align: center;">
                 AI-powered patient stratification and early detection system
             </p>
         </div>
