@@ -51,7 +51,7 @@ def page_summary_body():
     with col1:
         st.markdown("""
         <div style="background: rgba(52, 98, 171, 0.85); padding: 1.5rem; border-radius: 15px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); margin: 1rem 0; border: 3px solid rgba(100, 100, 120, 0.8); font-weight: bold;">
-            <h4 style="color: #000000; font-weight: bold;"><strong>🎨 Frontend Technologies</strong></h4>
+            <h4 style="color: #000000; font-weight: bold;">🎨 Frontend Technologies</h4>
             <ul style="color: #000000; font-weight: bold;">
                 <li><strong>Streamlit</strong> - Interactive web application framework</li>
                 <li><strong>Plotly</strong> - Interactive 3D visualizations</li>
@@ -64,7 +64,7 @@ def page_summary_body():
     with col2:
         st.markdown("""
         <div style="background: rgba(52, 98, 171, 0.85); padding: 1.5rem; border-radius: 15px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); margin: 1rem 0; border: 3px solid rgba(100, 100, 120, 0.8); font-weight: bold;">
-            <h4 style="color: #000000; font-weight: bold;"><strong>⚙️ Backend & Analytics</strong></h4>
+            <h4 style="color: #000000; font-weight: bold;">⚙️ Backend & Analytics</h4>
             <ul style="color: #000000; font-weight: bold;">
                 <li><strong>Pandas</strong> - Data manipulation and analysis</li>
                 <li><strong>Scikit-learn</strong> - Machine learning algorithms</li>
@@ -93,6 +93,7 @@ def page_summary_body():
         .blue-box h4 {
             color: black !important;
             margin-top: 0;
+            font-weight: bold;
         }
         .blue-box p, .blue-box li {
             color: black !important;
