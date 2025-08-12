@@ -702,11 +702,11 @@ def dashboard_body():
         st.dataframe(df_stats, use_container_width=True)
     
     with tab2:
-        # Enhanced Risk Assessment Tab - Dark Theme with Bold Black Text - Centered - icons separate from underlined text
+        # Enhanced Risk Assessment Tab - Dark Theme with Bold Black Text - Left justified - icons separate from underlined text
         st.markdown("""
-        <div class="custom-card" style="text-align: center;">
-            <h2 style="color: #000000; margin-top: 0; font-weight: bold; text-align: center;">🏥 <span style="text-decoration: underline; text-decoration-color: #000000; text-decoration-thickness: 2px;">Advanced Risk Assessment & Clinical Decision Support</span></h2>
-            <p style="font-size: 1.1rem; color: #000000; margin-bottom: 0; font-weight: bold; text-align: center;">
+        <div class="custom-card" style="text-align: left;">
+            <h2 style="color: #000000; margin-top: 0; font-weight: bold; text-align: left;">🏥 <span style="text-decoration: underline; text-decoration-color: #000000; text-decoration-thickness: 2px;">Advanced Risk Assessment & Clinical Decision Support</span></h2>
+            <p style="font-size: 1.1rem; color: #000000; margin-bottom: 0; font-weight: bold; text-align: left;">
                 AI-powered patient stratification and early detection system
             </p>
         </div>
