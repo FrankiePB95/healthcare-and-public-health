@@ -1,3 +1,4 @@
+# Import necessary packages
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -9,35 +10,11 @@ import matplotlib as mb
 import numpy as np
 import scipy.stats as stats
 
-# Load and process data
-df = pd.read_csv("inputs/alzheimers_disease_data.csv")
+# Load processed data (already cleaned and transformed)
+df = pd.read_csv("outputs/processed_alzheimers_disease_data_unscaled_and_unencoded.csv")
 
-# Data preprocessing for risk assessment
-def preprocess_data_for_risk_assessment(df):
-    """
-    Preprocess data for risk assessment dashboard
-    """
-    # Take a sample for demonstration
-    df_sample = df.sample(frac=0.25, random_state=10)
-    
-    # Create processed dataframe similar to notebook
-    processed_df = df_sample.copy()
-    
-    # Replace categorical values
-    if "Gender" in processed_df.columns:
-        processed_df["Gender"] = processed_df["Gender"].replace({0: "Male", 1: "Female"})
-    
-    # Create risk assessment columns
-    processed_df = processed_df.rename(columns={
-        "Age": "Patient_Age",
-        "AlcoholConsumption": "Alcohol_Consumption",
-        "PhysicalActivity": "Physical_Activity",
-        "CholesterolTotal": "Cholesterol_Total",
-        "FunctionalAssessment": "Functional_Assessment",
-        "ADL": "Activities_Of_Daily_Living"
-    })
-    
-    return processed_df
+# Use the processed data directly - no additional preprocessing needed
+processed_df = df.copy()
 
 # Risk Assessment Functions
 def calculate_risk_score(row):
@@ -100,7 +77,8 @@ def categorize_risk(score):
         return 'Low Risk'
 
 # Process data for risk assessment
-processed_df = preprocess_data_for_risk_assessment(df)
+# Data is already processed from the CSV, no additional processing needed
+processed_df = df.copy()
 
 def scatter(df):
     try:
