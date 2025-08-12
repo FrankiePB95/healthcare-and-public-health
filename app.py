@@ -30,14 +30,12 @@ def home_page():
 def conclusion_page():
     st.header("Welcome to the Healthcare Analytics Dashboard")
     st.write("This is the home page of your healthcare and public health analytics application.")
-    st.info("Add your page functions and uncomment the app.add_page() calls above to enable navigation.")
-
+   
 # Add your app pages here
 app.add_page("Home", home_page)
 app.add_page("Project Summary", page_summary_body)
-app.add_page("Alzheimer's Disease", dashboard_body)
+app.add_page("Alzheimer's Disease Dashboard", dashboard_body)
 app.add_page("Conclusion", conclusion_page)
-
 
 # Run the app
 app.run()
