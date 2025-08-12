@@ -232,13 +232,15 @@ def dashboard_body():
 
         # Show first few rows
         st.subheader("Data Preview")
-        st.dataframe(df.head())
+        df_display = df.head().copy()
+        df_display.columns = df_display.columns.str.replace('_', ' ')
+        st.dataframe(df_display)
         
         # Basic statistics
         st.subheader("Basic Statistics")
-        st.dataframe(df.describe())
-        
-        st.info("This is a basic dashboard for Alzheimer's Disease data analysis.")
+        df_stats = df.describe().copy()
+        df_stats.columns = df_stats.columns.str.replace('_', ' ')
+        st.dataframe(df_stats)
     
     with tab2:
         # Risk Assessment Dashboard
