@@ -165,17 +165,17 @@ def risk_assessment_dashboard():
         
         with demo_col1:
             # Gender filter
-            gender_options = ['All'] + sorted(df['Gender'].unique().tolist())
+            gender_options = ["All"] + sorted(df["Gender"].unique().tolist())
             selected_gender = st.selectbox("👤 Gender", gender_options, help="Filter by patient gender")
         
         with demo_col2:
             # Ethnicity filter  
-            ethnicity_options = ['All'] + sorted(df['Ethnicity'].unique().tolist())
+            ethnicity_options = ["All"] + sorted(df["Ethnicity"].unique().tolist())
             selected_ethnicity = st.selectbox("🌍 Ethnicity", ethnicity_options, help="Filter by ethnic background")
         
         with demo_col3:
             # Age range filter
-            age_min, age_max = int(df['Patient_Age'].min()), int(df['Patient_Age'].max())
+            age_min, age_max = int(df["Patient_Age"].min()), int(df["Patient_Age"].max())
             age_range = st.slider("📅 Age Range", age_min, age_max, (age_min, age_max), 
                                 help=f"Age ranges from {age_min} to {age_max} years")
     
@@ -184,29 +184,29 @@ def risk_assessment_dashboard():
         
         with med_col1:
             # Cardiovascular Disease filter
-            cvd_options = ['All'] + sorted(df['Cardiovascular_Disease'].unique().tolist()) if 'Cardiovascular_Disease' in df.columns else ['All']
+            cvd_options = ["All"] + sorted(df["Cardiovascular_Disease"].unique().tolist()) if "Cardiovascular_Disease" in df.columns else ["All"]
             selected_cvd = st.selectbox("❤️ Cardiovascular Disease", cvd_options, help="Filter by cardiovascular disease status")
             
             # Depression filter
-            depression_options = ['All'] + sorted(df['Depression'].unique().tolist())
+            depression_options = ["All"] + sorted(df["Depression"].unique().tolist())
             selected_depression = st.selectbox("🧠 Depression", depression_options, help="Filter by depression status")
         
         with med_col2:
             # Memory Complaints filter
-            memory_options = ['All'] + sorted(df['Memory_Complaints'].unique().tolist()) if 'Memory_Complaints' in df.columns else ['All']
+            memory_options = ["All"] + sorted(df["Memory_Complaints"].unique().tolist()) if "Memory_Complaints" in df.columns else ["All"]
             selected_memory = st.selectbox("🧩 Memory Complaints", memory_options, help="Filter by memory complaint status")
             
             # Behavioral Problems filter
-            behavior_options = ['All'] + sorted(df['Behavioral_Problems'].unique().tolist()) if 'Behavioral_Problems' in df.columns else ['All']
+            behavior_options = ["All"] + sorted(df["Behavioral_Problems"].unique().tolist()) if "Behavioral_Problems" in df.columns else ["All"]
             selected_behavior = st.selectbox("😤 Behavioral Problems", behavior_options, help="Filter by behavioral issues")
         
         with med_col3:
             # Personality Changes filter
-            personality_options = ['All'] + sorted(df['Personality_Changes'].unique().tolist()) if 'Personality_Changes' in df.columns else ['All']
+            personality_options = ["All"] + sorted(df["Personality_Changes"].unique().tolist()) if "Personality_Changes" in df.columns else ["All"]
             selected_personality = st.selectbox("👤 Personality Changes", personality_options, help="Filter by personality changes")
             
             # Difficulty Completing Tasks filter
-            tasks_options = ['All'] + sorted(df['Difficulty_Completing_Tasks'].unique().tolist()) if 'Difficulty_Completing_Tasks' in df.columns else ['All']
+            tasks_options = ["All"] + sorted(df["Difficulty_Completing_Tasks"].unique().tolist()) if "Difficulty_Completing_Tasks" in df.columns else ["All"]
             selected_tasks = st.selectbox("📝 Task Difficulty", tasks_options, help="Filter by difficulty completing tasks")
     
     with st.expander("💊 **Lifestyle & Health Metrics**", expanded=False):
@@ -214,7 +214,7 @@ def risk_assessment_dashboard():
         
         with lifestyle_col1:
             # Smoking filter
-            smoking_options = ['All'] + sorted(df['Smoking'].unique().tolist())
+            smoking_options = ["All"] + sorted(df["Smoking"].unique().tolist())
             selected_smoking = st.selectbox("🚬 Smoking Status", smoking_options, help="Filter by smoking habits")
             
             # BMI range filter
@@ -280,45 +280,45 @@ def risk_assessment_dashboard():
                 selected_diagnosis = st.selectbox("🩺 Alzheimer's Diagnosis", diagnosis_options, 
                                                 help="Filter by Alzheimer's diagnosis status")
             else:
-                selected_diagnosis = 'All'
+                selected_diagnosis = "All"
     
     # Apply filters to the dataframe
     filtered_df = df.copy()
     
     # Demographic filters
-    if selected_gender != 'All':
-        filtered_df = filtered_df[filtered_df['Gender'] == selected_gender]
+    if selected_gender != "All":
+        filtered_df = filtered_df[filtered_df["Gender"] == selected_gender]
     
-    if selected_ethnicity != 'All':
-        filtered_df = filtered_df[filtered_df['Ethnicity'] == selected_ethnicity]
+    if selected_ethnicity != "All":
+        filtered_df = filtered_df[filtered_df["Ethnicity"] == selected_ethnicity]
     
     filtered_df = filtered_df[
-        (filtered_df['Patient_Age'] >= age_range[0]) & 
-        (filtered_df['Patient_Age'] <= age_range[1])
+        (filtered_df["Patient_Age"] >= age_range[0]) & 
+        (filtered_df["Patient_Age"] <= age_range[1])
     ]
     
     # Medical history filters
-    if selected_cvd != 'All' and 'Cardiovascular_Disease' in df.columns:
-        filtered_df = filtered_df[filtered_df['Cardiovascular_Disease'] == selected_cvd]
+    if selected_cvd != "All" and "Cardiovascular_Disease" in df.columns:
+        filtered_df = filtered_df[filtered_df["Cardiovascular_Disease"] == selected_cvd]
     
-    if selected_depression != 'All':
-        filtered_df = filtered_df[filtered_df['Depression'] == selected_depression]
+    if selected_depression != "All":
+        filtered_df = filtered_df[filtered_df["Depression"] == selected_depression]
     
-    if selected_memory != 'All' and 'Memory_Complaints' in df.columns:
-        filtered_df = filtered_df[filtered_df['Memory_Complaints'] == selected_memory]
+    if selected_memory != "All" and "Memory_Complaints" in df.columns:
+        filtered_df = filtered_df[filtered_df["Memory_Complaints"] == selected_memory]
     
-    if selected_behavior != 'All' and 'Behavioral_Problems' in df.columns:
-        filtered_df = filtered_df[filtered_df['Behavioral_Problems'] == selected_behavior]
+    if selected_behavior != "All" and "Behavioral_Problems" in df.columns:
+        filtered_df = filtered_df[filtered_df["Behavioral_Problems"] == selected_behavior]
     
-    if selected_personality != 'All' and 'Personality_Changes' in df.columns:
-        filtered_df = filtered_df[filtered_df['Personality_Changes'] == selected_personality]
+    if selected_personality != "All" and "Personality_Changes" in df.columns:
+        filtered_df = filtered_df[filtered_df["Personality_Changes"] == selected_personality]
     
-    if selected_tasks != 'All' and 'Difficulty_Completing_Tasks' in df.columns:
-        filtered_df = filtered_df[filtered_df['Difficulty_Completing_Tasks'] == selected_tasks]
+    if selected_tasks != "All" and "Difficulty_Completing_Tasks" in df.columns:
+        filtered_df = filtered_df[filtered_df["Difficulty_Completing_Tasks"] == selected_tasks]
     
     # Lifestyle filters
-    if selected_smoking != 'All':
-        filtered_df = filtered_df[filtered_df['Smoking'] == selected_smoking]
+    if selected_smoking != "All":
+        filtered_df = filtered_df[filtered_df["Smoking"] == selected_smoking]
     
     filtered_df = filtered_df[
         (filtered_df['BMI'] >= bmi_range[0]) & 
@@ -361,8 +361,8 @@ def risk_assessment_dashboard():
             (filtered_df['Activities_Of_Daily_Living'] <= adl_range[1])
         ]
     
-    if selected_diagnosis != 'All' and 'Diagnosis' in df.columns:
-        filtered_df = filtered_df[filtered_df['Diagnosis'] == selected_diagnosis]
+    if selected_diagnosis != "All" and "Diagnosis" in df.columns:
+        filtered_df = filtered_df[filtered_df["Diagnosis"] == selected_diagnosis]
     
     # Display comprehensive filter summary
     st.markdown("---")
@@ -377,16 +377,16 @@ def risk_assessment_dashboard():
     with col_summary2:
         # Show active filters in an organized way
         active_filters = []
-        if selected_gender != 'All': active_filters.append(f"👤 Gender: {selected_gender}")
-        if selected_ethnicity != 'All': active_filters.append(f"🌍 Ethnicity: {selected_ethnicity}")
-        if selected_depression != 'All': active_filters.append(f"🧠 Depression: {selected_depression}")
-        if selected_cvd != 'All': active_filters.append(f"❤️ CVD: {selected_cvd}")
-        if selected_smoking != 'All': active_filters.append(f"🚬 Smoking: {selected_smoking}")
-        if selected_memory != 'All' and 'Memory_Complaints' in df.columns: active_filters.append(f"🧩 Memory: {selected_memory}")
-        if selected_behavior != 'All' and 'Behavioral_Problems' in df.columns: active_filters.append(f"😤 Behavior: {selected_behavior}")
-        if selected_personality != 'All' and 'Personality_Changes' in df.columns: active_filters.append(f"👤 Personality: {selected_personality}")
-        if selected_tasks != 'All' and 'Difficulty_Completing_Tasks' in df.columns: active_filters.append(f"📝 Tasks: {selected_tasks}")
-        if selected_diagnosis != 'All': active_filters.append(f"🩺 Diagnosis: {selected_diagnosis}")
+        if selected_gender != "All": active_filters.append(f"👤 Gender: {selected_gender}")
+        if selected_ethnicity != "All": active_filters.append(f"🌍 Ethnicity: {selected_ethnicity}")
+        if selected_depression != "All": active_filters.append(f"🧠 Depression: {selected_depression}")
+        if selected_cvd != "All": active_filters.append(f"❤️ CVD: {selected_cvd}")
+        if selected_smoking != "All": active_filters.append(f"🚬 Smoking: {selected_smoking}")
+        if selected_memory != "All" and "Memory_Complaints" in df.columns: active_filters.append(f"🧩 Memory: {selected_memory}")
+        if selected_behavior != "All" and "Behavioral_Problems" in df.columns: active_filters.append(f"😤 Behavior: {selected_behavior}")
+        if selected_personality != "All" and "Personality_Changes" in df.columns: active_filters.append(f"👤 Personality: {selected_personality}")
+        if selected_tasks != "All" and "Difficulty_Completing_Tasks" in df.columns: active_filters.append(f"📝 Tasks: {selected_tasks}")
+        if selected_diagnosis != "All": active_filters.append(f"🩺 Diagnosis: {selected_diagnosis}")
         
         # Add range filters if they're not at default
         if age_range != (age_min, age_max): active_filters.append(f"📅 Age: {age_range[0]}-{age_range[1]}")
