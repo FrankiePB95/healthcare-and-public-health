@@ -237,59 +237,66 @@ def risk_assessment_dashboard():
     return df
 
 def dashboard_body():
-    # Custom CSS for enhanced visual appeal and consistent theme
+    # Custom CSS for dark theme with enhanced visual appeal
     st.markdown("""
     <style>
-    /* Main background and theme */
+    /* Dark theme background */
     .stApp {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
         background-attachment: fixed;
+        color: #e0e0e0;
     }
     
-    /* Content container styling */
+    /* Content container styling - dark theme */
     .main .block-container {
-        background: rgba(255, 255, 255, 0.95);
+        background: rgba(30, 30, 50, 0.95);
         border-radius: 15px;
         padding: 2rem;
         margin-top: 2rem;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         backdrop-filter: blur(10px);
+        border: 1px solid rgba(100, 100, 120, 0.3);
     }
     
-    /* Header styling */
+    /* Header styling - dark theme */
     h1 {
-        color: #2c3e50;
+        color: #2c2c54 !important;
         text-align: center;
         font-family: 'Arial Black', sans-serif;
         font-size: 3rem !important;
         margin-bottom: 1rem;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        background: linear-gradient(45deg, #667eea, #764ba2);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        background: linear-gradient(45deg, #40407a, #2c2c54);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
     }
     
-    /* Subheader styling */
+    /* Subheader styling - dark theme */
     h2, h3 {
-        color: #34495e;
-        border-bottom: 2px solid #3498db;
+        color: #40407a !important;
+        border-bottom: 2px solid #40407a;
         padding-bottom: 0.5rem;
         margin-top: 2rem;
     }
     
-    /* Tab styling */
+    /* All text elements - dark theme */
+    .stMarkdown, .stText, p, div, span, label {
+        color: #2c2c54 !important;
+    }
+    
+    /* Tab styling - dark theme */
     .stTabs [data-baseweb="tab-list"] {
         gap: 2px;
-        background: linear-gradient(90deg, #667eea, #764ba2);
+        background: linear-gradient(90deg, #2c2c54, #40407a);
         border-radius: 10px;
         padding: 0.5rem;
     }
     
     .stTabs [data-baseweb="tab"] {
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(44, 44, 84, 0.3);
         border-radius: 8px;
-        color: white !important;
+        color: #2c2c54 !important;
         font-weight: bold;
         border: none;
         padding: 0.8rem 1.5rem;
@@ -297,177 +304,203 @@ def dashboard_body():
     }
     
     .stTabs [aria-selected="true"] {
-        background: white !important;
-        color: #2c3e50 !important;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        background: rgba(30, 30, 50, 0.9) !important;
+        color: #40407a !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
     
-    /* Info box styling */
+    /* Info box styling - dark theme */
     .stAlert > div {
-        background: linear-gradient(135deg, #74b9ff, #0984e3);
-        color: white;
+        background: linear-gradient(135deg, #2c2c54, #40407a);
+        color: #1e1e32 !important;
         border: none;
         border-radius: 10px;
         font-weight: bold;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
     
-    /* Expander styling */
+    /* Expander styling - dark theme */
     .streamlit-expanderHeader {
-        background: linear-gradient(90deg, #74b9ff, #0984e3);
-        color: white !important;
+        background: linear-gradient(90deg, #2c2c54, #40407a);
+        color: #1e1e32 !important;
         border-radius: 8px;
         font-weight: bold;
     }
     
     .streamlit-expanderContent {
-        background: rgba(116, 185, 255, 0.1);
+        background: rgba(44, 44, 84, 0.2);
         border-radius: 8px;
-        border: 1px solid #74b9ff;
+        border: 1px solid #40407a;
+        color: #2c2c54 !important;
     }
     
-    /* DataFrame styling */
+    /* DataFrame styling - dark theme */
     .stDataFrame {
-        background: white;
+        background: rgba(30, 30, 50, 0.9);
         border-radius: 10px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         overflow: hidden;
+        color: #2c2c54 !important;
     }
     
-    /* Success/Warning/Error message styling */
-    .stSuccess {
-        background: linear-gradient(135deg, #00b894, #00a085);
-        border-radius: 10px;
-        color: white;
-    }
-    
-    .stWarning {
-        background: linear-gradient(135deg, #fdcb6e, #e17055);
-        border-radius: 10px;
-        color: white;
-    }
-    
-    /* Metric cards styling */
+    /* Metric cards styling - dark theme */
     [data-testid="metric-container"] {
-        background: linear-gradient(135deg, #74b9ff, #0984e3);
+        background: linear-gradient(135deg, #2c2c54, #40407a);
         border: none;
         padding: 1rem;
         border-radius: 10px;
-        color: white;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        color: #1e1e32 !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
     
-    /* Sidebar styling */
-    .css-1d391kg {
-        background: linear-gradient(180deg, #667eea, #764ba2);
+    [data-testid="metric-container"] > div {
+        color: #1e1e32 !important;
     }
     
-    /* Custom card styling */
+    /* Custom card styling - dark theme */
     .custom-card {
-        background: white;
+        background: rgba(30, 30, 50, 0.8);
         padding: 1.5rem;
         border-radius: 15px;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
         margin: 1rem 0;
-        border-left: 5px solid #3498db;
+        border-left: 5px solid #40407a;
+        border: 1px solid rgba(100, 100, 120, 0.3);
+    }
+    
+    /* Button styling - dark theme */
+    .stButton > button {
+        background: linear-gradient(135deg, #2c2c54, #40407a);
+        color: #1e1e32 !important;
+        border: none;
+        border-radius: 25px;
+        padding: 0.5rem 2rem;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+    .stButton > button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        background: linear-gradient(135deg, #40407a, #2c2c54);
+    }
+    
+    /* Sidebar styling - dark theme */
+    .css-1d391kg {
+        background: linear-gradient(180deg, #1a1a2e, #16213e);
+    }
+    
+    /* Input and select styling - dark theme */
+    .stSelectbox > div > div {
+        background: rgba(30, 30, 50, 0.8);
+        color: #2c2c54 !important;
+        border: 1px solid #40407a;
+    }
+    
+    /* Success/Warning/Error message styling - dark theme */
+    .stSuccess {
+        background: linear-gradient(135deg, #2c2c54, #40407a);
+        border-radius: 10px;
+        color: #1e1e32 !important;
+    }
+    
+    .stWarning {
+        background: linear-gradient(135deg, #40407a, #2c2c54);
+        border-radius: 10px;
+        color: #1e1e32 !important;
+    }
+    
+    /* Override any remaining light text */
+    * {
+        color: #2c2c54 !important;
+    }
+    
+    /* Ensure readability for specific elements */
+    .custom-card h2, .custom-card h3, .custom-card p {
+        color: #40407a !important;
     }
     
     /* Text styling improvements */
     .stMarkdown {
         text-align: justify;
         line-height: 1.6;
-    }
-    
-    /* Button styling */
-    .stButton > button {
-        background: linear-gradient(135deg, #74b9ff, #0984e3);
-        color: white;
-        border: none;
-        border-radius: 25px;
-        padding: 0.5rem 2rem;
-        font-weight: bold;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
-    
-    .stButton > button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        color: #2c2c54 !important;
     }
     </style>
     """, unsafe_allow_html=True)
     
-    # Enhanced title with styling
+    # Enhanced title with dark theme styling
     st.markdown("""
     <div style="text-align: center; padding: 2rem 0;">
         <h1>🏥 Healthcare Analytics Dashboard</h1>
-        <p style="font-size: 1.2rem; color: #7f8c8d; margin-top: 0;">
+        <p style="font-size: 1.2rem; color: #40407a; margin-top: 0; font-weight: 500;">
             Advanced Alzheimer's Disease Risk Assessment & Clinical Insights
         </p>
     </div>
     """, unsafe_allow_html=True)
     
-    # Enhanced Usage Instructions with custom styling
+    # Enhanced Usage Instructions with dark theme styling
     st.markdown("""
     <div class="custom-card">
-        <h3 style="color: #2c3e50; margin-top: 0;">📋 Dashboard Navigation Guide</h3>
+        <h3 style="color: #40407a; margin-top: 0;">📋 Dashboard Navigation Guide</h3>
     </div>
     """, unsafe_allow_html=True)
     
     with st.expander("🔍 Click here for comprehensive usage instructions", expanded=False):
         st.markdown("""
-        <div style="background: linear-gradient(135deg, rgba(116, 185, 255, 0.1), rgba(9, 132, 227, 0.1)); 
+        <div style="background: linear-gradient(135deg, rgba(44, 44, 84, 0.2), rgba(64, 64, 122, 0.2)); 
                     padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
         
         ### 📊 **General Analytics Tab**
         <div style="margin-left: 1rem; margin-bottom: 1rem;">
-        • <strong style="color: #3498db;">Dataset Overview</strong>: Comprehensive view of the Alzheimer's disease research dataset<br>
-        • <strong style="color: #3498db;">Data Preview</strong>: Interactive exploration of patient demographics and clinical data<br>
-        • <strong style="color: #3498db;">Statistical Insights</strong>: Key metrics and distributions across patient populations
+        • <strong style="color: #40407a;">Dataset Overview</strong>: Comprehensive view of the Alzheimer's disease research dataset<br>
+        • <strong style="color: #40407a;">Data Preview</strong>: Interactive exploration of patient demographics and clinical data<br>
+        • <strong style="color: #40407a;">Statistical Insights</strong>: Key metrics and distributions across patient populations
         </div>
         
         ### 🏥 **Risk Assessment & Early Detection Tab**
         <div style="margin-left: 1rem; margin-bottom: 1rem;">
-        • <strong style="color: #e74c3c;">Risk Stratification</strong>: AI-powered patient categorization system<br>
-        • <strong style="color: #e74c3c;">Interactive Visualizations</strong>: Dynamic charts with real-time data insights<br>
-        • <strong style="color: #e74c3c;">3D Clinical Analysis</strong>: Multi-dimensional risk factor relationships<br>
-        • <strong style="color: #e74c3c;">Correlation Matrix</strong>: Statistical dependencies between health variables
+        • <strong style="color: #2c2c54;">Risk Stratification</strong>: AI-powered patient categorization system<br>
+        • <strong style="color: #2c2c54;">Interactive Visualizations</strong>: Dynamic charts with real-time data insights<br>
+        • <strong style="color: #2c2c54;">3D Clinical Analysis</strong>: Multi-dimensional risk factor relationships<br>
+        • <strong style="color: #2c2c54;">Correlation Matrix</strong>: Statistical dependencies between health variables
         </div>
         
         ### 🎯 **Risk Classification System**
         <div style="display: flex; justify-content: space-around; margin: 1rem 0;">
             <div style="text-align: center; padding: 0.5rem;">
                 <span style="font-size: 2rem;">🟢</span><br>
-                <strong style="color: #27ae60;">Low Risk</strong><br>
-                <small>Routine monitoring</small>
+                <strong style="color: #2c2c54;">Low Risk</strong><br>
+                <small style="color: #40407a;">Routine monitoring</small>
             </div>
             <div style="text-align: center; padding: 0.5rem;">
                 <span style="font-size: 2rem;">🟠</span><br>
-                <strong style="color: #f39c12;">Medium Risk</strong><br>
-                <small>Enhanced screening</small>
+                <strong style="color: #2c2c54;">Medium Risk</strong><br>
+                <small style="color: #40407a;">Enhanced screening</small>
             </div>
             <div style="text-align: center; padding: 0.5rem;">
                 <span style="font-size: 2rem;">🔴</span><br>
-                <strong style="color: #e74c3c;">High Risk</strong><br>
-                <small>Immediate attention</small>
+                <strong style="color: #2c2c54;">High Risk</strong><br>
+                <small style="color: #40407a;">Immediate attention</small>
             </div>
         </div>
         
         ### 🏥 **Clinical Decision Thresholds**
-        <div style="background: rgba(52, 73, 94, 0.1); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
-        • <strong>MMSE Score < 18</strong>: Significant cognitive impairment indicator<br>
-        • <strong>Age > 75 years</strong>: Increased neurodegeneration risk factor<br>
-        • <strong>BMI > 35 kg/m²</strong>: Severe obesity-related complications<br>
-        • <strong>Functional Assessment ≤ 2</strong>: Activities of daily living impairment
+        <div style="background: rgba(44, 44, 84, 0.2); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+        • <strong style="color: #2c2c54;">MMSE Score < 18</strong>: Significant cognitive impairment indicator<br>
+        • <strong style="color: #2c2c54;">Age > 75 years</strong>: Increased neurodegeneration risk factor<br>
+        • <strong style="color: #2c2c54;">BMI > 35 kg/m²</strong>: Severe obesity-related complications<br>
+        • <strong style="color: #2c2c54;">Functional Assessment ≤ 2</strong>: Activities of daily living impairment
         </div>
         
         ### 💡 **Optimization Tips**
         <div style="margin-left: 1rem;">
-        1. <strong>Sequential Analysis</strong>: Begin with General Analytics for dataset familiarization<br>
-        2. <strong>Interactive Exploration</strong>: Utilize hover functionality for detailed patient profiles<br>
-        3. <strong>Pattern Recognition</strong>: Examine correlation heatmaps for clinical insights<br>
-        4. <strong>Risk Prioritization</strong>: Focus on high-risk patient clusters in 3D visualizations<br>
-        5. <strong>Clinical Integration</strong>: Cross-reference findings with established medical guidelines
+        1. <strong style="color: #40407a;">Sequential Analysis</strong>: Begin with General Analytics for dataset familiarization<br>
+        2. <strong style="color: #40407a;">Interactive Exploration</strong>: Utilize hover functionality for detailed patient profiles<br>
+        3. <strong style="color: #40407a;">Pattern Recognition</strong>: Examine correlation heatmaps for clinical insights<br>
+        4. <strong style="color: #40407a;">Risk Prioritization</strong>: Focus on high-risk patient clusters in 3D visualizations<br>
+        5. <strong style="color: #40407a;">Clinical Integration</strong>: Cross-reference findings with established medical guidelines
         </div>
         
         </div>
@@ -479,17 +512,17 @@ def dashboard_body():
     tab1, tab2 = st.tabs(["📊 General Analytics", "🏥 Risk Assessment & Early Detection"])
     
     with tab1:
-        # Enhanced General Analytics Tab
+        # Enhanced General Analytics Tab - Dark Theme
         st.markdown("""
         <div class="custom-card">
-            <h2 style="color: #2c3e50; margin-top: 0;">📊 Alzheimer's Disease Research Analytics</h2>
-            <p style="font-size: 1.1rem; color: #7f8c8d; margin-bottom: 0;">
+            <h2 style="color: #40407a; margin-top: 0;">📊 Alzheimer's Disease Research Analytics</h2>
+            <p style="font-size: 1.1rem; color: #2c2c54; margin-bottom: 0;">
                 Comprehensive clinical dataset analysis for cognitive health research
             </p>
         </div>
         """, unsafe_allow_html=True)
         
-        # Dataset overview with enhanced styling
+        # Dataset overview with enhanced dark theme styling
         col1, col2, col3 = st.columns(3)
         with col1:
             st.metric(
@@ -512,12 +545,12 @@ def dashboard_body():
 
         st.markdown("---")
 
-        # Enhanced Data Preview Section
+        # Enhanced Data Preview Section - Dark Theme
         st.markdown("""
-        <div style="background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(155, 89, 182, 0.1)); 
+        <div style="background: linear-gradient(135deg, rgba(44, 44, 84, 0.3), rgba(64, 64, 122, 0.3)); 
                     padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
-            <h3 style="color: #2c3e50; margin-top: 0;">🔍 Clinical Data Preview</h3>
-            <p style="color: #7f8c8d;">Sample patient records showing key demographic and clinical parameters</p>
+            <h3 style="color: #40407a; margin-top: 0;">🔍 Clinical Data Preview</h3>
+            <p style="color: #2c2c54;">Sample patient records showing key demographic and clinical parameters</p>
         </div>
         """, unsafe_allow_html=True)
         
@@ -525,12 +558,12 @@ def dashboard_body():
         df_display.columns = df_display.columns.str.replace('_', ' ')
         st.dataframe(df_display, use_container_width=True)
         
-        # Enhanced Statistics Section
+        # Enhanced Statistics Section - Dark Theme
         st.markdown("""
-        <div style="background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(26, 188, 156, 0.1)); 
+        <div style="background: linear-gradient(135deg, rgba(44, 44, 84, 0.3), rgba(64, 64, 122, 0.3)); 
                     padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
-            <h3 style="color: #2c3e50; margin-top: 0;">📈 Statistical Summary</h3>
-            <p style="color: #7f8c8d;">Descriptive statistics for numerical clinical variables</p>
+            <h3 style="color: #40407a; margin-top: 0;">📈 Statistical Summary</h3>
+            <p style="color: #2c2c54;">Descriptive statistics for numerical clinical variables</p>
         </div>
         """, unsafe_allow_html=True)
         
@@ -541,11 +574,11 @@ def dashboard_body():
         st.dataframe(df_stats, use_container_width=True)
     
     with tab2:
-        # Enhanced Risk Assessment Tab
+        # Enhanced Risk Assessment Tab - Dark Theme
         st.markdown("""
         <div class="custom-card">
-            <h2 style="color: #2c3e50; margin-top: 0;">🏥 Advanced Risk Assessment & Clinical Decision Support</h2>
-            <p style="font-size: 1.1rem; color: #7f8c8d; margin-bottom: 0;">
+            <h2 style="color: #40407a; margin-top: 0;">🏥 Advanced Risk Assessment & Clinical Decision Support</h2>
+            <p style="font-size: 1.1rem; color: #2c2c54; margin-bottom: 0;">
                 AI-powered patient stratification and early detection system
             </p>
         </div>
