@@ -239,6 +239,39 @@ def risk_assessment_dashboard():
 def dashboard_body():
     st.title("Healthcare Analytics Dashboard")
     
+    # Usage Instructions
+    st.markdown("### 📋 How to Use This Dashboard")
+    with st.expander("Click here for detailed usage instructions", expanded=False):
+        st.markdown("""
+        #### 📊 **General Analytics Tab**
+        - **Dataset Overview**: View basic information about the Alzheimer's disease dataset
+        - **Data Preview**: Examine the first few rows of patient data
+        - **Basic Statistics**: Review statistical summaries of key health metrics
+        
+        #### 🏥 **Risk Assessment & Early Detection Tab**
+        - **Risk Distribution**: See how patients are categorized by risk levels
+        - **Interactive Charts**: Hover over visualizations for detailed patient information
+        - **3D Analysis**: Explore relationships between age, risk, cholesterol, and functional assessment
+        - **Correlation Matrix**: Understand how different health factors relate to each other
+        
+        #### 🎯 **Key Features**
+        - **Risk Categories**: 🟢 Low Risk | 🟠 Medium Risk | 🔴 High Risk
+        - **Clinical Thresholds**: 
+          - MMSE < 18: Cognitive impairment concern
+          - Age > 75: Increased risk factor  
+          - BMI > 35: High obesity risk
+        - **Interactive Elements**: All charts support zooming, panning, and detailed tooltips
+        
+        #### 💡 **Tips for Best Use**
+        1. Start with the General Analytics tab to understand the dataset
+        2. Use the Risk Assessment tab for clinical insights
+        3. Hover over charts to see patient-specific details
+        4. Look for patterns in the correlation heatmap
+        5. Use the 3D scatter plot to identify patient clusters
+        """)
+    
+    st.markdown("---")
+    
     # Create tabs for different dashboard sections
     tab1, tab2 = st.tabs(["📊 General Analytics", "🏥 Risk Assessment & Early Detection"])
     
