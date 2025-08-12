@@ -19,7 +19,7 @@ app = MultiPage()
 
 # Title of the main page
 st.title("Healthcare and Public Health Analytics")
-st.write("Navigate using the sidebar to explore different sections of the dashboard.")
+st.markdown('<p style="text-align: center; font-size: 16px; color: #666;">Navigate using the sidebar to explore different sections of the dashboard.</p>', unsafe_allow_html=True)
 
 # Create functions for the generation of a home pagea and a conclusion page
 def home_page():
