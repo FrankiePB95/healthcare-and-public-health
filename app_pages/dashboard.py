@@ -154,7 +154,16 @@ def risk_assessment_dashboard():
                           size="Risk_Score",
                           hover_data=["Cholesterol_Total", "Functional_Assessment"],
                           color_discrete_map={"High Risk": "#e74c3c", "Medium Risk": "#f39c12", "Low Risk": "#2ecc71"},
-                          title="3D Risk Assessment: Age vs MMSE vs BMI")
+                          title="3D Risk Assessment: Age vs MMSE vs BMI",
+                          labels={
+                              "Patient_Age": "Patient Age",
+                              "MMSE": "MMSE",
+                              "BMI": "BMI",
+                              "Risk_Category": "Risk Category",
+                              "Risk_Score": "Risk Score",
+                              "Cholesterol_Total": "Cholesterol Total",
+                              "Functional_Assessment": "Functional Assessment"
+                          })
     
     fig_3d.update_layout(scene=dict(
         xaxis_title="Patient Age",
@@ -175,7 +184,12 @@ def risk_assessment_dashboard():
     available_vars = [var for var in risk_variables if var in df.columns]
     correlation_matrix = df[available_vars].corr()
     
-    fig_heatmap = px.imshow(correlation_matrix, 
+    # Format correlation matrix labels for display
+    correlation_matrix_display = correlation_matrix.copy()
+    correlation_matrix_display.index = correlation_matrix_display.index.str.replace('_', ' ').str.replace('-', ' ')
+    correlation_matrix_display.columns = correlation_matrix_display.columns.str.replace('_', ' ').str.replace('-', ' ')
+    
+    fig_heatmap = px.imshow(correlation_matrix_display, 
                            text_auto=True, 
                            color_continuous_scale="RdBu_r",
                            title="Risk Factor Correlation Heatmap")
@@ -212,7 +226,11 @@ def risk_assessment_dashboard():
         display_cols = ["Patient_Age", "MMSE", "BMI", "Risk_Score", "Early_Detection_Flag"]
         available_display_cols = [col for col in display_cols if col in high_risk_patients.columns]
         
-        st.dataframe(high_risk_patients[available_display_cols].head(10))
+        # Format column names for display (replace underscores and hyphens with spaces)
+        high_risk_display = high_risk_patients[available_display_cols].head(10).copy()
+        high_risk_display.columns = high_risk_display.columns.str.replace('_', ' ').str.replace('-', ' ')
+        
+        st.dataframe(high_risk_display)
         
         st.info(f"Showing top 10 of {len(high_risk_patients)} high-risk patients requiring immediate attention.")
     
@@ -239,6 +257,8 @@ def dashboard_body():
         # Basic statistics
         st.subheader("Basic Statistics")
         df_stats = df.describe().copy()
+        if 'Patient_ID' in df_stats.columns:
+            df_stats = df_stats.drop('Patient_ID', axis=1)
         df_stats.columns = df_stats.columns.str.replace('_', ' ')
         st.dataframe(df_stats)
     
