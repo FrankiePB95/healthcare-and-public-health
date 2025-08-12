@@ -13,71 +13,142 @@ df = pd.read_csv("outputs/processed_alzheimers_disease_data_unscaled_and_unencod
 # Risk Assessment Functions
 def calculate_risk_score(row):
     """
-    Calculate comprehensive risk score based on multiple health factors
+    Enhanced comprehensive risk score based on multiple health factors from the dataset
     Higher scores indicate higher risk for cognitive decline/dementia
+    Based on clinical research and the available dataset variables
     """
     risk_score = 0
     
-    # Age risk (40% weight) - older patients at higher risk
-    if row["Patient_Age"] >= 80:
-        risk_score += 4
+    # Age risk (25% weight) - older patients at higher risk
+    if row["Patient_Age"] >= 85:
+        risk_score += 3.5
+    elif row["Patient_Age"] >= 80:
+        risk_score += 3.0
     elif row["Patient_Age"] >= 75:
-        risk_score += 3
-    elif row["Patient_Age"] >= 70:
-        risk_score += 2
-    else:
-        risk_score += 1
-        
-    # MMSE risk (30% weight) - lower scores indicate cognitive impairment
-    if row["MMSE"] < 10:
-        risk_score += 3
-    elif row["MMSE"] < 18:
         risk_score += 2.5
+    elif row["Patient_Age"] >= 70:
+        risk_score += 2.0
+    else:
+        risk_score += 1.0
+        
+    # MMSE risk (25% weight) - lower scores indicate cognitive impairment
+    if row["MMSE"] < 10:
+        risk_score += 3.5  # Severe cognitive impairment
+    elif row["MMSE"] < 18:
+        risk_score += 3.0  # Moderate cognitive impairment
     elif row["MMSE"] < 24:
-        risk_score += 1.5
+        risk_score += 2.0  # Mild cognitive impairment
+    elif row["MMSE"] < 27:
+        risk_score += 1.0  # Borderline
     else:
-        risk_score += 0.5
+        risk_score += 0.5  # Normal
         
-    # BMI risk (15% weight) - both high and low BMI are risk factors
+    # Functional Assessment risk (15% weight)
+    if "Functional_Assessment" in row.index and pd.notna(row["Functional_Assessment"]):
+        if row["Functional_Assessment"] <= 2:
+            risk_score += 2.0
+        elif row["Functional_Assessment"] <= 4:
+            risk_score += 1.5
+        elif row["Functional_Assessment"] <= 6:
+            risk_score += 1.0
+        else:
+            risk_score += 0.5
+    
+    # Activities of Daily Living risk (10% weight)
+    if "Activities_Of_Daily_Living" in row.index and pd.notna(row["Activities_Of_Daily_Living"]):
+        if row["Activities_Of_Daily_Living"] <= 2:
+            risk_score += 1.5
+        elif row["Activities_Of_Daily_Living"] <= 5:
+            risk_score += 1.0
+        else:
+            risk_score += 0.3
+    
+    # Depression risk (8% weight) - depression is a risk factor
+    if "Depression" in row.index:
+        if str(row["Depression"]).lower() in ['yes', '1', 'true']:
+            risk_score += 1.2
+        else:
+            risk_score += 0.2
+    
+    # Memory Complaints risk (8% weight)
+    if "Memory_Complaints" in row.index:
+        if str(row["Memory_Complaints"]).lower() in ['yes', '1', 'true']:
+            risk_score += 1.2
+        else:
+            risk_score += 0.1
+    
+    # Behavioral Problems risk (5% weight)
+    if "Behavioral_Problems" in row.index:
+        if str(row["Behavioral_Problems"]).lower() in ['yes', '1', 'true']:
+            risk_score += 0.8
+    
+    # Personality Changes risk (5% weight)
+    if "Personality_Changes" in row.index:
+        if str(row["Personality_Changes"]).lower() in ['yes', '1', 'true']:
+            risk_score += 0.8
+    
+    # Difficulty Completing Tasks risk (5% weight)
+    if "Difficulty_Completing_Tasks" in row.index:
+        if str(row["Difficulty_Completing_Tasks"]).lower() in ['yes', '1', 'true']:
+            risk_score += 0.8
+    
+    # BMI risk (4% weight) - both high and low BMI are risk factors
     if row["BMI"] > 35 or row["BMI"] < 18.5:
-        risk_score += 1.5
+        risk_score += 0.8
     elif row["BMI"] > 30 or row["BMI"] < 20:
-        risk_score += 1
-    else:
         risk_score += 0.5
-        
-    # Functional Assessment (10% weight) - lower scores indicate dependency
-    if row["Functional_Assessment"] <= 2:
-        risk_score += 1
-    elif row["Functional_Assessment"] <= 4:
-        risk_score += 0.7
     else:
-        risk_score += 0.3
-        
-    # Cholesterol risk (5% weight) - very high or very low can be concerning
-    if row["Cholesterol_Total"] > 280 or row["Cholesterol_Total"] < 160:
-        risk_score += 0.5
-    elif row["Cholesterol_Total"] > 240:
-        risk_score += 0.3
-        
+        risk_score += 0.2
+    
+    # Cardiovascular Disease risk (3% weight)
+    if "Cardiovascular_Disease" in row.index:
+        if str(row["Cardiovascular_Disease"]).lower() in ['yes', '1', 'true']:
+            risk_score += 0.6
+    
+    # Physical Activity risk (3% weight) - low activity increases risk
+    if "Physical_Activity" in row.index and pd.notna(row["Physical_Activity"]):
+        if row["Physical_Activity"] < 2:
+            risk_score += 0.6  # Very low activity
+        elif row["Physical_Activity"] < 4:
+            risk_score += 0.4  # Low activity
+        else:
+            risk_score += 0.1  # Good activity level
+    
+    # Smoking risk (2% weight)
+    if "Smoking" in row.index:
+        if str(row["Smoking"]).lower() in ['yes', '1', 'true']:
+            risk_score += 0.4
+    
+    # Diet Quality risk (2% weight) - poor diet increases risk
+    if "Diet_Quality" in row.index and pd.notna(row["Diet_Quality"]):
+        if row["Diet_Quality"] < 4:
+            risk_score += 0.4  # Poor diet
+        elif row["Diet_Quality"] < 6:
+            risk_score += 0.2  # Fair diet
+        # Good diet (6+) adds no additional risk
+    
     return round(risk_score, 2)
 
 def categorize_risk(score):
-    if score >= 7:
+    """
+    Categorize risk based on enhanced scoring system
+    Risk categories adjusted for the new comprehensive scoring range
+    """
+    if score >= 9:
         return "High Risk"
-    elif score >= 5:
+    elif score >= 6:
         return "Medium Risk"
     else:
         return "Low Risk"
 
 def risk_assessment_dashboard():
     """
-    Interactive Risk Assessment & Early Detection Dashboard with Filtering
+    Interactive Risk Assessment & Early Detection Dashboard with Advanced Filtering
     """
     st.markdown('<h3 style="color: #000000; margin-top: 0; font-weight: bold;"><strong>🏥 Risk Assessment & Early Detection Dashboard</strong></h3>', unsafe_allow_html=True)
     
     # Add comprehensive filtering options
-    st.markdown('<h4 style="color: #000000; margin-top: 0; font-weight: bold;"><strong>🔍 Patient Population Filters</strong></h4>', unsafe_allow_html=True)
+    st.markdown('<h4 style="color: #000000; margin-top: 0; font-weight: bold;"><strong>🔍 Advanced Patient Population Filters</strong></h4>', unsafe_allow_html=True)
     
     # Add reset button
     reset_col, info_col = st.columns([1, 4])
@@ -86,102 +157,282 @@ def risk_assessment_dashboard():
             st.experimental_rerun()
     
     with info_col:
-        st.info("💡 **Tip:** Use filters to analyze specific patient populations and risk patterns")
+        st.info("💡 **Tip:** Use filters to analyze specific patient populations and identify risk patterns across demographics, lifestyle factors, and clinical conditions")
     
-    # Create filter columns
-    filter_col1, filter_col2, filter_col3, filter_col4 = st.columns(4)
-    
-    with filter_col1:
-        # Gender filter
-        gender_options = ['All'] + sorted(df['Gender'].unique().tolist())
-        selected_gender = st.selectbox("👤 Gender Filter", gender_options)
+    # Create comprehensive filter sections
+    with st.expander("👥 **Demographic Filters**", expanded=False):
+        demo_col1, demo_col2, demo_col3 = st.columns(3)
         
-        # Depression filter
-        depression_options = ['All'] + sorted(df['Depression'].unique().tolist())
-        selected_depression = st.selectbox("🧠 Depression Status", depression_options)
-    
-    with filter_col2:
-        # Ethnicity filter
-        ethnicity_options = ['All'] + sorted(df['Ethnicity'].unique().tolist())
-        selected_ethnicity = st.selectbox("🌍 Ethnicity Filter", ethnicity_options)
+        with demo_col1:
+            # Gender filter
+            gender_options = ['All'] + sorted(df['Gender'].unique().tolist())
+            selected_gender = st.selectbox("👤 Gender", gender_options, help="Filter by patient gender")
         
-        # Cardiovascular Disease filter
-        cvd_options = ['All'] + sorted(df['Cardiovascular_Disease'].unique().tolist())
-        selected_cvd = st.selectbox("❤️ Cardiovascular Disease", cvd_options)
-    
-    with filter_col3:
-        # Smoking filter
-        smoking_options = ['All'] + sorted(df['Smoking'].unique().tolist())
-        selected_smoking = st.selectbox("🚬 Smoking Status", smoking_options)
+        with demo_col2:
+            # Ethnicity filter  
+            ethnicity_options = ['All'] + sorted(df['Ethnicity'].unique().tolist())
+            selected_ethnicity = st.selectbox("🌍 Ethnicity", ethnicity_options, help="Filter by ethnic background")
         
-        # Age range filter
-        age_min, age_max = int(df['Patient_Age'].min()), int(df['Patient_Age'].max())
-        age_range = st.slider("📅 Age Range", age_min, age_max, (age_min, age_max))
+        with demo_col3:
+            # Age range filter
+            age_min, age_max = int(df['Patient_Age'].min()), int(df['Patient_Age'].max())
+            age_range = st.slider("📅 Age Range", age_min, age_max, (age_min, age_max), 
+                                help=f"Age ranges from {age_min} to {age_max} years")
     
-    with filter_col4:
-        # Diagnosis filter
-        if 'Diagnosis' in df.columns:
-            diagnosis_options = ['All'] + sorted(df['Diagnosis'].unique().tolist())
-            selected_diagnosis = st.selectbox("🩺 Diagnosis Filter", diagnosis_options)
-        else:
-            selected_diagnosis = 'All'
+    with st.expander("🏥 **Medical History Filters**", expanded=False):
+        med_col1, med_col2, med_col3 = st.columns(3)
         
-        # MMSE range filter
-        mmse_min, mmse_max = float(df['MMSE'].min()), float(df['MMSE'].max())
-        mmse_range = st.slider("🧩 MMSE Score Range", mmse_min, mmse_max, (mmse_min, mmse_max))
+        with med_col1:
+            # Cardiovascular Disease filter
+            cvd_options = ['All'] + sorted(df['Cardiovascular_Disease'].unique().tolist()) if 'Cardiovascular_Disease' in df.columns else ['All']
+            selected_cvd = st.selectbox("❤️ Cardiovascular Disease", cvd_options, help="Filter by cardiovascular disease status")
+            
+            # Depression filter
+            depression_options = ['All'] + sorted(df['Depression'].unique().tolist())
+            selected_depression = st.selectbox("🧠 Depression", depression_options, help="Filter by depression status")
+        
+        with med_col2:
+            # Memory Complaints filter
+            memory_options = ['All'] + sorted(df['Memory_Complaints'].unique().tolist()) if 'Memory_Complaints' in df.columns else ['All']
+            selected_memory = st.selectbox("🧩 Memory Complaints", memory_options, help="Filter by memory complaint status")
+            
+            # Behavioral Problems filter
+            behavior_options = ['All'] + sorted(df['Behavioral_Problems'].unique().tolist()) if 'Behavioral_Problems' in df.columns else ['All']
+            selected_behavior = st.selectbox("😤 Behavioral Problems", behavior_options, help="Filter by behavioral issues")
+        
+        with med_col3:
+            # Personality Changes filter
+            personality_options = ['All'] + sorted(df['Personality_Changes'].unique().tolist()) if 'Personality_Changes' in df.columns else ['All']
+            selected_personality = st.selectbox("👤 Personality Changes", personality_options, help="Filter by personality changes")
+            
+            # Difficulty Completing Tasks filter
+            tasks_options = ['All'] + sorted(df['Difficulty_Completing_Tasks'].unique().tolist()) if 'Difficulty_Completing_Tasks' in df.columns else ['All']
+            selected_tasks = st.selectbox("📝 Task Difficulty", tasks_options, help="Filter by difficulty completing tasks")
+    
+    with st.expander("💊 **Lifestyle & Health Metrics**", expanded=False):
+        lifestyle_col1, lifestyle_col2, lifestyle_col3 = st.columns(3)
+        
+        with lifestyle_col1:
+            # Smoking filter
+            smoking_options = ['All'] + sorted(df['Smoking'].unique().tolist())
+            selected_smoking = st.selectbox("🚬 Smoking Status", smoking_options, help="Filter by smoking habits")
+            
+            # BMI range filter
+            bmi_min, bmi_max = float(df['BMI'].min()), float(df['BMI'].max())
+            bmi_range = st.slider("⚖️ BMI Range", bmi_min, bmi_max, (bmi_min, bmi_max), 
+                                help=f"BMI ranges from {bmi_min:.1f} to {bmi_max:.1f}")
+        
+        with lifestyle_col2:
+            # Physical Activity range
+            if 'Physical_Activity' in df.columns:
+                activity_min, activity_max = float(df['Physical_Activity'].min()), float(df['Physical_Activity'].max())
+                activity_range = st.slider("🏃 Physical Activity (hrs/week)", activity_min, activity_max, (activity_min, activity_max),
+                                         help=f"Weekly physical activity: {activity_min:.0f} to {activity_max:.0f} hours")
+            else:
+                activity_range = None
+            
+            # Alcohol Consumption range
+            if 'Alcohol_Consumption' in df.columns:
+                alcohol_min, alcohol_max = float(df['Alcohol_Consumption'].min()), float(df['Alcohol_Consumption'].max())
+                alcohol_range = st.slider("🍷 Alcohol (units/week)", alcohol_min, alcohol_max, (alcohol_min, alcohol_max),
+                                        help=f"Weekly alcohol consumption: {alcohol_min:.0f} to {alcohol_max:.0f} units")
+            else:
+                alcohol_range = None
+        
+        with lifestyle_col3:
+            # Diet Quality range
+            if 'Diet_Quality' in df.columns:
+                diet_min, diet_max = float(df['Diet_Quality'].min()), float(df['Diet_Quality'].max())
+                diet_range = st.slider("🥗 Diet Quality Score", diet_min, diet_max, (diet_min, diet_max),
+                                     help=f"Diet quality score: {diet_min:.1f} to {diet_max:.1f}")
+            else:
+                diet_range = None
+    
+    with st.expander("🧠 **Cognitive & Functional Assessment**", expanded=False):
+        cognitive_col1, cognitive_col2 = st.columns(2)
+        
+        with cognitive_col1:
+            # MMSE range filter
+            mmse_min, mmse_max = float(df['MMSE'].min()), float(df['MMSE'].max())
+            mmse_range = st.slider("🧩 MMSE Score", mmse_min, mmse_max, (mmse_min, mmse_max),
+                                 help=f"Mini-Mental State Exam: {mmse_min:.0f} to {mmse_max:.0f} (lower = more impaired)")
+            
+            # Functional Assessment range
+            if 'Functional_Assessment' in df.columns:
+                func_min, func_max = float(df['Functional_Assessment'].min()), float(df['Functional_Assessment'].max())
+                func_range = st.slider("🔧 Functional Assessment", func_min, func_max, (func_min, func_max),
+                                     help=f"Functional assessment: {func_min:.0f} to {func_max:.0f} (lower = more impaired)")
+            else:
+                func_range = None
+        
+        with cognitive_col2:
+            # Activities of Daily Living range
+            if 'Activities_Of_Daily_Living' in df.columns:
+                adl_min, adl_max = float(df['Activities_Of_Daily_Living'].min()), float(df['Activities_Of_Daily_Living'].max())
+                adl_range = st.slider("🏠 Activities of Daily Living", adl_min, adl_max, (adl_min, adl_max),
+                                    help=f"ADL score: {adl_min:.0f} to {adl_max:.0f} (lower = more impaired)")
+            else:
+                adl_range = None
+            
+            # Diagnosis filter
+            if 'Diagnosis' in df.columns:
+                diagnosis_options = ['All'] + sorted(df['Diagnosis'].unique().tolist())
+                selected_diagnosis = st.selectbox("🩺 Alzheimer's Diagnosis", diagnosis_options, 
+                                                help="Filter by Alzheimer's diagnosis status")
+            else:
+                selected_diagnosis = 'All'
     
     # Apply filters to the dataframe
     filtered_df = df.copy()
     
+    # Demographic filters
     if selected_gender != 'All':
         filtered_df = filtered_df[filtered_df['Gender'] == selected_gender]
-    
-    if selected_depression != 'All':
-        filtered_df = filtered_df[filtered_df['Depression'] == selected_depression]
     
     if selected_ethnicity != 'All':
         filtered_df = filtered_df[filtered_df['Ethnicity'] == selected_ethnicity]
     
-    if selected_cvd != 'All':
-        filtered_df = filtered_df[filtered_df['Cardiovascular_Disease'] == selected_cvd]
-    
-    if selected_smoking != 'All':
-        filtered_df = filtered_df[filtered_df['Smoking'] == selected_smoking]
-    
-    if selected_diagnosis != 'All':
-        filtered_df = filtered_df[filtered_df['Diagnosis'] == selected_diagnosis]
-    
-    # Apply age and MMSE filters
     filtered_df = filtered_df[
         (filtered_df['Patient_Age'] >= age_range[0]) & 
         (filtered_df['Patient_Age'] <= age_range[1])
     ]
     
+    # Medical history filters
+    if selected_cvd != 'All' and 'Cardiovascular_Disease' in df.columns:
+        filtered_df = filtered_df[filtered_df['Cardiovascular_Disease'] == selected_cvd]
+    
+    if selected_depression != 'All':
+        filtered_df = filtered_df[filtered_df['Depression'] == selected_depression]
+    
+    if selected_memory != 'All' and 'Memory_Complaints' in df.columns:
+        filtered_df = filtered_df[filtered_df['Memory_Complaints'] == selected_memory]
+    
+    if selected_behavior != 'All' and 'Behavioral_Problems' in df.columns:
+        filtered_df = filtered_df[filtered_df['Behavioral_Problems'] == selected_behavior]
+    
+    if selected_personality != 'All' and 'Personality_Changes' in df.columns:
+        filtered_df = filtered_df[filtered_df['Personality_Changes'] == selected_personality]
+    
+    if selected_tasks != 'All' and 'Difficulty_Completing_Tasks' in df.columns:
+        filtered_df = filtered_df[filtered_df['Difficulty_Completing_Tasks'] == selected_tasks]
+    
+    # Lifestyle filters
+    if selected_smoking != 'All':
+        filtered_df = filtered_df[filtered_df['Smoking'] == selected_smoking]
+    
+    filtered_df = filtered_df[
+        (filtered_df['BMI'] >= bmi_range[0]) & 
+        (filtered_df['BMI'] <= bmi_range[1])
+    ]
+    
+    if activity_range and 'Physical_Activity' in df.columns:
+        filtered_df = filtered_df[
+            (filtered_df['Physical_Activity'] >= activity_range[0]) & 
+            (filtered_df['Physical_Activity'] <= activity_range[1])
+        ]
+    
+    if alcohol_range and 'Alcohol_Consumption' in df.columns:
+        filtered_df = filtered_df[
+            (filtered_df['Alcohol_Consumption'] >= alcohol_range[0]) & 
+            (filtered_df['Alcohol_Consumption'] <= alcohol_range[1])
+        ]
+    
+    if diet_range and 'Diet_Quality' in df.columns:
+        filtered_df = filtered_df[
+            (filtered_df['Diet_Quality'] >= diet_range[0]) & 
+            (filtered_df['Diet_Quality'] <= diet_range[1])
+        ]
+    
+    # Cognitive filters
     filtered_df = filtered_df[
         (filtered_df['MMSE'] >= mmse_range[0]) & 
         (filtered_df['MMSE'] <= mmse_range[1])
     ]
     
-    # Display filter summary
+    if func_range and 'Functional_Assessment' in df.columns:
+        filtered_df = filtered_df[
+            (filtered_df['Functional_Assessment'] >= func_range[0]) & 
+            (filtered_df['Functional_Assessment'] <= func_range[1])
+        ]
+    
+    if adl_range and 'Activities_Of_Daily_Living' in df.columns:
+        filtered_df = filtered_df[
+            (filtered_df['Activities_Of_Daily_Living'] >= adl_range[0]) & 
+            (filtered_df['Activities_Of_Daily_Living'] <= adl_range[1])
+        ]
+    
+    if selected_diagnosis != 'All' and 'Diagnosis' in df.columns:
+        filtered_df = filtered_df[filtered_df['Diagnosis'] == selected_diagnosis]
+    
+    # Display comprehensive filter summary
     st.markdown("---")
-    st.markdown(f"**📊 Filtered Population: {len(filtered_df)} out of {len(df)} patients**")
+    col_summary1, col_summary2 = st.columns([2, 3])
     
-    # Show active filters
-    active_filters = []
-    if selected_gender != 'All': active_filters.append(f"Gender: {selected_gender}")
-    if selected_depression != 'All': active_filters.append(f"Depression: {selected_depression}")
-    if selected_ethnicity != 'All': active_filters.append(f"Ethnicity: {selected_ethnicity}")
-    if selected_cvd != 'All': active_filters.append(f"CVD: {selected_cvd}")
-    if selected_smoking != 'All': active_filters.append(f"Smoking: {selected_smoking}")
-    if selected_diagnosis != 'All': active_filters.append(f"Diagnosis: {selected_diagnosis}")
-    if age_range != (age_min, age_max): active_filters.append(f"Age: {age_range[0]}-{age_range[1]}")
-    if mmse_range != (mmse_min, mmse_max): active_filters.append(f"MMSE: {mmse_range[0]:.1f}-{mmse_range[1]:.1f}")
+    with col_summary1:
+        st.markdown(f"**📊 Filtered Population: {len(filtered_df):,} out of {len(df):,} patients**")
+        if len(filtered_df) > 0:
+            retention_pct = (len(filtered_df) / len(df)) * 100
+            st.markdown(f"**📈 Population Retention: {retention_pct:.1f}%**")
     
-    if active_filters:
-        st.info(f"**Active Filters:** {', '.join(active_filters)}")
+    with col_summary2:
+        # Show active filters in an organized way
+        active_filters = []
+        if selected_gender != 'All': active_filters.append(f"👤 Gender: {selected_gender}")
+        if selected_ethnicity != 'All': active_filters.append(f"🌍 Ethnicity: {selected_ethnicity}")
+        if selected_depression != 'All': active_filters.append(f"🧠 Depression: {selected_depression}")
+        if selected_cvd != 'All': active_filters.append(f"❤️ CVD: {selected_cvd}")
+        if selected_smoking != 'All': active_filters.append(f"🚬 Smoking: {selected_smoking}")
+        if selected_memory != 'All' and 'Memory_Complaints' in df.columns: active_filters.append(f"🧩 Memory: {selected_memory}")
+        if selected_behavior != 'All' and 'Behavioral_Problems' in df.columns: active_filters.append(f"😤 Behavior: {selected_behavior}")
+        if selected_personality != 'All' and 'Personality_Changes' in df.columns: active_filters.append(f"👤 Personality: {selected_personality}")
+        if selected_tasks != 'All' and 'Difficulty_Completing_Tasks' in df.columns: active_filters.append(f"📝 Tasks: {selected_tasks}")
+        if selected_diagnosis != 'All': active_filters.append(f"🩺 Diagnosis: {selected_diagnosis}")
+        
+        # Add range filters if they're not at default
+        if age_range != (age_min, age_max): active_filters.append(f"📅 Age: {age_range[0]}-{age_range[1]}")
+        if mmse_range != (mmse_min, mmse_max): active_filters.append(f"🧩 MMSE: {mmse_range[0]:.1f}-{mmse_range[1]:.1f}")
+        if bmi_range != (bmi_min, bmi_max): active_filters.append(f"⚖️ BMI: {bmi_range[0]:.1f}-{bmi_range[1]:.1f}")
+        
+        if activity_range and 'Physical_Activity' in df.columns:
+            activity_default_min, activity_default_max = float(df['Physical_Activity'].min()), float(df['Physical_Activity'].max())
+            if activity_range != (activity_default_min, activity_default_max): 
+                active_filters.append(f"🏃 Activity: {activity_range[0]:.0f}-{activity_range[1]:.0f}h")
+        
+        if alcohol_range and 'Alcohol_Consumption' in df.columns:
+            alcohol_default_min, alcohol_default_max = float(df['Alcohol_Consumption'].min()), float(df['Alcohol_Consumption'].max())
+            if alcohol_range != (alcohol_default_min, alcohol_default_max): 
+                active_filters.append(f"🍷 Alcohol: {alcohol_range[0]:.0f}-{alcohol_range[1]:.0f}u")
+        
+        if diet_range and 'Diet_Quality' in df.columns:
+            diet_default_min, diet_default_max = float(df['Diet_Quality'].min()), float(df['Diet_Quality'].max())
+            if diet_range != (diet_default_min, diet_default_max): 
+                active_filters.append(f"🥗 Diet: {diet_range[0]:.1f}-{diet_range[1]:.1f}")
+        
+        if func_range and 'Functional_Assessment' in df.columns:
+            func_default_min, func_default_max = float(df['Functional_Assessment'].min()), float(df['Functional_Assessment'].max())
+            if func_range != (func_default_min, func_default_max): 
+                active_filters.append(f"🔧 Function: {func_range[0]:.0f}-{func_range[1]:.0f}")
+        
+        if adl_range and 'Activities_Of_Daily_Living' in df.columns:
+            adl_default_min, adl_default_max = float(df['Activities_Of_Daily_Living'].min()), float(df['Activities_Of_Daily_Living'].max())
+            if adl_range != (adl_default_min, adl_default_max): 
+                active_filters.append(f"🏠 ADL: {adl_range[0]:.0f}-{adl_range[1]:.0f}")
+        
+        if active_filters:
+            st.markdown("**🔍 Active Filters:**")
+            # Display filters in a more organized way
+            for i in range(0, len(active_filters), 2):
+                if i + 1 < len(active_filters):
+                    st.markdown(f"• {active_filters[i]} | {active_filters[i + 1]}")
+                else:
+                    st.markdown(f"• {active_filters[i]}")
     
     if len(filtered_df) == 0:
-        st.warning("⚠️ No patients match the selected filters. Please adjust your filter criteria.")
+        st.error("⚠️ No patients match the selected filter criteria. Please adjust your filters to include more patients.")
+        st.markdown("**💡 Suggestions:**")
+        st.markdown("- Reset all filters using the 'Reset All Filters' button")
+        st.markdown("- Widen the range filters (Age, MMSE, BMI, etc.)")
+        st.markdown("- Remove some of the categorical filters")
         return df
     
     # Business need explanation
@@ -271,33 +522,51 @@ def risk_assessment_dashboard():
         )
         st.plotly_chart(fig_bar, use_container_width=True)
     
-    # Interactive 3D Risk Assessment for filtered data
+    # Enhanced Interactive 3D Risk Assessment for filtered data
     st.markdown('<h3 style="color: #000000; margin-top: 0; font-weight: bold;"><strong>🎯 <span style="text-decoration: underline; text-decoration-color: #000000; text-decoration-thickness: 2px;">Interactive 3D Risk Assessment Matrix</span></strong></h3>', unsafe_allow_html=True)
+    
+    # Prepare hover data with available columns
+    hover_data_cols = ["Cholesterol_Total", "Functional_Assessment", "Gender", "Depression"]
+    if "Activities_Of_Daily_Living" in filtered_df.columns:
+        hover_data_cols.append("Activities_Of_Daily_Living")
+    if "Memory_Complaints" in filtered_df.columns:
+        hover_data_cols.append("Memory_Complaints")
+    if "Physical_Activity" in filtered_df.columns:
+        hover_data_cols.append("Physical_Activity")
+    if "Diet_Quality" in filtered_df.columns:
+        hover_data_cols.append("Diet_Quality")
+    
+    # Filter to only include columns that actually exist in the dataframe
+    available_hover_cols = [col for col in hover_data_cols if col in filtered_df.columns]
     
     fig_3d = px.scatter_3d(filtered_df, 
                           x="Patient_Age", y="MMSE", z="BMI",
                           color="Risk_Category",
                           size="Risk_Score",
-                          hover_data=["Cholesterol_Total", "Functional_Assessment", "Gender", "Depression"],
+                          hover_data=available_hover_cols,
                           color_discrete_map={"High Risk": "#e74c3c", "Medium Risk": "#f39c12", "Low Risk": "#2ecc71"},
-                          title="3D Risk Assessment: Age vs MMSE vs BMI (Filtered Population)",
+                          title=f"3D Risk Assessment: Age vs MMSE vs BMI (Filtered Population: n={len(filtered_df)})",
                           labels={
-                              "Patient_Age": "Patient Age",
-                              "MMSE": "MMSE",
-                              "BMI": "BMI",
+                              "Patient_Age": "Patient Age (years)",
+                              "MMSE": "MMSE Score (cognitive function)",
+                              "BMI": "Body Mass Index",
                               "Risk_Category": "Risk Category",
-                              "Risk_Score": "Risk Score",
-                              "Cholesterol_Total": "Cholesterol Total",
+                              "Risk_Score": "Comprehensive Risk Score",
+                              "Cholesterol_Total": "Total Cholesterol",
                               "Functional_Assessment": "Functional Assessment",
+                              "Activities_Of_Daily_Living": "Activities of Daily Living",
+                              "Memory_Complaints": "Memory Complaints",
+                              "Physical_Activity": "Physical Activity (hrs/week)",
+                              "Diet_Quality": "Diet Quality Score",
                               "Gender": "Gender",
-                              "Depression": "Depression"
+                              "Depression": "Depression Status"
                           })
     
     fig_3d.update_layout(
         scene=dict(
-            xaxis_title="Patient Age",
+            xaxis_title="Patient Age (years)",
             yaxis_title="MMSE Score (Cognitive Function)",
-            zaxis_title="BMI",
+            zaxis_title="Body Mass Index (BMI)",
             xaxis=dict(title=dict(font=dict(size=14, color="#000000", family="Arial Black"))),
             yaxis=dict(title=dict(font=dict(size=14, color="#000000", family="Arial Black"))),
             zaxis=dict(title=dict(font=dict(size=14, color="#000000", family="Arial Black")))
@@ -305,42 +574,114 @@ def risk_assessment_dashboard():
         title=dict(font=dict(size=16, color="#000000", family="Arial Black")),
         font=dict(size=12, color="#000000", family="Arial", weight="bold"),
         plot_bgcolor="rgba(255, 255, 255, 0.1)",
-        paper_bgcolor="rgba(255, 255, 255, 0.1)"
+        paper_bgcolor="rgba(255, 255, 255, 0.1)",
+        height=700
     )
     
     st.plotly_chart(fig_3d, use_container_width=True)
     
-    # Risk factor correlation heatmap for filtered data
-    st.markdown('<h4 style="color: #000000; margin-top: 0; font-weight: bold;"><strong>🔥 Risk Factor Correlation Analysis</strong></h4>', unsafe_allow_html=True)
+    # Add 3D plot interpretation guide
+    with st.expander("📊 **How to Interpret the 3D Risk Assessment**"):
+        st.markdown("""
+        **🎯 Understanding the 3D Visualization:**
+        - **X-axis (Age)**: Older patients typically show higher risk
+        - **Y-axis (MMSE)**: Lower scores indicate cognitive impairment
+        - **Z-axis (BMI)**: Both very high and very low values can be concerning
+        - **Color**: Red = High Risk, Orange = Medium Risk, Green = Low Risk
+        - **Size**: Larger bubbles = Higher comprehensive risk scores
+        
+        **🔍 What to Look For:**
+        - **High-risk clusters**: Red bubbles in the lower-left areas (older age, lower MMSE)
+        - **Outliers**: Unusual combinations that might need clinical attention
+        - **Patterns**: How risk factors combine across different populations
+        
+        **💡 Clinical Insights:**
+        - Hover over points to see detailed patient information
+        - Use filters to compare different population segments
+        - Look for unexpected risk patterns in your filtered population
+        """)
     
-    risk_variables = ["Patient_Age", "MMSE", "BMI", "Cholesterol_Total", 
-                     "Functional_Assessment", "Physical_Activity", 
-                     "Alcohol_Consumption", "Risk_Score"]
+    # Add population statistics for the 3D plot
+    if len(filtered_df) > 0:
+        col1, col2, col3, col4 = st.columns(4)
+        with col1:
+            st.metric("Avg Age", f"{filtered_df['Patient_Age'].mean():.1f} yrs")
+        with col2:
+            st.metric("Avg MMSE", f"{filtered_df['MMSE'].mean():.1f}")
+        with col3:
+            st.metric("Avg BMI", f"{filtered_df['BMI'].mean():.1f}")
+        with col4:
+            st.metric("Avg Risk Score", f"{filtered_df['Risk_Score'].mean():.2f}")
     
-    # Filter variables that exist in the dataframe
+    # Enhanced risk factor correlation heatmap for filtered data
+    st.markdown('<h4 style="color: #000000; margin-top: 0; font-weight: bold;"><strong>🔥 Comprehensive Risk Factor Correlation Analysis</strong></h4>', unsafe_allow_html=True)
+    
+    # Include all relevant variables from the dataset based on your notes
+    risk_variables = [
+        "Patient_Age", "MMSE", "BMI", "Cholesterol_Total", 
+        "Functional_Assessment", "Physical_Activity", 
+        "Alcohol_Consumption", "Diet_Quality", "Activities_Of_Daily_Living",
+        "Risk_Score"
+    ]
+    
+    # Filter variables that exist in the filtered dataframe
     available_vars = [var for var in risk_variables if var in filtered_df.columns]
-    correlation_matrix = filtered_df[available_vars].corr()
     
-    # Format correlation matrix labels for display
-    correlation_matrix_display = correlation_matrix.copy()
-    correlation_matrix_display.index = correlation_matrix_display.index.str.replace('_', ' ').str.replace('-', ' ')
-    correlation_matrix_display.columns = correlation_matrix_display.columns.str.replace('_', ' ').str.replace('-', ' ')
-    
-    fig_heatmap = px.imshow(correlation_matrix_display, 
-                           text_auto=True, 
-                           color_continuous_scale="RdBu_r",
-                           title="Risk Factor Correlation Heatmap (Filtered Population)")
-    
-    fig_heatmap.update_layout(
-        title=dict(font=dict(size=16, color="#000000", family="Arial Black")),
-        font=dict(size=12, color="#000000", family="Arial", weight="bold"),
-        xaxis=dict(title=dict(font=dict(size=14, color="#000000", family="Arial Black"))),
-        yaxis=dict(title=dict(font=dict(size=14, color="#000000", family="Arial Black"))),
-        plot_bgcolor="rgba(255, 255, 255, 0.1)",
-        paper_bgcolor="rgba(255, 255, 255, 0.1)"
-    )
-    
-    st.plotly_chart(fig_heatmap, use_container_width=True)
+    if len(available_vars) >= 3:  # Need at least 3 variables for meaningful correlation
+        correlation_matrix = filtered_df[available_vars].corr()
+        
+        # Format correlation matrix labels for display
+        correlation_matrix_display = correlation_matrix.copy()
+        correlation_matrix_display.index = correlation_matrix_display.index.str.replace('_', ' ').str.replace('-', ' ')
+        correlation_matrix_display.columns = correlation_matrix_display.columns.str.replace('_', ' ').str.replace('-', ' ')
+        
+        fig_heatmap = px.imshow(correlation_matrix_display, 
+                               text_auto=True, 
+                               color_continuous_scale="RdBu_r",
+                               title=f"Risk Factor Correlation Matrix (Filtered Population: n={len(filtered_df)})",
+                               aspect="auto")
+        
+        fig_heatmap.update_layout(
+            title=dict(font=dict(size=16, color="#000000", family="Arial Black")),
+            font=dict(size=12, color="#000000", family="Arial", weight="bold"),
+            xaxis=dict(title=dict(font=dict(size=14, color="#000000", family="Arial Black"))),
+            yaxis=dict(title=dict(font=dict(size=14, color="#000000", family="Arial Black"))),
+            plot_bgcolor="rgba(255, 255, 255, 0.1)",
+            paper_bgcolor="rgba(255, 255, 255, 0.1)",
+            height=600
+        )
+        
+        st.plotly_chart(fig_heatmap, use_container_width=True)
+        
+        # Add correlation insights
+        with st.expander("🔍 **Key Correlation Insights**"):
+            if len(filtered_df) > 10:  # Only show insights if we have enough data
+                st.markdown("**📊 Strongest Correlations in Filtered Population:**")
+                
+                # Find strongest positive and negative correlations
+                corr_matrix = correlation_matrix.copy()
+                np.fill_diagonal(corr_matrix.values, 0)  # Remove diagonal (self-correlations)
+                
+                # Find strongest correlations
+                max_corr = corr_matrix.abs().max().max()
+                max_corr_pair = corr_matrix.abs().idxmax()[corr_matrix.abs().max().idxmax()]
+                actual_corr = corr_matrix.loc[corr_matrix.abs().max().idxmax(), max_corr_pair]
+                
+                if max_corr > 0.3:  # Only show if correlation is meaningful
+                    correlation_type = "positive" if actual_corr > 0 else "negative"
+                    st.markdown(f"• **Strongest {correlation_type} correlation**: {corr_matrix.abs().max().idxmax()} ↔ {max_corr_pair} ({actual_corr:.3f})")
+                
+                # Risk score correlations
+                if 'Risk_Score' in corr_matrix.columns:
+                    risk_correlations = corr_matrix['Risk_Score'].abs().sort_values(ascending=False)
+                    if len(risk_correlations) > 1:
+                        top_risk_factor = risk_correlations.index[1]  # Skip Risk_Score itself
+                        risk_corr_value = corr_matrix.loc['Risk_Score', top_risk_factor]
+                        st.markdown(f"• **Top risk predictor**: {top_risk_factor} (correlation: {risk_corr_value:.3f})")
+            else:
+                st.warning("Not enough data points in filtered population for meaningful correlation analysis.")
+    else:
+        st.warning("Not enough numerical variables available for correlation analysis.")
     
     # Clinical insights by risk category for filtered data
     st.markdown('<h4 style="color: #000000; margin-top: 0; font-weight: bold;"><strong>🏥 Clinical Insights by Risk Category</strong></h4>', unsafe_allow_html=True)
