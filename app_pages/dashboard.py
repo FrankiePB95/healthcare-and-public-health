@@ -428,7 +428,7 @@ def risk_assessment_dashboard():
                     st.markdown(f"• {active_filters[i]}")
     
     if len(filtered_df) == 0:
-        st.error("⚠️ No patients match the selected filter criteria. Please adjust your filters to include more patients.")
+        st.error("**⚠️ No patients match the selected filter criteria. Please adjust your filters to include more patients.**")
         st.markdown("**💡 Suggestions:**")
         st.markdown("- Reset all filters using the 'Reset All Filters' button")
         st.markdown("- Widen the range filters (Age, MMSE, BMI, etc.)")
@@ -436,7 +436,7 @@ def risk_assessment_dashboard():
         return df
     
     # Business need explanation
-    with st.expander("📋 Business Need & Dashboard Components"):
+    with st.expander("**📋 Business Need & Dashboard Components**"):
         st.markdown("""
         ### **Business Need**: 
         Healthcare providers need to identify high-risk patients for early intervention to:
@@ -470,24 +470,25 @@ def risk_assessment_dashboard():
     
     with col1:
         total_patients = len(filtered_df)
-        st.metric("Total Patients", total_patients)
+        st.metric("**Total Patients**", f"**{total_patients}**")
     
     with col2:
         high_risk_count = len(filtered_df[filtered_df["Risk_Category"] == "High Risk"])
         high_risk_pct = (high_risk_count/total_patients*100) if total_patients > 0 else 0
-        st.metric("High Risk Patients", high_risk_count, delta=f"{high_risk_pct:.1f}%")
+        st.metric("**High Risk Patients**", f"**{high_risk_count}**", delta=f"**{high_risk_pct:.1f}%**")
     
     with col3:
         early_detection_count = filtered_df["Early_Detection_Flag"].sum()
         early_detection_pct = (early_detection_count/total_patients*100) if total_patients > 0 else 0
-        st.metric("Early Detection Flags", early_detection_count, delta=f"{early_detection_pct:.1f}%")
+        st.metric("**Early Detection Flags**", f"**{early_detection_count}**", delta=f"**{early_detection_pct:.1f}%**")
     
     with col4:
         avg_risk_score = filtered_df["Risk_Score"].mean()
-        st.metric("Average Risk Score", f"{avg_risk_score:.2f}")
+        st.metric("**Average Risk Score**", f"**{avg_risk_score:.2f}**")
     
     # Risk distribution for filtered data
-    st.markdown('<h3 style="color: #000000; margin-top: 0; font-weight: bold;"><strong>📊 <span style="text-decoration: underline; text-decoration-color: #000000; text-decoration-thickness: 2px;">Risk Category Distribution</span></strong></h3>', unsafe_allow_html=True)
+    # Display results with enhanced styling
+    st.markdown('<h3 style="color: #000000; margin-top: 0; font-weight: bold;"><strong>📊 Risk Category Distribution</strong></h3>', unsafe_allow_html=True)
     risk_distribution = filtered_df["Risk_Category"].value_counts()
     
     col1, col2 = st.columns([1, 1])
@@ -523,7 +524,8 @@ def risk_assessment_dashboard():
         st.plotly_chart(fig_bar, use_container_width=True)
     
     # Enhanced Interactive 3D Risk Assessment for filtered data
-    st.markdown('<h3 style="color: #000000; margin-top: 0; font-weight: bold;"><strong>🎯 <span style="text-decoration: underline; text-decoration-color: #000000; text-decoration-thickness: 2px;">Interactive 3D Risk Assessment Matrix</span></strong></h3>', unsafe_allow_html=True)
+    # Enhanced 3D scatter plot with better insights
+    st.markdown('<h3 style="color: #000000; margin-top: 0; font-weight: bold;"><strong>🎯 Interactive 3D Risk Assessment Matrix</strong></h3>', unsafe_allow_html=True)
     
     # Prepare hover data with available columns
     hover_data_cols = ["Cholesterol_Total", "Functional_Assessment", "Gender", "Depression"]
@@ -605,16 +607,17 @@ def risk_assessment_dashboard():
     if len(filtered_df) > 0:
         col1, col2, col3, col4 = st.columns(4)
         with col1:
-            st.metric("Avg Age", f"{filtered_df['Patient_Age'].mean():.1f} yrs")
+            st.metric("**Avg Age**", f"**{filtered_df['Patient_Age'].mean():.1f} yrs**")
         with col2:
-            st.metric("Avg MMSE", f"{filtered_df['MMSE'].mean():.1f}")
+            st.metric("**Avg MMSE**", f"**{filtered_df['MMSE'].mean():.1f}**")
         with col3:
-            st.metric("Avg BMI", f"{filtered_df['BMI'].mean():.1f}")
+            st.metric("**Avg BMI**", f"**{filtered_df['BMI'].mean():.1f}**")
         with col4:
-            st.metric("Avg Risk Score", f"{filtered_df['Risk_Score'].mean():.2f}")
+            st.metric("**Avg Risk Score**", f"**{filtered_df['Risk_Score'].mean():.2f}**")
     
     # Enhanced risk factor correlation heatmap for filtered data
-    st.markdown('<h4 style="color: #000000; margin-top: 0; font-weight: bold;"><strong>🔥 Comprehensive Risk Factor Correlation Analysis</strong></h4>', unsafe_allow_html=True)
+    # Enhanced correlation analysis section with better insights
+    st.markdown('<h3 style="color: #000000; margin-top: 0; font-weight: bold;"><strong>🔥 Comprehensive Risk Factor Correlation Analysis</strong></h3>', unsafe_allow_html=True)
     
     # Include all relevant variables from the dataset based on your notes
     risk_variables = [
@@ -679,30 +682,30 @@ def risk_assessment_dashboard():
                         risk_corr_value = corr_matrix.loc['Risk_Score', top_risk_factor]
                         st.markdown(f"• **Top risk predictor**: {top_risk_factor} (correlation: {risk_corr_value:.3f})")
             else:
-                st.warning("Not enough data points in filtered population for meaningful correlation analysis.")
+                st.warning("**Not enough data points in filtered population for meaningful correlation analysis.**")
     else:
-        st.warning("Not enough numerical variables available for correlation analysis.")
+        st.warning("**Not enough numerical variables available for correlation analysis.**")
     
     # Clinical insights by risk category for filtered data
-    st.markdown('<h4 style="color: #000000; margin-top: 0; font-weight: bold;"><strong>🏥 Clinical Insights by Risk Category</strong></h4>', unsafe_allow_html=True)
+    st.markdown('<h3 style="color: #000000; margin-top: 0; font-weight: bold;"><strong>🏥 Clinical Insights by Risk Category</strong></h3>', unsafe_allow_html=True)
     
     for risk_cat in ["High Risk", "Medium Risk", "Low Risk"]:
         subset = filtered_df[filtered_df["Risk_Category"] == risk_cat]
         if len(subset) > 0:
-            with st.expander(f"{risk_cat} Patients (n={len(subset)})"):
+            with st.expander(f"**{risk_cat} Patients (n={len(subset)})**"):
                 col1, col2, col3, col4 = st.columns(4)
                 
                 with col1:
-                    st.metric("Average MMSE", f"{subset['MMSE'].mean():.1f}")
+                    st.metric("**Average MMSE**", f"**{subset['MMSE'].mean():.1f}**")
                 
                 with col2:
-                    st.metric("Average Age", f"{subset['Patient_Age'].mean():.1f}")
+                    st.metric("**Average Age**", f"**{subset['Patient_Age'].mean():.1f}**")
                 
                 with col3:
-                    st.metric("Average BMI", f"{subset['BMI'].mean():.1f}")
+                    st.metric("**Average BMI**", f"**{subset['BMI'].mean():.1f}**")
                 
                 with col4:
-                    st.metric("Early Detection Flags", f"{subset['Early_Detection_Flag'].sum()}")
+                    st.metric("**Early Detection Flags**", f"**{subset['Early_Detection_Flag'].sum()}**")
                 
                 # Additional demographic insights for filtered population
                 if len(subset) > 0:
@@ -713,17 +716,18 @@ def risk_assessment_dashboard():
                         gender_dist = subset['Gender'].value_counts()
                         for gender, count in gender_dist.items():
                             percentage = (count / len(subset)) * 100
-                            st.write(f"• {gender}: {count} ({percentage:.1f}%)")
+                            st.write(f"**• {gender}: {count} ({percentage:.1f}%)**")
                     
                     with demo_col2:
                         st.markdown("**Depression Status:**")
                         depression_dist = subset['Depression'].value_counts()
                         for status, count in depression_dist.items():
                             percentage = (count / len(subset)) * 100
-                            st.write(f"• {status}: {count} ({percentage:.1f}%)")
+                            st.write(f"**• {status}: {count} ({percentage:.1f}%)**")
     
     # Patient risk table for filtered data
-    st.markdown('<h4 style="color: #000000; margin-top: 0; font-weight: bold;"><strong>📋 High-Risk Patient Details</strong></h4>', unsafe_allow_html=True)
+    # Enhanced high-risk patient details section
+    st.markdown('<h3 style="color: #000000; margin-top: 0; font-weight: bold;"><strong>📋 High-Risk Patient Details</strong></h3>', unsafe_allow_html=True)
     
     high_risk_patients = filtered_df[filtered_df["Risk_Category"] == "High Risk"].copy()
     if len(high_risk_patients) > 0:
@@ -737,7 +741,7 @@ def risk_assessment_dashboard():
         
         st.dataframe(high_risk_display)
         
-        st.info(f"Showing top 10 of {len(high_risk_patients)} high-risk patients requiring immediate attention.")
+        st.info(f"**Showing top 10 of {len(high_risk_patients)} high-risk patients requiring immediate attention.**")
         
         # Summary insights for filtered high-risk patients
         if len(high_risk_patients) > 0:
@@ -746,18 +750,18 @@ def risk_assessment_dashboard():
             
             with col1:
                 avg_age = high_risk_patients['Patient_Age'].mean()
-                st.metric("Avg Age", f"{avg_age:.1f} years")
+                st.metric("**Avg Age**", f"**{avg_age:.1f} years**")
             
             with col2:
                 avg_mmse = high_risk_patients['MMSE'].mean()
-                st.metric("Avg MMSE", f"{avg_mmse:.1f}")
+                st.metric("**Avg MMSE**", f"**{avg_mmse:.1f}**")
             
             with col3:
                 depression_count = (high_risk_patients['Depression'] == 'Yes').sum() if 'Depression' in high_risk_patients.columns else 0
                 depression_pct = (depression_count / len(high_risk_patients)) * 100 if len(high_risk_patients) > 0 else 0
-                st.metric("Depression Rate", f"{depression_pct:.1f}%")
+                st.metric("**Depression Rate**", f"**{depression_pct:.1f}%**")
     else:
-        st.info("No high-risk patients found in the filtered population.")
+        st.info("**No high-risk patients found in the filtered population.**")
     
     return filtered_df
 
@@ -778,11 +782,11 @@ def dashboard_body():
     # Enhanced Usage Instructions with dark theme and bold black text - icons separate from underlined text
     st.markdown("""
     <div class="custom-card">
-        <h3 style="color: #000000; margin-top: 0; font-weight: bold;">📋 <span style="text-decoration: underline; text-decoration-color: #000000; text-decoration-thickness: 2px;">Dashboard Navigation Guide</span></h3>
+        <h3 style="color: #000000; margin-top: 0; font-weight: bold;"><strong>📋 Dashboard Navigation Guide</strong></h3>
     </div>
     """, unsafe_allow_html=True)
     
-    with st.expander("🔍 Click here for comprehensive usage instructions", expanded=False):
+    with st.expander("**🔍 Click here for comprehensive usage instructions**", expanded=False):
         st.markdown("""
         <div style="background: linear-gradient(135deg, rgba(21, 101, 192, 0.3), rgba(25, 118, 210, 0.3)); 
                     padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
@@ -861,21 +865,21 @@ def dashboard_body():
         col1, col2, col3 = st.columns(3)
         with col1:
             st.metric(
-                label="📋 Total Patients", 
-                value="537",
-                delta="Research Cohort"
+                label="**📋 Total Patients**", 
+                value="**537**",
+                delta="**Research Cohort**"
             )
         with col2:
             st.metric(
-                label="📊 Clinical Features", 
-                value="10",
-                delta="Biomarkers"
+                label="**📊 Clinical Features**", 
+                value="**10**",
+                delta="**Biomarkers**"
             )
         with col3:
             st.metric(
-                label="🎯 Analysis Focus", 
-                value="Risk Assessment",
-                delta="Early Detection"
+                label="**🎯 Analysis Focus**", 
+                value="**Risk Assessment**",
+                delta="**Early Detection**"
             )
 
         st.markdown("---")
@@ -884,7 +888,7 @@ def dashboard_body():
         st.markdown("""
         <div style="background: linear-gradient(135deg, rgba(21, 101, 192, 0.3), rgba(25, 118, 210, 0.3)); 
                     padding: 1.5rem; border-radius: 10px; margin: 1rem 0; border: 3px solid rgba(100, 100, 120, 0.8); font-weight: bold;">
-            <h3 style="color: #000000; margin-top: 0; font-weight: bold;">🔍 <span style="text-decoration: underline; text-decoration-color: #000000; text-decoration-thickness: 2px;">Clinical Data Preview</span></h3>
+            <h3 style="color: #000000; margin-top: 0; font-weight: bold;"><strong>🔍 Clinical Data Preview</strong></h3>
             <p style="color: #000000; font-weight: bold;">Sample patient records showing key demographic and clinical parameters</p>
         </div>
         """, unsafe_allow_html=True)
@@ -897,7 +901,7 @@ def dashboard_body():
         st.markdown("""
         <div style="background: linear-gradient(135deg, rgba(21, 101, 192, 0.3), rgba(25, 118, 210, 0.3)); 
                     padding: 1.5rem; border-radius: 10px; margin: 1rem 0; border: 3px solid rgba(100, 100, 120, 0.8); font-weight: bold;">
-            <h3 style="color: #000000; margin-top: 0; font-weight: bold;">📈 <span style="text-decoration: underline; text-decoration-color: #000000; text-decoration-thickness: 2px;">Statistical Summary</span></h3>
+            <h3 style="color: #000000; margin-top: 0; font-weight: bold;"><strong>📈 Statistical Summary</strong></h3>
             <p style="color: #000000; font-weight: bold;">Descriptive statistics for numerical clinical variables</p>
         </div>
         """, unsafe_allow_html=True)
