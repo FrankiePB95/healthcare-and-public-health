@@ -36,7 +36,7 @@ The project followed these steps:
 ## Hypothesis
 There lies a correlation between age, cognitive ability and lifestyle factors in relation to Alzheimer's Disease.
 
-###Consider the following 4 validations:
+### Consider the following 4 validations:
  - **Validation** Created tabular chart within the dashboard that allows for statistical insights revolving lifestyle factors such as smoking, diet, quality and alcohol consumption. Users can observe frequently prevent values, minimum values, standard deviation and more.
  - **Validation** Created an interactive 3D scatter matrix that consider age, MMSE score and BMI in its relation to overall health to gauge relationships between these.
  - **Validation** Created a risk factor correlation matrix that plots factors against each other, including cholesterol total, physical activity and activities in daily life and age to gauge their relationships with dementia risk.
@@ -64,27 +64,27 @@ From the dashboard, I would consider recommending:
 ## Variables
 Patient Information
 
-###Patient ID
+### Patient ID
 PatientID: A unique identifier assigned to each patient - 4751 to 6900.
 
-###Demographic Details
+### Demographic Details
 Patient Age: The age of the patients ranges from 60 to 90 years.
 Gender: Gender of the patients - Male and Female.
 Ethnicity: The ethnicity of the patients - Caucasian, African American, Asian and Other
 
-###Lifestyle Factors
+### Lifestyle Factors
 BMI: Body Mass Index of the patients - 15 to 40.
 Smoking: Smoking status - Yes and No.
 Alcohol_Consumption: Weekly alcohol consumption in units - 0 to 20.
 Physical_Activity: Weekly physical activity in hours - 0 to 10.
 Diet_Quality: Diet quality score -  0 to 10.
 
-###Medical History
+### Medical History
 Cardiovascular_Disease: Presence of cardiovascular disease - Yes and No.
 Depression: Presence of depression - Yes and No.
 Cholesterol_Total: Total cholesterol levels - 150 to 300 mg/dL.
 
-###Cognitive and Functional Assessments
+### Cognitive and Functional Assessments
 MMSE: Mini-Mental State Examination score - 0 to 30 (lower scores indicate cognitive impairment).
 Functional_Assessment: Functional assessment score - 0 to 10 (lower scores indicate greater impairment).
 Memory_Complaints: Presence of memory complaints - Yes and No.
