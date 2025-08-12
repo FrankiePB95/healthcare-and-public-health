@@ -16,13 +16,13 @@ st.set_page_config(
 )
 
 # Initialize session state for enhanced page persistence
-if 'app_initialized' not in st.session_state:
+if "app_initialized" not in st.session_state:
     st.session_state.app_initialized = True
     # Check for URL parameters to restore page state
     query_params = st.experimental_get_query_params()
-    if 'page' in query_params:
+    if "page" in query_params:
         try:
-            page_index = int(query_params['page'][0])
+            page_index = int(query_params["page"][0])
             if 0 <= page_index < 4:  # We have 4 pages total
                 st.session_state.current_page_index = page_index
         except (ValueError, IndexError):
