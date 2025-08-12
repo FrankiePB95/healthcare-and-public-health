@@ -185,9 +185,9 @@ def risk_assessment_dashboard():
             xaxis_title="Patient Age",
             yaxis_title="MMSE Score (Cognitive Function)",
             zaxis_title="BMI",
-            xaxis=dict(titlefont=dict(size=14, color="#000000", family="Arial Black")),
-            yaxis=dict(titlefont=dict(size=14, color="#000000", family="Arial Black")),
-            zaxis=dict(titlefont=dict(size=14, color="#000000", family="Arial Black"))
+            xaxis=dict(title=dict(font=dict(size=14, color="#000000", family="Arial Black"))),
+            yaxis=dict(title=dict(font=dict(size=14, color="#000000", family="Arial Black"))),
+            zaxis=dict(title=dict(font=dict(size=14, color="#000000", family="Arial Black")))
         ),
         title=dict(font=dict(size=16, color="#000000", family="Arial Black")),
         font=dict(size=12, color="#000000", family="Arial", weight="bold"),
