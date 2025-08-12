@@ -247,9 +247,9 @@ def dashboard_body():
         color: #000000;
     }
     
-    /* Content container styling - much darker grey tones */
+    /* Content container styling - space blue tones */
     .main .block-container {
-        background: rgba(140, 140, 150, 0.95);
+        background: rgba(72, 118, 191, 0.95);
         border-radius: 15px;
         padding: 2rem;
         margin-top: 2rem;
@@ -300,7 +300,7 @@ def dashboard_body():
     }
     
     .stTabs [aria-selected="true"] {
-        background: rgba(120, 120, 135, 0.9) !important;
+        background: rgba(52, 98, 171, 0.9) !important;
         color: #000000 !important;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
@@ -324,15 +324,15 @@ def dashboard_body():
     }
     
     .streamlit-expanderContent {
-        background: rgba(120, 120, 135, 0.8);
+        background: rgba(52, 98, 171, 0.8);
         border-radius: 8px;
         border: 1px solid #1565c0;
         color: #000000 !important;
     }
     
-    /* DataFrame styling - much darker grey tones */
+    /* DataFrame styling - space blue tones */
     .stDataFrame {
-        background: rgba(120, 120, 135, 0.9);
+        background: rgba(52, 98, 171, 0.9);
         border-radius: 10px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         overflow: hidden;
@@ -361,9 +361,9 @@ def dashboard_body():
         color: #000000 !important;
     }
     
-    /* Custom card styling - much darker grey tones with black text */
+    /* Custom card styling - space blue tones with black text */
     .custom-card {
-        background: rgba(120, 120, 135, 0.85);
+        background: rgba(52, 98, 171, 0.85);
         padding: 1.5rem;
         border-radius: 15px;
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
@@ -397,7 +397,7 @@ def dashboard_body():
     
     /* Input and select styling - black text */
     .stSelectbox > div > div {
-        background: rgba(120, 120, 135, 0.8);
+        background: rgba(52, 98, 171, 0.8);
         color: #000000 !important;
         border: 1px solid #1565c0;
     }
@@ -452,7 +452,7 @@ def dashboard_body():
     /* Code styling */
     code {
         color: #000000 !important;
-        background: rgba(120, 120, 135, 0.8);
+        background: rgba(52, 98, 171, 0.8);
         border: 1px solid rgba(100, 100, 120, 0.5);
     }
     </style>
