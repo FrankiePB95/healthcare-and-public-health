@@ -619,28 +619,6 @@ def risk_assessment_dashboard():
     # Enhanced correlation analysis section with better insights
     st.markdown('<h3 style="color: #000000; margin-top: 0; font-weight: bold;"><strong>🔥 Comprehensive Risk Factor Correlation Analysis</strong></h3>', unsafe_allow_html=True)
     
-    # Add interpretation guide for correlation matrix in expandable dropdown
-    with st.expander("📖 **How to Interpret the Correlation Matrix**", expanded=False):
-        st.markdown("""
-        The correlation matrix shows how different health factors relate to each other. Each cell displays a correlation coefficient between -1.0 and +1.0:
-        
-        **🔵 Positive Correlations (Blue shades):**
-        - **+1.0**: Perfect positive relationship - as one factor increases, the other increases proportionally
-        - **+0.7 to +0.9**: Strong positive correlation - factors tend to increase together
-        - **+0.3 to +0.6**: Moderate positive correlation - some tendency to move in the same direction
-        - **+0.1 to +0.2**: Weak positive correlation - slight tendency to increase together
-        
-        **🔴 Negative Correlations (Red shades):**
-        - **-1.0**: Perfect negative relationship - as one factor increases, the other decreases proportionally  
-        - **-0.7 to -0.9**: Strong negative correlation - factors tend to move in opposite directions
-        - **-0.3 to -0.6**: Moderate negative correlation - some tendency to move in opposite directions
-        - **-0.1 to -0.2**: Weak negative correlation - slight tendency to move in opposite directions
-        
-        **⚪ Near Zero (White):** No meaningful relationship between the factors
-        
-        **💡 Clinical Significance:** Look for strong correlations (>0.5 or <-0.5) to identify which factors most influence each other and the overall Risk Score.
-        """)
-    
     # Include all relevant variables from the dataset based on your notes
     risk_variables = [
         "Patient_Age", "MMSE", "BMI", "Cholesterol_Total", 
@@ -677,6 +655,28 @@ def risk_assessment_dashboard():
         )
         
         st.plotly_chart(fig_heatmap, use_container_width=True)
+        
+        # Add interpretation guide for correlation matrix in expandable dropdown
+        with st.expander("📖 **How to Interpret the Correlation Matrix**", expanded=False):
+            st.markdown("""
+            The correlation matrix shows how different health factors relate to each other. Each cell displays a correlation coefficient between -1.0 and +1.0:
+            
+            **🔵 Positive Correlations (Blue shades):**
+            - **+1.0**: Perfect positive relationship - as one factor increases, the other increases proportionally
+            - **+0.7 to +0.9**: Strong positive correlation - factors tend to increase together
+            - **+0.3 to +0.6**: Moderate positive correlation - some tendency to move in the same direction
+            - **+0.1 to +0.2**: Weak positive correlation - slight tendency to increase together
+            
+            **🔴 Negative Correlations (Red shades):**
+            - **-1.0**: Perfect negative relationship - as one factor increases, the other decreases proportionally  
+            - **-0.7 to -0.9**: Strong negative correlation - factors tend to move in opposite directions
+            - **-0.3 to -0.6**: Moderate negative correlation - some tendency to move in opposite directions
+            - **-0.1 to -0.2**: Weak negative correlation - slight tendency to move in opposite directions
+            
+            **⚪ Near Zero (White):** No meaningful relationship between the factors
+            
+            **💡 Clinical Significance:** Look for strong correlations (>0.5 or <-0.5) to identify which factors most influence each other and the overall Risk Score.
+            """)
         
         # Add correlation insights
         with st.expander("🔍 **Key Correlation Insights**"):
