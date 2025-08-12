@@ -134,6 +134,12 @@ def risk_assessment_dashboard():
         fig_pie = px.pie(values=risk_distribution.values, names=risk_distribution.index,
                         color_discrete_map={"High Risk": "#e74c3c", "Medium Risk": "#f39c12", "Low Risk": "#2ecc71"},
                         title="Patient Risk Distribution")
+        fig_pie.update_layout(
+            title=dict(font=dict(size=16, color="#000000", family="Arial Black")),
+            font=dict(size=12, color="#000000", family="Arial", weight="bold"),
+            plot_bgcolor="rgba(255, 255, 255, 0.1)",
+            paper_bgcolor="rgba(255, 255, 255, 0.1)"
+        )
         st.plotly_chart(fig_pie, use_container_width=True)
     
     with col2:
@@ -142,7 +148,15 @@ def risk_assessment_dashboard():
                         color=risk_distribution.index,
                         color_discrete_map={"High Risk": "#e74c3c", "Medium Risk": "#f39c12", "Low Risk": "#2ecc71"},
                         title="Risk Category Counts")
-        fig_bar.update_layout(showlegend=False)
+        fig_bar.update_layout(
+            showlegend=False,
+            title=dict(font=dict(size=16, color="#000000", family="Arial Black")),
+            font=dict(size=12, color="#000000", family="Arial", weight="bold"),
+            xaxis=dict(title=dict(font=dict(size=14, color="#000000", family="Arial Black"))),
+            yaxis=dict(title=dict(font=dict(size=14, color="#000000", family="Arial Black"))),
+            plot_bgcolor="rgba(255, 255, 255, 0.1)",
+            paper_bgcolor="rgba(255, 255, 255, 0.1)"
+        )
         st.plotly_chart(fig_bar, use_container_width=True)
     
     # Interactive 3D Risk Assessment
@@ -165,11 +179,20 @@ def risk_assessment_dashboard():
                               "Functional_Assessment": "Functional Assessment"
                           })
     
-    fig_3d.update_layout(scene=dict(
-        xaxis_title="Patient Age",
-        yaxis_title="MMSE Score (Cognitive Function)",
-        zaxis_title="BMI"
-    ))
+    fig_3d.update_layout(
+        scene=dict(
+            xaxis_title="Patient Age",
+            yaxis_title="MMSE Score (Cognitive Function)",
+            zaxis_title="BMI",
+            xaxis=dict(titlefont=dict(size=14, color="#000000", family="Arial Black")),
+            yaxis=dict(titlefont=dict(size=14, color="#000000", family="Arial Black")),
+            zaxis=dict(titlefont=dict(size=14, color="#000000", family="Arial Black"))
+        ),
+        title=dict(font=dict(size=16, color="#000000", family="Arial Black")),
+        font=dict(size=12, color="#000000", family="Arial", weight="bold"),
+        plot_bgcolor="rgba(255, 255, 255, 0.1)",
+        paper_bgcolor="rgba(255, 255, 255, 0.1)"
+    )
     
     st.plotly_chart(fig_3d, use_container_width=True)
     
@@ -193,6 +216,15 @@ def risk_assessment_dashboard():
                            text_auto=True, 
                            color_continuous_scale="RdBu_r",
                            title="Risk Factor Correlation Heatmap")
+    
+    fig_heatmap.update_layout(
+        title=dict(font=dict(size=16, color="#000000", family="Arial Black")),
+        font=dict(size=12, color="#000000", family="Arial", weight="bold"),
+        xaxis=dict(titlefont=dict(size=14, color="#000000", family="Arial Black")),
+        yaxis=dict(titlefont=dict(size=14, color="#000000", family="Arial Black")),
+        plot_bgcolor="rgba(255, 255, 255, 0.1)",
+        paper_bgcolor="rgba(255, 255, 255, 0.1)"
+    )
     
     st.plotly_chart(fig_heatmap, use_container_width=True)
     
@@ -247,7 +279,7 @@ def dashboard_body():
         color: #000000;
     }
     
-    /* Content container styling - space blue tones */
+    /* Content container styling - space blue tones with bold borders */
     .main .block-container {
         background: rgba(72, 118, 191, 0.95);
         border-radius: 15px;
@@ -255,10 +287,11 @@ def dashboard_body():
         margin-top: 2rem;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
         backdrop-filter: blur(10px);
-        border: 1px solid rgba(100, 100, 120, 0.5);
+        border: 3px solid rgba(100, 100, 120, 0.8);
+        font-weight: bold;
     }
     
-    /* Header styling - black text */
+    /* Header styling - black text with underlines */
     h1 {
         color: #000000 !important;
         text-align: center;
@@ -266,27 +299,37 @@ def dashboard_body():
         font-size: 3rem !important;
         margin-bottom: 1rem;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        text-decoration: underline;
+        text-decoration-color: #1565c0;
+        text-decoration-thickness: 3px;
+        font-weight: 900;
     }
     
-    /* Subheader styling - black text with blue accents */
+    /* Subheader styling - black text with blue accents and underlines */
     h2, h3 {
         color: #000000 !important;
-        border-bottom: 2px solid #1565c0;
+        border-bottom: 3px solid #1565c0;
         padding-bottom: 0.5rem;
         margin-top: 2rem;
+        text-decoration: underline;
+        text-decoration-color: #1565c0;
+        text-decoration-thickness: 2px;
+        font-weight: bold;
     }
     
-    /* All text elements - black text */
+    /* All text elements - bold black text */
     .stMarkdown, .stText, p, div, span, label {
         color: #000000 !important;
+        font-weight: bold;
     }
     
-    /* Tab styling - blue theme with black text */
+    /* Tab styling - blue theme with black text and borders */
     .stTabs [data-baseweb="tab-list"] {
         gap: 2px;
         background: linear-gradient(90deg, #1565c0, #1976d2);
         border-radius: 10px;
         padding: 0.5rem;
+        border: 2px solid rgba(100, 100, 120, 0.8);
     }
     
     .stTabs [data-baseweb="tab"] {
@@ -294,7 +337,7 @@ def dashboard_body():
         border-radius: 8px;
         color: #000000 !important;
         font-weight: bold;
-        border: none;
+        border: 2px solid rgba(100, 100, 120, 0.6);
         padding: 0.8rem 1.5rem;
         transition: all 0.3s ease;
     }
@@ -303,65 +346,75 @@ def dashboard_body():
         background: rgba(52, 98, 171, 0.9) !important;
         color: #000000 !important;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        border: 3px solid rgba(100, 100, 120, 0.9);
+        font-weight: bold;
     }
     
-    /* Info box styling - blue theme with black text */
+    /* Info box styling - blue theme with black text and borders */
     .stAlert > div {
         background: linear-gradient(135deg, #1565c0, #1976d2);
         color: #000000 !important;
-        border: none;
+        border: 3px solid rgba(100, 100, 120, 0.8);
         border-radius: 10px;
         font-weight: bold;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
     
-    /* Expander styling - blue theme with black text */
+    /* Expander styling - blue theme with black text and borders */
     .streamlit-expanderHeader {
         background: linear-gradient(90deg, #1565c0, #1976d2);
         color: #000000 !important;
         border-radius: 8px;
         font-weight: bold;
+        border: 2px solid rgba(100, 100, 120, 0.8);
     }
     
     .streamlit-expanderContent {
         background: rgba(52, 98, 171, 0.8);
         border-radius: 8px;
-        border: 1px solid #1565c0;
+        border: 2px solid #1565c0;
         color: #000000 !important;
+        font-weight: bold;
     }
     
-    /* DataFrame styling - space blue tones */
+    /* DataFrame styling - space blue tones with bold borders */
     .stDataFrame {
         background: rgba(52, 98, 171, 0.9);
         border-radius: 10px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         overflow: hidden;
         color: #000000 !important;
+        border: 3px solid rgba(100, 100, 120, 0.8);
+        font-weight: bold;
     }
     
-    /* Metric cards styling - blue theme with black text */
+    /* Metric cards styling - blue theme with black text and borders */
     [data-testid="metric-container"] {
         background: linear-gradient(135deg, #1565c0, #1976d2);
-        border: none;
+        border: 3px solid rgba(100, 100, 120, 0.8);
         padding: 1rem;
         border-radius: 10px;
         color: #000000 !important;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        font-weight: bold;
     }
     
     [data-testid="metric-container"] > div {
         color: #000000 !important;
+        font-weight: bold;
     }
     
     [data-testid="metric-container"] [data-testid="metric-container-label"] {
         color: #000000 !important;
+        font-weight: bold;
     }
     
     [data-testid="metric-container"] [data-testid="metric-container-value"] {
         color: #000000 !important;
+        font-weight: bold;
     }
     
-    /* Custom card styling - space blue tones with black text */
+    /* Custom card styling - space blue tones with black text and borders */
     .custom-card {
         background: rgba(52, 98, 171, 0.85);
         padding: 1.5rem;
@@ -369,7 +422,8 @@ def dashboard_body():
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
         margin: 1rem 0;
         border-left: 5px solid #1565c0;
-        border: 1px solid rgba(100, 100, 120, 0.5);
+        border: 3px solid rgba(100, 100, 120, 0.8);
+        font-weight: bold;
     }
     
     /* Button styling - blue theme with black text */
@@ -395,83 +449,111 @@ def dashboard_body():
         background: linear-gradient(180deg, #0a1929, #1565c0);
     }
     
-    /* Input and select styling - black text */
+    /* Input and select styling - bold black text with borders */
     .stSelectbox > div > div {
         background: rgba(52, 98, 171, 0.8);
         color: #000000 !important;
-        border: 1px solid #1565c0;
+        border: 2px solid #1565c0;
+        font-weight: bold;
     }
     
-    /* Success/Warning/Error message styling - blue theme with black text */
+    /* Success/Warning/Error message styling - blue theme with black text and borders */
     .stSuccess {
         background: linear-gradient(135deg, #27ae60, #2ecc71);
         border-radius: 10px;
         color: #000000 !important;
+        border: 2px solid rgba(100, 100, 120, 0.8);
+        font-weight: bold;
     }
     
     .stWarning {
         background: linear-gradient(135deg, #f39c12, #e67e22);
         border-radius: 10px;
         color: #000000 !important;
+        border: 2px solid rgba(100, 100, 120, 0.8);
+        font-weight: bold;
     }
     
     .stError {
         background: linear-gradient(135deg, #e74c3c, #c0392b);
         border-radius: 10px;
         color: #000000 !important;
+        border: 2px solid rgba(100, 100, 120, 0.8);
+        font-weight: bold;
     }
     
-    /* Ensure black text for all elements */
+    /* Ensure bold black text for all elements */
     * {
         color: #000000 !important;
+        font-weight: bold;
     }
     
-    /* Custom card text */
+    /* Custom card text - bold */
     .custom-card h2, .custom-card h3, .custom-card p {
         color: #000000 !important;
+        font-weight: bold;
     }
     
-    /* Text styling improvements */
+    /* Text styling improvements - bold */
     .stMarkdown {
         text-align: justify;
         line-height: 1.6;
         color: #000000 !important;
+        font-weight: bold;
     }
     
     /* Strong/bold text styling */
     strong, b {
         color: #000000 !important;
-        font-weight: 700;
+        font-weight: 900;
     }
     
-    /* List styling */
+    /* List styling - bold */
     ul, ol, li {
         color: #000000 !important;
+        font-weight: bold;
     }
     
-    /* Code styling */
+    /* Code styling - bold with borders */
     code {
         color: #000000 !important;
         background: rgba(52, 98, 171, 0.8);
-        border: 1px solid rgba(100, 100, 120, 0.5);
+        border: 2px solid rgba(100, 100, 120, 0.8);
+        font-weight: bold;
+    }
+    
+    /* Plotly chart styling - add borders to infographics */
+    .js-plotly-plot, .plotly {
+        border: 3px solid rgba(100, 100, 120, 0.8) !important;
+        border-radius: 10px !important;
+        background: rgba(255, 255, 255, 0.1) !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+        margin: 1rem 0 !important;
+    }
+    
+    /* Plotly modebar styling */
+    .modebar {
+        background: rgba(52, 98, 171, 0.8) !important;
+        border-radius: 5px !important;
+        border: 1px solid rgba(100, 100, 120, 0.6) !important;
     }
     </style>
     """, unsafe_allow_html=True)
     
-    # Enhanced title with black text and minimal styling
+    # Enhanced title with black text, bold styling, and underline
     st.markdown("""
     <div style="text-align: center; padding: 2rem 0;">
-        <h1 style="color: #000000; font-size: 3rem; margin-bottom: 0.5rem;">🏥 Healthcare Analytics Dashboard</h1>
-        <p style="font-size: 1.2rem; color: #000000; margin-top: 0; font-weight: 500;">
+        <h1 style="color: #000000; font-size: 3rem; margin-bottom: 0.5rem; font-weight: 900; text-decoration: underline; text-decoration-color: #1565c0; text-decoration-thickness: 3px;">🏥 Healthcare Analytics Dashboard</h1>
+        <p style="font-size: 1.2rem; color: #000000; margin-top: 0; font-weight: bold;">
             Advanced Alzheimer's Disease Risk Assessment & Clinical Insights
         </p>
     </div>
     """, unsafe_allow_html=True)
     
-    # Enhanced Usage Instructions with dark theme and black text
+    # Enhanced Usage Instructions with dark theme and bold black text
     st.markdown("""
     <div class="custom-card">
-        <h3 style="color: #000000; margin-top: 0;">📋 Dashboard Navigation Guide</h3>
+        <h3 style="color: #000000; margin-top: 0; font-weight: bold; text-decoration: underline; text-decoration-color: #1565c0; text-decoration-thickness: 2px;">📋 Dashboard Navigation Guide</h3>
     </div>
     """, unsafe_allow_html=True)
     
@@ -540,11 +622,11 @@ def dashboard_body():
     tab1, tab2 = st.tabs(["📊 General Analytics", "🏥 Risk Assessment & Early Detection"])
     
     with tab1:
-        # Enhanced General Analytics Tab - Dark Theme with Black Text
+        # Enhanced General Analytics Tab - Dark Theme with Bold Black Text
         st.markdown("""
         <div class="custom-card">
-            <h2 style="color: #000000; margin-top: 0;">📊 Alzheimer's Disease Research Analytics</h2>
-            <p style="font-size: 1.1rem; color: #000000; margin-bottom: 0;">
+            <h2 style="color: #000000; margin-top: 0; font-weight: bold; text-decoration: underline; text-decoration-color: #1565c0; text-decoration-thickness: 2px;">📊 Alzheimer's Disease Research Analytics</h2>
+            <p style="font-size: 1.1rem; color: #000000; margin-bottom: 0; font-weight: bold;">
                 Comprehensive clinical dataset analysis for cognitive health research
             </p>
         </div>
@@ -573,12 +655,12 @@ def dashboard_body():
 
         st.markdown("---")
 
-        # Enhanced Data Preview Section - Blue Theme with Black Text
+        # Enhanced Data Preview Section - Blue Theme with Bold Black Text and Borders
         st.markdown("""
         <div style="background: linear-gradient(135deg, rgba(21, 101, 192, 0.3), rgba(25, 118, 210, 0.3)); 
-                    padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
-            <h3 style="color: #000000; margin-top: 0;">🔍 Clinical Data Preview</h3>
-            <p style="color: #000000;">Sample patient records showing key demographic and clinical parameters</p>
+                    padding: 1.5rem; border-radius: 10px; margin: 1rem 0; border: 3px solid rgba(100, 100, 120, 0.8); font-weight: bold;">
+            <h3 style="color: #000000; margin-top: 0; font-weight: bold; text-decoration: underline; text-decoration-color: #1565c0; text-decoration-thickness: 2px;">🔍 Clinical Data Preview</h3>
+            <p style="color: #000000; font-weight: bold;">Sample patient records showing key demographic and clinical parameters</p>
         </div>
         """, unsafe_allow_html=True)
         
@@ -586,12 +668,12 @@ def dashboard_body():
         df_display.columns = df_display.columns.str.replace('_', ' ')
         st.dataframe(df_display, use_container_width=True)
         
-        # Enhanced Statistics Section - Blue Theme with Black Text
+        # Enhanced Statistics Section - Blue Theme with Bold Black Text and Borders
         st.markdown("""
         <div style="background: linear-gradient(135deg, rgba(21, 101, 192, 0.3), rgba(25, 118, 210, 0.3)); 
-                    padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
-            <h3 style="color: #000000; margin-top: 0;">📈 Statistical Summary</h3>
-            <p style="color: #000000;">Descriptive statistics for numerical clinical variables</p>
+                    padding: 1.5rem; border-radius: 10px; margin: 1rem 0; border: 3px solid rgba(100, 100, 120, 0.8); font-weight: bold;">
+            <h3 style="color: #000000; margin-top: 0; font-weight: bold; text-decoration: underline; text-decoration-color: #1565c0; text-decoration-thickness: 2px;">📈 Statistical Summary</h3>
+            <p style="color: #000000; font-weight: bold;">Descriptive statistics for numerical clinical variables</p>
         </div>
         """, unsafe_allow_html=True)
         
@@ -602,11 +684,11 @@ def dashboard_body():
         st.dataframe(df_stats, use_container_width=True)
     
     with tab2:
-        # Enhanced Risk Assessment Tab - Dark Theme with Black Text
+        # Enhanced Risk Assessment Tab - Dark Theme with Bold Black Text
         st.markdown("""
         <div class="custom-card">
-            <h2 style="color: #000000; margin-top: 0;">🏥 Advanced Risk Assessment & Clinical Decision Support</h2>
-            <p style="font-size: 1.1rem; color: #000000; margin-bottom: 0;">
+            <h2 style="color: #000000; margin-top: 0; font-weight: bold; text-decoration: underline; text-decoration-color: #1565c0; text-decoration-thickness: 2px;">🏥 Advanced Risk Assessment & Clinical Decision Support</h2>
+            <p style="font-size: 1.1rem; color: #000000; margin-bottom: 0; font-weight: bold;">
                 AI-powered patient stratification and early detection system
             </p>
         </div>
