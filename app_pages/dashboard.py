@@ -154,7 +154,7 @@ def risk_assessment_dashboard():
     reset_col, info_col = st.columns([1, 4])
     with reset_col:
         if st.button("🔄 Reset All Filters", type="secondary"):
-            st.experimental_rerun()
+            st.rerun()
     
     with info_col:
         st.info("💡 **Tip:** Use filters to analyze specific patient populations and identify risk patterns across demographics, lifestyle factors, and clinical conditions")

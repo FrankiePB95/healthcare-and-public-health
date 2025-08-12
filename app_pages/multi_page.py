@@ -71,7 +71,7 @@ class MultiPage:
                 if st.session_state.current_page_index != i:
                     st.session_state.current_page_index = i
                     # Update URL parameters for bookmarking and sharing
-                    st.experimental_set_query_params(page=str(i))
+                    st.query_params["page"] = str(i)
                 break
         
         # Add current page indicator in sidebar
