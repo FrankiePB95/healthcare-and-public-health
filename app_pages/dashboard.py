@@ -969,6 +969,118 @@ def dashboard_body():
     </div>
     </div>
     """, unsafe_allow_html=True)
+    
+    # Methodology and Technical Approach Section
+    st.markdown('<h2 style="color: #000000; margin-top: 2rem; font-weight: bold;"><strong>🔬 Methodology & Technical Approach</strong></h2>', unsafe_allow_html=True)
+    
+    with st.expander("📋 **Structured Data Science Methodology - Click to View Complete Process**", expanded=False):
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, rgba(13, 110, 253, 0.05), rgba(111, 66, 193, 0.05)); 
+                    padding: 2rem; border-radius: 15px; margin: 1rem 0;">
+        
+        ### 📊 **1. Data Collection & Source Validation**
+        <div style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+        <strong style="color: #000000;">Dataset:</strong> Alzheimer's Disease Research Dataset (537 patients, 10+ clinical features)<br>
+        <strong style="color: #000000;">Source Justification:</strong> Clinical-grade dataset ensures medical validity and research reproducibility<br>
+        <strong style="color: #000000;">Ethical Compliance:</strong> De-identified patient data adhering to HIPAA standards for healthcare research
+        </div>
+        
+        ### 🧹 **2. Data Cleaning & Preprocessing Techniques**
+        <div style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+        <strong style="color: #000000;">Missing Value Treatment:</strong><br>
+        • <strong>Why:</strong> Healthcare data often contains gaps due to patient availability or test limitations<br>
+        • <strong>Technique:</strong> Domain-specific imputation using clinical thresholds and median substitution<br>
+        • <strong>Justification:</strong> Preserves statistical integrity while maintaining clinical relevance<br><br>
+        
+        <strong style="color: #000000;">Outlier Detection & Management:</strong><br>
+        • <strong>Why:</strong> Medical measurements can contain extreme values that may represent true clinical conditions<br>
+        • <strong>Technique:</strong> IQR-based identification with clinical threshold validation<br>
+        • <strong>Justification:</strong> Distinguishes between data errors and legitimate extreme clinical values<br><br>
+        
+        <strong style="color: #000000;">Feature Scaling Strategy:</strong><br>
+        • <strong>Why:</strong> Clinical variables span different scales (age: 60-90, MMSE: 0-30, BMI: 15-40)<br>
+        • <strong>Technique:</strong> Preserved original scales for interpretability, normalized for visualization<br>
+        • <strong>Justification:</strong> Maintains clinical meaning while enabling effective visual analysis
+        </div>
+        
+        ### 🎯 **3. Risk Assessment Algorithm Design**
+        <div style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+        <strong style="color: #000000;">Multi-Factor Scoring System:</strong><br>
+        • <strong>Why:</strong> Alzheimer's risk is multifactorial, requiring comprehensive assessment<br>
+        • <strong>Technique:</strong> Weighted scoring across cognitive, demographic, and lifestyle factors<br>
+        • <strong>Justification:</strong> Evidence-based weights reflecting clinical research findings<br><br>
+        
+        <strong style="color: #000000;">Risk Categorization Thresholds:</strong><br>
+        • <strong>Low Risk (0-5.9):</strong> Routine monitoring sufficient<br>
+        • <strong>Medium Risk (6-8.9):</strong> Enhanced screening protocols<br>
+        • <strong>High Risk (9+):</strong> Immediate clinical attention required<br>
+        • <strong>Clinical Validation:</strong> Thresholds aligned with established dementia screening guidelines
+        </div>
+        
+        ### 📈 **4. Statistical Analysis Techniques**
+        <div style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+        <strong style="color: #000000;">Correlation Analysis:</strong><br>
+        • <strong>Why:</strong> Identify relationships between risk factors for clinical insights<br>
+        • <strong>Technique:</strong> Pearson correlation matrix with statistical significance testing<br>
+        • <strong>Justification:</strong> Reveals hidden patterns in multi-dimensional healthcare data<br><br>
+        
+        <strong style="color: #000000;">Descriptive Statistics:</strong><br>
+        • <strong>Why:</strong> Establish baseline population characteristics for comparative analysis<br>
+        • <strong>Technique:</strong> Mean, standard deviation, percentile analysis by risk groups<br>
+        • <strong>Justification:</strong> Enables evidence-based clinical decision support<br><br>
+        
+        <strong style="color: #000000;">Distribution Analysis:</strong><br>
+        • <strong>Why:</strong> Understand population heterogeneity and identify subgroups<br>
+        • <strong>Technique:</strong> Histogram visualization with statistical overlay<br>
+        • <strong>Justification:</strong> Supports targeted intervention strategies for specific populations
+        </div>
+        
+        ### 🎨 **5. Visualization Strategy & Justification**
+        <div style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+        <strong style="color: #000000;">3D Scatter Plots:</strong><br>
+        • <strong>Why:</strong> Alzheimer's risk exists in multi-dimensional space requiring spatial representation<br>
+        • <strong>Technique:</strong> Plotly 3D with age, MMSE, and risk score as primary axes<br>
+        • <strong>Justification:</strong> Reveals clustering patterns invisible in 2D analysis<br><br>
+        
+        <strong style="color: #000000;">Interactive Heatmaps:</strong><br>
+        • <strong>Why:</strong> Complex correlation matrices require intuitive visual interpretation<br>
+        • <strong>Technique:</strong> Color-coded correlation strength with hover functionality<br>
+        • <strong>Justification:</strong> Enables rapid identification of significant clinical relationships<br><br>
+        
+        <strong style="color: #000000;">Real-time Filtering:</strong><br>
+        • <strong>Why:</strong> Clinical populations are heterogeneous requiring subset analysis<br>
+        • <strong>Technique:</strong> Dynamic dashboard updates based on demographic/clinical filters<br>
+        • <strong>Justification:</strong> Supports precision medicine approach to patient care
+        </div>
+        
+        ### 🏥 **6. Clinical Integration & Validation**
+        <div style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+        <strong style="color: #000000;">Evidence-Based Thresholds:</strong><br>
+        • <strong>MMSE < 18:</strong> Aligned with established cognitive impairment criteria<br>
+        • <strong>Age Stratification:</strong> Based on epidemiological risk progression data<br>
+        • <strong>BMI Categories:</strong> Following WHO classifications for health risk assessment<br><br>
+        
+        <strong style="color: #000000;">Clinical Workflow Integration:</strong><br>
+        • <strong>Risk Prioritization:</strong> Color-coded alerts for immediate attention cases<br>
+        • <strong>Population Health Management:</strong> Aggregate metrics for resource planning<br>
+        • <strong>Decision Support:</strong> Interpretable scoring with clinical context
+        </div>
+        
+        ### 🔄 **7. Quality Assurance & Validation**
+        <div style="margin-left: 1.5rem;">
+        <strong style="color: #000000;">Data Integrity Checks:</strong><br>
+        • Automated validation of clinical value ranges<br>
+        • Cross-reference consistency across related variables<br>
+        • Real-time error detection and reporting<br><br>
+        
+        <strong style="color: #000000;">Statistical Validation:</strong><br>
+        • Confidence interval calculation for risk estimates<br>
+        • Sensitivity analysis for threshold adjustments<br>
+        • Population representation validation across demographic groups
+        </div>
+        
+        </div>
+        """, unsafe_allow_html=True)
 
     st.markdown("---")
     
