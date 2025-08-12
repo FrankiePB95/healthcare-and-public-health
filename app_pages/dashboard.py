@@ -240,9 +240,9 @@ def dashboard_body():
     # Custom CSS for dark royal blue theme with darker information containers
     st.markdown("""
     <style>
-    /* Dark royal blue gradient background */
+    /* Dark royal blue gradient background - deeper version */
     .stApp {
-        background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #3f51b5 100%);
+        background: linear-gradient(135deg, #0d1441 0%, #1a237e 50%, #283593 100%);
         background-attachment: fixed;
         color: #000000;
     }
