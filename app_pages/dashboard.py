@@ -496,7 +496,7 @@ def risk_assessment_dashboard():
         # Pie chart for risk distribution
         fig_pie = px.pie(values=risk_distribution.values, names=risk_distribution.index,
                         color_discrete_map={"High Risk": "#e74c3c", "Medium Risk": "#f39c12", "Low Risk": "#2ecc71"},
-                        title="Patient Risk Distribution (Filtered)")
+                        title="Patient Risk Distribution")
         fig_pie.update_layout(
             title=dict(font=dict(size=16, color="#000000", family="Arial Black")),
             font=dict(size=12, color="#000000", family="Arial", weight="bold"),
@@ -510,7 +510,7 @@ def risk_assessment_dashboard():
         fig_bar = px.bar(x=risk_distribution.index, y=risk_distribution.values,
                         color=risk_distribution.index,
                         color_discrete_map={"High Risk": "#e74c3c", "Medium Risk": "#f39c12", "Low Risk": "#2ecc71"},
-                        title="Risk Category Counts (Filtered)")
+                        title="Risk Category Counts")
         fig_bar.update_layout(
             showlegend=False,
             title=dict(font=dict(size=16, color="#000000", family="Arial Black")),
