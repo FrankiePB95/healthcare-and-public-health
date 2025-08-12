@@ -40,6 +40,10 @@ datasets/
 *.xlsx
 *.json
 
+# Exception: Allow processed data files needed for the application
+!outputs/processed_alzheimers_disease_data_unscaled_and_unencoded.csv
+!outputs/processed_alzheimers_disease_data_scaled_and_encoded.csv
+
 # Model files
 models/
 *.pkl

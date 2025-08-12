@@ -1,0 +1,538 @@
+Patient_ID,Patient_Age,Gender,Ethnicity,BMI,Diet_Quality,Physical_Activity,Smoking,Alcohol_Consumption,Cardiovascular_Disease,Cholesterol_Total,Functional_Assessment,Activities_Of_Daily_Living,MMSE,Memory_Complaints,Behavioral_Problems,Personality_Changes,Difficulty_Completing_Tasks,Depression,Diagnosis
+5364,61,Female,African American,29.27,2.976618872327678,7,No,14.78,Yes,172.68,8,0.78,4.88,Yes,No,No,No,No,Dementia
+5769,81,Female,Caucasian,34.64,5.280583737322621,2,No,7.38,No,264.95,7,3.39,9.99,No,No,No,No,No,No Dementia
+5015,81,Male,African American,22.92,3.807813179139379,8,No,9.31,No,283.13,4,8.68,1.11,No,Yes,No,No,No,Dementia
+6509,62,Male,Caucasian,23.59,3.360431588390945,0,No,1.24,Yes,202.64,5,3.98,18.39,No,No,No,No,No,No Dementia
+6192,80,Female,Other,23.72,1.6250982585740548,5,Yes,12.34,No,264.4,7,2.74,24.1,No,No,No,No,Yes,No Dementia
+5842,81,Female,Caucasian,36.87,2.698384968531381,1,Yes,0.76,Yes,274.94,4,0.61,20.61,No,No,No,No,No,Dementia
+5200,70,Male,Caucasian,37.86,6.104171942036324,2,No,5.36,No,154.77,6,6.88,5.17,No,No,No,No,Yes,No Dementia
+5388,60,Male,African American,22.71,2.657988852338504,1,No,2.37,No,151.72,5,8.62,18.14,No,No,No,No,No,No Dementia
+4847,64,Male,Caucasian,27.16,6.073423271250684,2,Yes,14.35,No,251.03,7,9.18,9.2,Yes,No,No,No,No,No Dementia
+5614,82,Female,Other,35.26,2.5649498204643373,4,No,7.43,No,186.94,6,4.82,24.46,No,Yes,No,No,No,No Dementia
+5860,71,Female,Caucasian,31.44,7.438314957916088,4,Yes,18.06,No,269.38,7,2.12,2.43,Yes,No,No,Yes,No,Dementia
+6696,89,Male,Caucasian,25.12,5.721410204509958,5,No,0.01,No,293.21,7,4.39,22.29,No,No,No,No,No,No Dementia
+5545,82,Female,Caucasian,38.27,4.363783392312813,0,Yes,1.1,No,151.37,4,9.91,19.94,No,No,No,No,No,No Dementia
+4885,66,Male,Caucasian,37.74,4.316523127086739,1,No,6.24,No,188.79,9,7.77,21.59,Yes,Yes,No,No,No,Dementia
+5657,66,Male,African American,25.83,6.032894447297656,7,No,11.14,No,193.77,4,7.5,19.83,Yes,No,No,No,No,Dementia
+5080,62,Male,Caucasian,39.92,9.675490311297466,6,No,17.41,No,299.51,2,1.7,6.73,No,No,Yes,No,No,Dementia
+5253,81,Female,Caucasian,24.39,2.62944141026068,6,No,18.39,No,220.84,4,1.2,16.03,No,No,Yes,No,No,Dementia
+5116,73,Male,Other,18.25,7.927682082559857,5,No,11.14,Yes,150.21,0,0.7,20.38,No,No,No,No,No,Dementia
+6841,90,Female,African American,18.38,4.180192059294888,3,No,7.19,No,187.63,9,3.27,22.07,No,No,No,No,No,No Dementia
+6387,72,Male,Caucasian,22.38,0.2500122036535745,4,Yes,16.22,No,249.12,2,4.62,7.11,No,No,No,No,No,Dementia
+6329,65,Female,Caucasian,15.01,3.839334207246534,1,No,2.42,No,250.45,5,6.85,12.63,Yes,No,No,No,Yes,No Dementia
+6548,74,Female,Caucasian,16.8,3.673000514094713,4,Yes,4.6,No,193.77,5,7.65,10.29,No,No,No,No,No,No Dementia
+6368,63,Female,Asian,19.41,6.2374549526025005,1,No,3.17,Yes,207.02,9,6.48,26.41,No,No,No,Yes,No,No Dementia
+4896,80,Female,Caucasian,26.87,8.474539820843008,2,No,13.16,No,275.14,9,4.04,8.84,No,No,Yes,No,No,No Dementia
+5430,68,Female,Asian,22.75,9.812643386033978,7,No,13.24,No,251.28,1,3.37,16.3,No,No,No,No,No,Dementia
+6751,90,Male,Asian,22.16,2.303003467039609,8,No,11.49,No,156.97,7,3.31,6.05,No,No,No,No,No,Dementia
+4963,72,Male,Other,26.3,4.3652621356425385,6,No,16.08,No,229.47,0,5.74,24.2,No,No,No,No,No,No Dementia
+6690,64,Male,Caucasian,20.24,7.215891540381363,4,No,14.33,No,192.49,7,0.31,19.78,No,No,No,No,Yes,No Dementia
+5174,81,Male,Caucasian,33.3,4.7578066692841645,6,No,6.29,Yes,246.11,2,4.8,26.31,No,No,No,No,No,No Dementia
+5513,68,Female,Caucasian,22.3,1.3484878716253512,4,Yes,17.28,Yes,285.62,4,1.23,24.36,No,No,No,No,No,No Dementia
+5571,75,Male,Caucasian,25.39,1.7744176249688348,9,No,8.45,Yes,226.35,4,4.92,11.97,No,No,No,No,Yes,Dementia
+6523,79,Male,Caucasian,35.24,7.710060477135135,8,No,12.21,No,285.49,4,0.11,3.79,No,No,No,No,No,Dementia
+6694,74,Male,Caucasian,17.85,8.369580207467276,7,No,7.34,Yes,184.84,4,8.36,23.09,Yes,No,No,No,No,Dementia
+6522,70,Female,Caucasian,21.05,9.099631604041964,2,No,2.57,No,212.59,4,1.87,0.7,Yes,No,No,No,No,Dementia
+6615,69,Male,African American,31.36,3.889658772618503,3,Yes,10.43,Yes,228.6,2,8.02,17.62,No,No,Yes,No,No,No Dementia
+4942,75,Female,Other,18.76,0.1445431616305958,1,Yes,8.52,No,151.7,0,6.13,11.97,No,Yes,Yes,No,No,Dementia
+5470,84,Female,Caucasian,35.66,3.530223438758009,8,No,16.01,No,155.9,4,9.1,13.36,No,No,No,No,No,No Dementia
+6261,89,Male,Other,26.53,1.2818466450911523,1,No,5.92,No,298.6,0,0.98,13.87,No,No,No,No,No,Dementia
+5937,66,Male,African American,29.42,7.466741930784017,7,Yes,14.21,No,270.21,0,7.89,25.88,No,No,No,Yes,Yes,No Dementia
+5328,67,Female,Caucasian,29.15,9.884981215864178,9,No,0.17,No,187.06,9,6.04,17.8,No,No,No,No,No,No Dementia
+6812,68,Female,Caucasian,25.36,0.3806851124751376,5,No,0.84,No,241.49,9,6.0,5.51,No,No,No,Yes,No,Dementia
+4819,83,Female,Caucasian,27.59,2.8252298264607845,3,No,0.85,No,211.28,2,4.54,3.42,No,No,Yes,No,Yes,Dementia
+4925,79,Male,African American,20.78,1.807103172331028,7,No,9.98,No,220.94,1,5.76,7.26,No,No,No,No,No,No Dementia
+5205,90,Female,Caucasian,16.45,7.593641333041424,1,No,10.81,No,294.61,7,5.05,8.56,No,Yes,No,No,No,No Dementia
+5703,81,Female,Asian,36.72,0.4884690937846647,2,No,13.95,No,185.63,8,7.04,12.35,No,Yes,Yes,No,No,No Dementia
+4903,79,Female,African American,34.49,4.973181103293549,8,No,2.36,No,238.28,1,8.83,0.4,No,Yes,No,No,Yes,Dementia
+6832,68,Male,African American,15.48,2.563104061702146,5,No,13.75,No,177.33,9,6.13,1.11,No,No,No,No,Yes,No Dementia
+6000,62,Female,Caucasian,22.08,5.867852612513094,2,Yes,14.27,No,243.63,0,0.46,8.6,No,No,No,No,No,Dementia
+5135,75,Male,Asian,22.81,8.306085799718693,6,No,7.69,No,286.7,7,8.68,24.09,No,Yes,No,No,No,No Dementia
+5123,67,Male,Caucasian,27.36,0.7105416428981459,2,No,14.55,No,247.51,6,4.17,14.68,No,No,No,No,No,No Dementia
+6741,69,Female,Caucasian,24.98,4.655746961641717,1,No,18.65,Yes,299.89,4,3.83,22.21,No,No,No,No,No,Dementia
+4924,66,Female,Caucasian,28.73,9.962781706857225,2,No,2.84,No,186.98,8,0.15,25.89,No,No,No,No,No,No Dementia
+5862,63,Female,African American,35.35,9.905636670621558,7,No,16.3,No,188.12,0,3.84,1.85,No,No,No,No,No,No Dementia
+5056,89,Female,Caucasian,21.89,0.5184279609746023,7,No,4.65,No,196.79,5,3.32,28.67,No,No,No,No,No,No Dementia
+5567,85,Male,Other,23.13,0.6981202307732237,7,No,11.72,No,190.32,6,5.51,3.69,Yes,Yes,No,No,No,Dementia
+6623,74,Female,Caucasian,36.93,5.528129786964869,2,Yes,4.41,Yes,214.14,2,0.05,29.63,No,Yes,No,No,Yes,No Dementia
+6499,82,Male,Other,23.23,1.1312716919133936,7,Yes,9.19,Yes,186.36,8,8.99,6.49,No,No,No,No,No,No Dementia
+6320,62,Male,African American,18.41,1.270313154702314,6,No,9.9,No,154.18,8,4.69,0.77,No,No,No,No,No,No Dementia
+6713,68,Male,Caucasian,18.23,3.702900950241242,5,Yes,4.81,No,217.6,6,9.06,12.29,No,No,No,No,No,No Dementia
+4953,85,Male,Caucasian,35.73,0.2735842752810935,7,Yes,19.81,No,221.52,3,0.81,20.48,No,No,Yes,Yes,Yes,Dementia
+5836,88,Female,Caucasian,33.49,4.210247816603379,3,No,15.08,No,152.43,9,1.55,7.04,Yes,No,No,No,No,Dementia
+6404,63,Female,African American,20.97,3.378328214139068,6,Yes,19.58,No,209.78,3,7.24,20.38,No,No,No,No,No,No Dementia
+4881,76,Male,Other,22.44,5.787581574977284,9,No,7.64,No,167.82,1,4.01,6.33,No,Yes,No,No,No,Dementia
+5612,65,Female,Caucasian,29.19,6.364301948769383,8,Yes,0.53,Yes,292.34,7,5.19,6.63,Yes,No,No,No,No,No Dementia
+6268,64,Female,Asian,27.38,8.873661314548226,4,No,18.09,Yes,263.58,5,4.84,3.33,No,Yes,No,No,No,Dementia
+6734,69,Male,Other,32.17,3.7160720690133062,7,No,7.33,No,282.18,6,1.06,4.37,No,No,No,No,No,No Dementia
+5126,68,Male,Caucasian,15.38,9.75758081977711,7,No,15.45,No,198.86,0,8.7,9.77,No,Yes,No,No,No,Dementia
+5243,64,Female,Asian,23.4,2.5262863343136663,3,Yes,0.48,No,183.04,2,3.19,11.01,No,No,No,Yes,No,Dementia
+6512,89,Female,Caucasian,34.05,8.403006946553978,9,No,8.49,No,252.17,1,0.52,28.52,No,No,No,No,No,No Dementia
+4855,61,Male,Caucasian,35.6,9.091479762329254,0,No,0.52,Yes,232.59,3,9.16,23.03,No,No,No,No,No,No Dementia
+5770,69,Male,African American,29.68,0.0569930487704228,3,Yes,1.8,No,296.16,0,7.55,5.73,No,No,No,No,No,No Dementia
+5301,76,Female,Caucasian,26.34,6.875791404946584,4,No,14.87,No,203.14,4,9.68,13.82,No,No,No,No,No,No Dementia
+6716,84,Male,Caucasian,23.56,8.166205033412973,1,No,7.09,No,195.05,1,6.54,29.06,No,No,Yes,Yes,No,No Dementia
+5950,77,Male,Other,26.45,8.920332120232517,9,No,4.97,No,237.82,6,0.13,22.51,No,No,No,No,Yes,No Dementia
+6300,65,Female,Caucasian,35.14,1.1123789258236785,6,Yes,17.11,No,227.27,6,7.52,23.79,No,No,No,No,Yes,No Dementia
+4841,74,Male,Other,26.43,9.672833773212687,5,No,16.68,No,158.87,5,4.7,18.97,No,No,No,Yes,No,No Dementia
+5429,60,Female,Caucasian,24.62,9.10514800094438,5,Yes,1.39,No,257.99,4,0.43,24.56,Yes,No,No,Yes,No,No Dementia
+5554,81,Female,Caucasian,39.89,6.972279709237682,8,Yes,10.6,No,151.25,2,7.56,10.55,No,No,No,No,No,No Dementia
+6488,87,Female,Caucasian,23.82,1.8548170018312204,9,No,4.31,No,172.18,0,5.51,2.2,No,No,No,No,No,No Dementia
+5597,74,Female,Caucasian,34.81,1.341573763523829,1,No,18.07,Yes,285.12,0,3.6,2.79,Yes,No,No,No,No,Dementia
+6116,80,Female,Caucasian,24.16,3.7230245486506366,5,No,16.23,No,274.99,1,1.91,5.28,No,Yes,No,No,Yes,Dementia
+6674,77,Male,Caucasian,37.51,7.024848714523886,5,No,9.37,No,215.89,6,1.5,24.93,Yes,Yes,No,No,No,No Dementia
+6337,77,Female,Caucasian,30.46,8.64427402007382,1,No,12.38,No,217.05,0,4.45,19.37,No,No,No,No,No,Dementia
+6782,78,Male,Caucasian,33.86,2.6233976957784986,0,No,5.89,No,285.6,9,3.97,9.99,Yes,No,Yes,No,No,No Dementia
+5455,90,Male,Asian,21.99,5.063303887170041,6,No,10.76,No,215.32,6,2.71,27.82,No,No,Yes,Yes,No,No Dementia
+5844,67,Male,Caucasian,28.17,5.882361866138987,8,No,12.7,No,174.42,0,7.09,27.78,No,No,No,Yes,No,No Dementia
+5050,72,Male,Caucasian,18.0,0.2614117110299296,3,Yes,12.04,No,268.19,8,8.76,11.73,No,No,No,No,No,No Dementia
+6589,76,Male,Caucasian,29.37,7.522160391990212,7,No,5.73,No,231.3,9,9.53,23.83,Yes,No,No,Yes,Yes,No Dementia
+6807,63,Male,Asian,32.73,8.744618768000404,8,No,16.97,No,191.63,7,9.28,0.72,No,No,Yes,No,No,Dementia
+5875,79,Female,Caucasian,34.78,7.495914410468687,1,No,18.8,No,156.71,4,4.26,13.83,No,No,No,No,No,Dementia
+5256,73,Male,Asian,20.26,7.576393774431064,7,No,1.14,No,177.96,7,0.21,17.97,Yes,No,No,Yes,Yes,Dementia
+4848,67,Female,Caucasian,22.98,7.687968843557444,5,No,11.07,No,201.35,9,7.62,11.76,No,No,No,No,No,No Dementia
+6478,63,Male,Other,38.99,1.633983375497874,9,Yes,5.31,No,176.27,7,7.57,11.15,No,No,No,No,No,No Dementia
+4981,66,Female,Caucasian,39.74,8.131555129831515,6,No,1.98,No,272.93,0,2.86,25.26,Yes,No,No,Yes,No,No Dementia
+6608,85,Male,Caucasian,31.87,2.990987159026679,0,No,19.11,No,211.64,2,0.1,8.71,No,No,No,No,No,Dementia
+6176,76,Female,Asian,19.96,0.3492443912177856,9,Yes,11.62,No,156.05,1,0.8,28.08,No,No,No,No,No,No Dementia
+5226,67,Male,Caucasian,29.02,0.9842884258924078,9,Yes,1.23,No,277.88,1,1.56,12.66,No,Yes,No,No,No,Dementia
+4999,66,Female,African American,35.24,8.72404017012753,8,No,17.59,No,248.98,5,6.04,12.63,No,No,No,Yes,No,No Dementia
+6695,85,Female,Caucasian,18.64,3.3129599685738564,0,No,12.15,No,182.29,6,2.73,11.31,No,No,No,No,No,No Dementia
+5890,90,Female,Caucasian,26.15,6.754069582378257,7,Yes,8.36,Yes,185.37,5,5.09,19.49,No,Yes,No,No,No,No Dementia
+6451,88,Male,Other,31.78,3.121503470499684,6,Yes,5.25,No,234.5,1,5.97,11.23,No,No,No,No,No,No Dementia
+5534,62,Male,Caucasian,24.04,1.6846319599080406,3,Yes,12.03,Yes,174.64,9,1.99,25.8,No,Yes,No,No,No,No Dementia
+6219,74,Male,African American,34.05,1.671345085046292,5,No,4.07,No,260.01,7,3.4,8.85,No,No,No,Yes,No,No Dementia
+5850,64,Female,Caucasian,22.53,3.189174442960284,0,No,4.37,Yes,293.22,6,7.4,16.04,No,Yes,No,No,No,No Dementia
+6872,61,Male,Caucasian,25.53,4.219055639081586,2,No,4.23,No,157.72,8,2.7,1.38,No,No,No,No,No,Dementia
+6067,74,Male,Caucasian,17.46,8.504389553118962,3,No,15.41,No,283.01,3,0.73,17.53,No,No,Yes,No,No,Dementia
+4845,64,Male,Caucasian,18.08,4.641570411701713,8,No,2.57,No,238.06,7,4.12,14.39,No,No,No,No,No,No Dementia
+6515,69,Female,Caucasian,28.34,7.955759937569516,3,No,13.88,No,268.68,5,2.43,22.02,No,No,No,No,No,No Dementia
+5582,60,Male,Caucasian,38.18,9.19347282902526,0,No,16.92,No,241.42,8,9.56,29.03,No,No,No,No,Yes,No Dementia
+6724,80,Male,Caucasian,34.82,6.389472893552684,8,No,7.53,No,162.01,2,3.2,0.8,No,No,No,No,No,Dementia
+6660,71,Female,Caucasian,18.8,7.159439530934692,0,No,19.95,No,267.77,6,7.87,27.2,Yes,Yes,Yes,Yes,No,No Dementia
+5865,87,Male,Caucasian,23.47,4.694408821047303,4,No,19.95,No,177.5,3,1.76,19.79,Yes,No,Yes,No,No,Dementia
+6598,87,Female,Caucasian,34.82,3.3831543734278604,2,No,6.52,Yes,273.35,8,3.47,0.16,Yes,No,Yes,No,No,Dementia
+5901,82,Male,Caucasian,37.17,5.833759473354276,9,No,16.94,No,257.73,0,6.6,21.82,No,Yes,No,No,Yes,Dementia
+5708,68,Female,Caucasian,34.14,2.260279473723456,4,No,4.11,Yes,284.4,4,8.39,1.93,Yes,No,No,No,No,Dementia
+6628,77,Male,African American,28.19,7.733321645514295,9,Yes,2.3,No,277.65,0,6.87,27.02,No,No,No,No,No,No Dementia
+4861,76,Female,Caucasian,34.62,2.3010466903936564,6,Yes,6.86,Yes,225.52,1,7.58,2.43,No,No,No,Yes,No,No Dementia
+6731,65,Male,Asian,17.91,7.354630918637106,9,No,8.2,No,223.55,4,3.8,17.54,No,Yes,No,No,No,Dementia
+5215,66,Male,Caucasian,35.65,1.8731114111191491,0,No,7.89,No,228.27,7,7.58,18.07,No,No,Yes,No,Yes,No Dementia
+5275,62,Male,Other,34.15,0.3503916182118671,1,No,19.79,No,251.58,3,4.59,25.0,No,No,No,No,No,No Dementia
+5235,62,Male,Caucasian,17.46,0.8528066409097912,1,No,3.55,No,167.56,5,8.29,22.36,Yes,No,No,Yes,No,No Dementia
+6576,64,Female,Caucasian,34.88,3.615911276726246,1,No,3.14,No,222.51,5,7.06,24.43,No,Yes,Yes,No,No,No Dementia
+6730,83,Female,Caucasian,29.66,3.338144447395095,2,No,18.7,No,174.97,9,5.81,16.71,No,No,Yes,No,No,No Dementia
+6455,80,Male,African American,24.52,3.69635484582976,4,No,14.37,No,279.83,5,9.61,27.93,No,No,Yes,No,No,No Dementia
+4914,69,Male,Caucasian,25.06,3.896881920012236,1,Yes,19.79,No,167.4,6,3.64,16.05,No,No,No,No,Yes,No Dementia
+6327,80,Male,Caucasian,16.5,3.741310091674896,2,No,11.11,No,204.75,8,5.94,2.86,No,No,No,No,No,No Dementia
+6790,62,Female,Caucasian,16.95,7.521115309299922,2,No,5.14,No,215.41,6,6.4,29.96,No,No,No,No,No,Dementia
+6534,65,Male,Caucasian,38.74,1.8444493772792336,3,No,12.55,No,189.84,8,5.49,15.84,No,No,No,No,No,No Dementia
+6555,77,Female,Caucasian,35.58,7.155175172051496,6,Yes,18.94,No,212.68,0,6.97,14.43,No,No,No,No,No,No Dementia
+5347,61,Male,Caucasian,39.39,3.9574397288296206,0,No,0.89,No,180.19,2,4.39,8.17,No,No,No,No,No,Dementia
+6556,68,Female,Caucasian,26.63,4.658708596037232,8,No,1.76,Yes,172.5,7,3.67,5.13,No,Yes,No,Yes,Yes,Dementia
+5093,60,Male,Caucasian,30.98,9.674142221080416,0,No,15.03,No,285.68,3,5.35,10.97,No,No,Yes,Yes,No,No Dementia
+6765,87,Female,Caucasian,36.98,6.0247364608326,8,No,16.78,No,291.84,9,5.47,12.23,No,No,No,No,No,No Dementia
+5530,77,Female,Caucasian,30.03,7.858171753712519,0,No,4.77,No,298.31,5,4.07,14.03,Yes,No,Yes,No,No,Dementia
+5110,61,Male,Caucasian,37.75,1.792783335548448,3,Yes,12.31,Yes,216.64,0,9.52,18.03,Yes,No,No,No,No,Dementia
+5801,70,Female,Caucasian,30.17,8.332597096471453,1,No,19.36,No,183.83,5,8.55,25.16,No,No,Yes,No,No,No Dementia
+6003,72,Male,Caucasian,16.33,6.714227830121189,7,No,7.78,No,286.88,8,7.15,28.46,No,No,No,No,No,No Dementia
+4968,64,Male,African American,38.56,0.7506638177643665,3,No,12.15,No,226.49,0,3.99,12.1,No,No,No,No,No,Dementia
+6562,71,Female,Caucasian,39.6,3.099419971769696,6,Yes,16.77,Yes,175.28,4,0.47,3.63,No,No,No,No,No,Dementia
+5706,72,Male,Other,31.35,6.246485616697946,8,No,10.32,No,294.74,6,7.95,13.8,No,No,No,No,No,No Dementia
+5512,86,Male,Caucasian,21.9,1.6721895498251715,2,Yes,0.86,No,198.58,7,4.59,25.66,No,No,No,No,No,No Dementia
+5566,78,Female,Caucasian,38.98,4.414653568692581,2,No,0.86,No,178.06,1,7.48,13.79,No,No,Yes,Yes,Yes,No Dementia
+5627,81,Female,Asian,17.05,8.419147488771376,8,No,16.23,No,172.47,8,7.15,3.0,No,No,No,No,Yes,No Dementia
+5069,81,Female,African American,32.08,5.796696475405158,8,Yes,17.95,No,156.61,2,9.2,14.39,Yes,No,No,Yes,No,Dementia
+4866,63,Female,Caucasian,22.92,2.277149975635938,9,Yes,15.22,No,180.46,4,0.35,2.78,No,No,Yes,No,No,Dementia
+5294,72,Male,African American,35.5,6.750428946099579,1,No,10.63,No,202.23,6,7.44,24.17,No,Yes,Yes,No,No,No Dementia
+6339,76,Female,African American,37.24,3.793936227248426,5,No,17.64,No,253.39,9,8.28,25.02,Yes,No,No,No,No,No Dementia
+6169,62,Female,Caucasian,22.44,4.160334950400602,7,No,14.2,No,214.44,9,7.24,20.83,No,No,Yes,No,Yes,No Dementia
+4820,72,Male,African American,23.87,0.6396683648582724,3,No,6.15,No,183.91,2,9.48,8.28,No,No,No,No,No,No Dementia
+5246,85,Male,Caucasian,33.97,0.338431041269136,4,No,10.74,No,158.22,1,7.92,12.22,No,Yes,No,No,No,Dementia
+4939,67,Female,African American,29.3,3.5009607362127424,9,No,13.6,No,214.99,4,7.55,22.86,No,No,No,No,No,No Dementia
+6709,61,Male,Caucasian,35.16,1.5369152516643891,6,No,3.74,No,256.1,7,4.88,14.41,No,No,No,No,No,No Dementia
+4771,82,Female,Caucasian,36.22,7.971127068871205,6,No,4.19,Yes,271.84,6,1.69,8.98,No,Yes,No,No,No,Dementia
+5580,65,Male,African American,27.64,5.194009464648836,3,No,8.5,No,294.86,0,1.2,8.02,No,No,No,No,No,Dementia
+5641,88,Male,Asian,39.89,9.422153514266263,2,Yes,2.31,No,259.06,4,4.48,28.78,No,No,Yes,Yes,Yes,No Dementia
+6754,73,Male,Caucasian,19.81,0.3608704829751252,8,No,8.94,No,283.27,1,5.02,2.32,No,Yes,No,No,No,Dementia
+5866,68,Male,Caucasian,36.15,8.72459139437311,8,No,11.04,No,281.8,2,5.94,3.46,No,No,No,No,No,No Dementia
+6650,61,Female,Caucasian,30.99,5.289290698416634,2,Yes,5.14,No,245.65,3,4.55,1.02,Yes,No,No,No,No,Dementia
+6675,83,Female,Caucasian,34.11,9.822395196978084,4,Yes,5.79,No,160.01,4,5.61,22.01,No,No,No,No,No,No Dementia
+5376,64,Female,African American,24.95,8.941904359404912,4,No,19.92,No,275.93,4,6.79,21.54,Yes,No,No,No,No,No Dementia
+6806,85,Male,Asian,15.69,1.9203671887293936,8,No,18.67,No,183.97,3,5.68,10.82,No,Yes,No,No,No,Dementia
+5083,65,Male,Caucasian,24.88,8.107859895109984,6,No,1.17,No,297.73,4,3.45,20.21,Yes,No,No,No,No,Dementia
+5365,64,Female,Other,39.35,6.168083231262632,3,Yes,5.7,No,214.93,3,7.65,28.35,No,No,No,No,No,No Dementia
+6869,70,Male,Caucasian,37.08,6.788793046873554,3,Yes,12.8,No,275.34,3,6.63,4.52,No,No,No,No,No,No Dementia
+6842,64,Male,Caucasian,29.09,2.30424151508972,8,No,19.78,No,150.19,7,4.56,19.46,No,Yes,No,No,Yes,No Dementia
+5420,83,Male,Caucasian,20.32,7.684550458338196,3,No,3.59,Yes,232.25,8,5.67,23.22,No,No,No,No,No,No Dementia
+4787,85,Male,Caucasian,36.22,2.40458512208533,3,No,2.65,No,227.3,0,8.74,14.11,Yes,No,No,No,No,Dementia
+6647,61,Male,Caucasian,22.12,8.95725916333984,5,No,6.7,No,260.63,9,9.25,22.46,No,No,No,Yes,No,No Dementia
+5308,72,Male,Caucasian,37.63,7.24696164812923,2,No,13.85,No,276.31,9,3.65,14.53,No,Yes,No,No,No,Dementia
+5776,77,Female,African American,27.39,8.994876654180965,8,Yes,16.92,No,219.79,8,0.9,17.98,No,No,No,No,No,No Dementia
+6215,77,Female,Caucasian,32.76,4.466551986031759,9,Yes,0.75,No,298.37,1,0.63,2.81,No,No,No,No,No,Dementia
+6668,87,Male,Caucasian,16.03,5.418057970681204,6,Yes,8.66,Yes,291.86,4,6.04,13.97,Yes,No,No,No,Yes,Dementia
+6487,60,Male,Caucasian,32.34,7.558624703888169,2,No,15.5,No,162.07,0,0.02,7.97,Yes,No,No,No,No,Dementia
+6153,67,Female,Caucasian,27.79,9.518117802798972,5,No,19.03,No,175.64,0,8.23,22.78,No,No,No,No,No,No Dementia
+6102,79,Female,Caucasian,22.83,1.7513714599661712,3,No,8.14,No,209.22,3,6.3,25.52,No,Yes,No,No,Yes,No Dementia
+4954,65,Male,Caucasian,28.47,5.60034498468526,4,Yes,19.42,No,272.07,9,8.23,8.77,No,Yes,No,No,Yes,No Dementia
+5486,60,Male,African American,27.56,4.581085019360993,8,No,0.04,No,284.83,9,8.02,23.8,No,No,No,No,Yes,No Dementia
+6323,74,Male,Caucasian,33.78,2.368112364703343,4,No,3.25,No,235.27,8,1.3,26.34,No,No,No,No,No,No Dementia
+5529,88,Female,Other,17.52,2.905000832496276,7,No,0.69,No,255.5,0,7.75,3.29,No,No,Yes,No,No,No Dementia
+6656,89,Female,Caucasian,28.17,6.584235178471412,0,Yes,11.49,No,168.68,7,1.82,0.33,No,No,No,Yes,No,No Dementia
+5884,81,Male,Caucasian,21.09,5.995928485089217,9,Yes,16.56,No,268.57,9,9.18,0.85,No,No,No,No,No,No Dementia
+5606,70,Female,African American,28.11,0.2846484981603669,1,Yes,8.69,No,156.23,0,0.25,6.32,No,No,No,No,No,Dementia
+5634,84,Male,Caucasian,39.59,3.55522006037135,8,Yes,18.64,Yes,291.35,0,2.29,13.75,No,No,Yes,No,Yes,Dementia
+5908,90,Female,Caucasian,22.13,9.691334453219731,4,Yes,10.07,No,226.51,3,1.28,23.08,No,Yes,No,No,No,Dementia
+4927,60,Male,Caucasian,32.89,5.986073182115908,4,No,0.61,No,294.38,7,8.91,7.26,No,No,No,No,No,No Dementia
+4778,71,Male,Caucasian,18.43,2.0325055299205284,9,No,15.92,No,189.98,6,6.17,28.72,Yes,No,No,No,No,No Dementia
+6809,71,Female,Other,27.94,8.637388550907252,3,No,4.92,No,260.35,3,0.93,0.82,No,No,Yes,Yes,Yes,Dementia
+6508,65,Male,African American,28.76,6.114930451468547,1,No,2.48,No,200.67,5,3.19,3.0,No,No,Yes,No,No,No Dementia
+4786,70,Male,Caucasian,22.78,6.633075040283733,3,Yes,17.82,No,166.68,7,9.95,19.6,No,Yes,Yes,No,No,No Dementia
+4779,83,Male,Caucasian,30.95,1.2892518488393956,0,No,4.69,No,186.56,8,2.11,28.66,Yes,No,No,No,No,No Dementia
+5327,84,Male,African American,33.74,3.9734494208704008,0,Yes,6.07,No,180.73,0,4.13,3.3,No,No,No,No,No,Dementia
+5112,71,Female,Other,33.53,8.818901743857353,3,No,14.05,No,163.04,8,4.71,11.97,No,No,No,No,Yes,No Dementia
+5888,73,Male,African American,20.05,0.5349552184255035,8,No,5.75,No,205.15,4,2.69,12.6,Yes,Yes,No,No,No,Dementia
+6610,77,Female,Caucasian,16.79,4.289167098077932,6,Yes,5.25,No,216.41,7,0.66,1.56,No,Yes,No,No,No,Dementia
+6395,86,Male,Caucasian,24.16,2.814760829756059,8,Yes,18.73,Yes,256.52,4,0.24,23.73,Yes,No,No,No,No,Dementia
+6575,61,Female,Caucasian,19.39,2.012372475084012,9,No,9.78,No,275.14,0,9.75,23.87,No,No,No,No,No,No Dementia
+5033,65,Female,African American,25.04,4.473406482876787,9,No,13.18,No,277.64,3,0.23,24.07,No,No,No,No,No,No Dementia
+4788,60,Female,Caucasian,31.57,8.8568335672575,4,No,3.48,Yes,195.47,6,7.61,16.64,No,Yes,No,No,No,No Dementia
+6888,86,Male,Other,24.23,5.53085682671396,2,No,10.89,No,239.02,4,9.87,0.75,No,No,No,No,No,No Dementia
+5360,76,Male,Caucasian,18.53,6.938616694934447,1,No,9.62,Yes,202.95,5,3.22,1.93,No,No,No,Yes,No,No Dementia
+4836,71,Female,Caucasian,22.62,1.4422160136430984,4,No,5.44,Yes,203.41,4,5.6,25.38,No,No,No,No,No,No Dementia
+5506,82,Male,African American,23.46,8.843953840542303,8,Yes,1.57,No,224.78,3,2.37,7.18,No,No,No,Yes,No,Dementia
+6089,89,Male,Asian,15.77,2.674462181643125,0,No,1.43,No,238.99,0,7.01,29.56,No,Yes,No,No,Yes,No Dementia
+6258,82,Female,Caucasian,32.91,7.517458764562361,7,No,7.86,No,287.31,8,0.2,23.02,No,Yes,No,No,Yes,Dementia
+5550,63,Male,Asian,24.11,6.1796955669227565,8,No,4.89,Yes,235.09,7,6.43,5.4,No,No,No,No,Yes,No Dementia
+6206,83,Female,Caucasian,23.67,8.103709120370352,9,No,10.04,No,234.51,5,1.03,20.92,No,No,No,No,No,No Dementia
+6856,83,Male,Other,31.1,7.603504099804315,4,No,7.54,No,178.78,7,1.02,25.39,Yes,No,No,No,No,No Dementia
+6517,89,Female,Caucasian,29.64,9.980281202676776,8,Yes,11.3,Yes,288.64,3,0.05,28.22,No,No,No,Yes,No,No Dementia
+6493,80,Male,Asian,31.51,3.640378962439885,0,Yes,16.03,Yes,279.03,2,2.78,22.38,No,No,No,No,No,Dementia
+4904,84,Female,Caucasian,15.75,5.470976235440991,5,No,18.45,No,190.57,4,0.37,22.7,No,No,No,No,No,Dementia
+5595,87,Female,Caucasian,24.57,7.15780093197679,2,Yes,5.75,Yes,273.79,8,8.84,5.63,No,No,No,No,No,No Dementia
+5793,62,Female,Other,16.52,8.165480171056867,9,No,10.35,No,208.06,0,1.02,5.9,No,No,No,No,Yes,Dementia
+5313,90,Male,Caucasian,21.64,8.16902122530919,6,No,1.45,No,272.43,3,4.65,20.8,No,No,No,No,No,Dementia
+5524,73,Male,Other,29.02,5.63566339897343,4,No,11.32,Yes,174.85,6,5.71,13.25,No,No,No,No,No,No Dementia
+5867,62,Male,Caucasian,23.2,8.230137851608754,4,Yes,18.6,No,267.36,9,6.5,17.91,No,No,Yes,No,Yes,No Dementia
+5021,81,Male,Caucasian,18.36,6.860767675924661,0,No,13.42,No,171.05,5,9.78,21.12,No,No,No,No,Yes,No Dementia
+5742,81,Female,African American,18.53,4.418764734762184,2,No,17.0,No,274.18,1,4.53,9.48,Yes,Yes,No,No,Yes,Dementia
+5934,76,Male,Asian,20.28,2.4658673239862097,4,No,8.65,No,154.31,9,9.68,26.86,No,No,No,No,Yes,No Dementia
+5827,75,Male,Caucasian,19.84,0.0254123435181885,2,No,12.84,No,216.4,9,8.79,19.29,Yes,No,No,No,No,No Dementia
+5509,77,Male,African American,19.05,2.792135759046621,2,Yes,6.09,No,279.48,4,8.07,18.5,No,No,No,No,Yes,No Dementia
+4818,63,Female,Asian,22.05,5.426497156416725,8,No,13.22,No,209.38,2,7.37,3.34,Yes,No,No,No,No,Dementia
+4946,87,Female,African American,39.69,7.000779323052615,8,Yes,8.25,No,202.35,4,6.18,26.19,No,Yes,No,No,No,No Dementia
+5591,60,Female,Caucasian,38.4,1.270711787002008,1,No,18.52,No,223.26,8,3.92,7.88,No,No,No,No,No,No Dementia
+4950,75,Female,Other,20.62,1.4844827015353823,9,Yes,5.96,No,221.68,1,9.12,9.53,No,No,No,No,No,No Dementia
+6863,66,Female,African American,31.21,6.148757099068266,4,No,13.71,No,269.32,9,5.77,9.53,No,No,Yes,No,No,No Dementia
+5493,84,Female,Other,32.7,2.6384199122330765,0,Yes,1.85,No,292.62,1,4.97,8.68,No,No,No,No,No,Dementia
+6769,79,Male,Other,17.67,9.737814679511608,5,No,17.77,No,254.43,8,5.93,25.66,No,No,No,No,No,No Dementia
+5957,65,Male,Caucasian,17.32,7.415785201103987,5,No,3.26,No,256.3,0,0.16,6.72,No,No,No,Yes,No,Dementia
+5949,66,Female,Caucasian,36.16,2.180358435964942,6,No,9.9,No,152.72,8,4.11,23.28,No,No,No,No,Yes,No Dementia
+6073,69,Male,African American,37.17,3.314528084804885,4,No,5.5,No,273.17,9,8.66,10.65,No,No,No,No,No,No Dementia
+4893,82,Male,African American,35.03,8.571591763187335,7,No,19.68,Yes,247.22,4,7.33,23.71,No,No,No,No,No,No Dementia
+6640,72,Male,African American,26.12,9.431955528779293,0,No,11.32,No,152.54,8,4.81,29.99,Yes,No,No,No,No,No Dementia
+6098,69,Female,African American,29.1,1.0292827546054997,9,Yes,10.15,No,273.43,3,8.32,11.13,No,No,Yes,Yes,No,No Dementia
+6202,78,Male,Other,30.54,7.933096204211944,9,No,11.64,Yes,213.88,4,7.88,4.45,No,No,No,Yes,No,No Dementia
+5178,71,Female,Caucasian,37.46,5.812415359259758,2,No,16.15,No,162.41,8,8.33,3.39,No,No,No,No,Yes,No Dementia
+5940,89,Female,Caucasian,39.22,8.680778904353096,0,No,7.1,No,235.03,6,1.11,25.58,Yes,No,Yes,No,No,No Dementia
+6390,78,Female,Caucasian,34.64,0.4809043098916854,6,Yes,17.46,No,150.75,1,2.18,1.98,Yes,No,No,Yes,No,Dementia
+6431,70,Male,Caucasian,38.43,9.270589129154247,1,No,1.52,No,183.24,4,6.72,23.0,No,No,No,No,No,No Dementia
+6099,62,Female,African American,16.75,2.721910968104896,0,No,11.56,No,263.38,4,6.12,25.88,No,No,No,No,No,No Dementia
+6621,87,Male,Caucasian,23.62,2.014930154292376,3,No,10.36,No,207.14,9,0.7,18.86,No,No,No,No,Yes,No Dementia
+4996,61,Male,African American,39.67,3.084166405028479,4,No,7.63,No,183.24,4,1.48,18.49,Yes,No,No,No,No,Dementia
+5480,76,Female,Caucasian,24.86,3.271251540247764,0,No,2.24,No,160.7,1,5.79,25.52,Yes,No,No,No,No,No Dementia
+5518,62,Female,Caucasian,20.45,0.16879763839587,7,No,1.57,No,266.68,6,6.72,12.78,Yes,Yes,No,Yes,No,Dementia
+5765,78,Female,African American,36.28,3.7541548431838025,0,No,4.34,No,210.21,2,8.8,9.15,No,No,No,No,Yes,No Dementia
+6672,88,Male,African American,24.86,5.1604312548505575,7,No,11.35,No,239.46,6,0.83,4.27,No,No,Yes,Yes,No,No Dementia
+5985,84,Male,Caucasian,38.53,0.7920286144620503,0,Yes,13.31,No,241.92,3,8.14,21.65,Yes,Yes,No,Yes,No,Dementia
+5570,89,Male,Caucasian,18.89,6.475960707545728,9,No,3.85,Yes,251.53,5,0.5,5.04,Yes,Yes,Yes,No,No,Dementia
+4761,89,Male,Other,39.46,0.4340202778290269,8,No,9.81,No,224.53,8,2.02,19.7,No,No,No,No,No,No Dementia
+5436,63,Male,Caucasian,30.57,1.6156689031862148,9,No,14.24,No,174.02,1,2.82,7.74,No,No,No,No,No,Dementia
+5525,76,Male,Caucasian,35.88,0.3803108516681774,7,Yes,16.29,No,235.01,3,8.08,11.77,No,No,No,No,No,No Dementia
+6297,76,Female,Caucasian,23.72,2.238354882485996,3,Yes,10.72,No,222.14,8,7.03,23.77,No,No,No,Yes,No,No Dementia
+5835,89,Male,Caucasian,18.15,3.4388173775796416,2,Yes,6.79,No,217.9,1,9.57,21.22,Yes,No,No,Yes,No,Dementia
+5773,90,Male,Asian,22.19,1.01905786202246,6,No,14.64,No,226.87,9,4.96,8.73,No,No,No,No,No,No Dementia
+6506,87,Female,Asian,22.72,1.289357124876146,8,No,14.91,No,287.81,5,8.74,23.95,No,No,No,No,No,No Dementia
+6108,81,Female,African American,26.88,1.400242812990774,8,No,14.52,No,254.71,5,6.56,21.31,No,No,Yes,No,Yes,No Dementia
+6371,87,Female,Caucasian,27.01,5.141242539610639,5,No,3.43,No,228.92,1,1.03,26.5,No,No,No,No,Yes,No Dementia
+5754,70,Male,Caucasian,35.4,5.266309450205241,8,Yes,14.54,No,170.56,0,4.38,5.38,No,No,No,No,No,Dementia
+5952,77,Male,Caucasian,18.1,3.082786607407958,4,Yes,1.81,No,254.76,3,6.02,22.49,Yes,No,No,No,Yes,Dementia
+5751,74,Female,African American,31.53,4.883257980629031,6,Yes,14.55,No,224.86,3,3.14,16.98,No,No,No,No,No,Dementia
+6014,60,Male,Caucasian,21.8,6.446648586279906,0,Yes,5.69,No,279.68,5,1.64,14.65,Yes,No,No,No,No,Dementia
+5121,70,Male,African American,19.16,0.989180688647121,1,No,11.51,No,299.33,6,7.72,1.3,No,No,No,No,No,No Dementia
+5115,72,Female,Caucasian,19.39,4.037829830055766,9,No,6.41,No,235.36,3,3.91,2.16,No,No,No,No,No,Dementia
+5489,65,Male,Other,20.46,6.161499264469763,6,No,17.9,No,272.27,7,4.68,2.61,No,No,No,No,No,No Dementia
+5096,85,Male,Asian,29.79,2.46270375021946,6,No,14.78,No,214.76,6,5.28,9.98,No,No,No,No,No,No Dementia
+6424,69,Male,Caucasian,26.09,6.519625955231718,1,No,12.95,No,267.56,8,6.89,23.36,No,No,No,Yes,No,No Dementia
+5188,90,Female,Asian,19.21,5.025735847153139,2,Yes,8.7,Yes,172.11,2,1.21,20.07,No,No,No,No,No,Dementia
+5132,75,Female,Other,38.67,7.973274736874043,7,Yes,6.67,No,198.08,0,6.2,6.18,No,No,Yes,No,No,No Dementia
+5038,83,Male,Caucasian,31.33,1.480997591409231,7,No,13.9,No,209.45,4,7.2,2.42,Yes,No,No,No,No,Dementia
+5221,75,Female,African American,25.69,6.199063300139788,9,No,3.08,No,246.52,7,5.97,22.92,No,No,No,Yes,No,No Dementia
+5472,67,Female,Caucasian,20.36,7.456166043716879,9,Yes,10.67,No,242.74,6,7.64,5.03,Yes,No,No,Yes,No,No Dementia
+6662,76,Female,Caucasian,26.53,7.854433029397453,0,No,4.33,No,256.61,4,7.21,10.52,No,Yes,No,No,No,Dementia
+6501,67,Female,Caucasian,23.17,2.8921334639866725,4,No,15.51,No,224.39,1,3.81,3.9,No,Yes,No,Yes,Yes,Dementia
+6438,62,Male,Caucasian,37.81,8.032561130925313,4,No,4.06,No,255.71,7,2.43,1.53,No,No,No,No,No,No Dementia
+5712,90,Male,Caucasian,16.35,7.810721390490102,5,No,10.35,No,215.34,3,0.19,14.68,No,Yes,No,No,No,Dementia
+5833,82,Female,Caucasian,33.63,4.265449399397569,1,No,15.88,No,168.03,3,7.85,17.04,Yes,Yes,Yes,No,No,Dementia
+5913,63,Male,Asian,17.76,6.69198011841338,0,No,2.52,Yes,231.55,8,7.56,21.72,Yes,No,No,No,No,No Dementia
+5839,60,Female,Asian,33.04,3.846433101635356,4,Yes,3.11,Yes,214.57,5,1.75,27.93,No,No,No,No,No,No Dementia
+6889,71,Male,Caucasian,36.8,6.786050018724379,6,No,16.14,No,186.43,6,2.0,27.96,No,No,No,Yes,No,Dementia
+5448,68,Male,African American,36.96,8.089298676343683,6,Yes,9.74,No,238.03,8,9.86,28.81,No,No,No,No,No,No Dementia
+5926,81,Female,Caucasian,35.78,7.691021735561546,0,No,6.38,Yes,183.24,1,4.78,17.48,No,No,No,No,No,Dementia
+6048,88,Female,Caucasian,39.36,2.263282660731168,4,No,4.68,No,269.95,4,1.68,3.36,No,No,No,No,No,Dementia
+6302,65,Male,African American,29.05,0.6898830391510191,4,No,5.05,No,150.44,1,9.76,20.7,No,No,No,No,No,No Dementia
+6539,76,Male,African American,22.95,2.8028229705972887,6,No,0.99,No,250.68,2,3.49,14.94,No,Yes,No,No,No,Dementia
+5735,87,Female,Caucasian,15.41,5.902405410734182,1,No,7.55,No,244.19,9,8.52,10.42,No,No,Yes,Yes,No,No Dementia
+6683,70,Male,Other,30.44,6.684098135665803,2,Yes,14.74,No,200.07,8,3.25,21.22,No,No,No,No,No,No Dementia
+6725,79,Female,Caucasian,39.07,8.252511679020479,2,No,19.4,Yes,246.61,2,6.32,29.84,No,No,No,No,No,No Dementia
+5523,81,Male,Caucasian,31.46,7.421303390156342,9,No,11.9,No,212.62,9,4.13,28.9,No,No,No,No,No,No Dementia
+6722,68,Male,Other,19.23,8.616224301293563,2,No,12.09,No,154.36,6,7.06,13.03,No,No,No,No,No,No Dementia
+6535,90,Male,Asian,34.58,7.690754601513243,7,No,12.47,No,199.05,2,1.22,9.54,No,No,No,Yes,No,Dementia
+6444,62,Male,Asian,24.13,6.418246099643908,9,No,18.36,Yes,205.27,2,0.43,9.26,No,Yes,No,No,Yes,Dementia
+5130,70,Male,African American,35.92,6.156986205900887,6,No,0.76,No,191.1,2,9.73,27.25,No,No,No,No,No,No Dementia
+6374,88,Female,Caucasian,35.35,4.085773101685232,8,Yes,0.77,No,274.52,3,6.84,6.89,No,Yes,No,No,No,Dementia
+6412,77,Male,Caucasian,15.23,7.06666874414792,9,No,13.14,No,171.8,0,7.12,22.1,No,No,No,No,No,No Dementia
+5620,78,Male,Other,32.55,9.24710233295449,6,Yes,15.97,No,180.81,1,8.0,18.57,Yes,No,No,No,No,Dementia
+6446,78,Female,Caucasian,20.71,8.115240998293856,2,Yes,2.04,No,253.65,1,7.47,21.52,No,No,No,No,No,No Dementia
+5782,87,Male,African American,16.72,1.570701289551132,5,Yes,13.48,No,175.95,3,0.23,13.87,No,No,No,No,No,Dementia
+5251,73,Female,Caucasian,19.05,9.356916656132908,6,Yes,2.19,No,283.03,7,5.44,10.97,No,No,No,No,No,No Dementia
+5607,62,Male,African American,34.8,7.933459191866666,0,Yes,12.63,No,271.43,3,4.93,18.5,No,No,No,No,Yes,Dementia
+4871,70,Male,Caucasian,39.64,5.19867613761583,0,No,3.68,No,281.03,5,8.13,15.21,No,Yes,Yes,No,No,No Dementia
+6420,62,Male,Caucasian,23.36,1.7288161374239608,2,No,19.16,No,278.91,5,4.06,19.53,No,Yes,No,No,Yes,Dementia
+5090,88,Female,Other,36.84,7.598883477039213,3,No,6.84,No,204.78,9,1.09,2.91,No,Yes,No,No,Yes,Dementia
+6873,71,Male,Caucasian,29.21,4.76663412383978,0,No,6.31,No,212.58,5,4.48,13.84,No,No,No,No,No,No Dementia
+5812,88,Male,Caucasian,38.9,8.978579998231332,9,Yes,2.26,No,238.56,5,6.99,7.93,Yes,No,No,Yes,No,No Dementia
+6463,65,Male,Caucasian,15.41,9.876762763930117,2,No,1.51,Yes,231.59,8,2.58,2.24,No,No,Yes,No,No,No Dementia
+5983,81,Female,African American,21.05,5.21422078059471,3,No,6.03,No,174.33,5,5.19,20.57,No,No,Yes,No,Yes,No Dementia
+5168,61,Female,Caucasian,27.33,6.216966940217207,2,No,13.05,No,226.95,3,1.54,12.07,No,No,No,No,No,Dementia
+6260,64,Male,Caucasian,34.93,6.79493635600053,0,No,8.66,No,277.84,1,6.37,14.2,No,No,No,No,Yes,No Dementia
+5214,74,Female,African American,36.32,5.929389278888106,8,No,10.14,No,244.19,1,8.15,21.54,No,No,No,No,No,No Dementia
+5315,72,Male,Asian,32.28,4.374623405566159,7,No,2.7,Yes,167.17,5,4.55,2.17,No,No,Yes,No,No,No Dementia
+6571,82,Male,African American,35.44,8.513504019925822,1,Yes,17.89,No,198.23,2,9.75,11.51,No,No,No,No,No,No Dementia
+5527,69,Female,Caucasian,24.03,7.481825475170861,2,No,15.21,No,237.87,2,7.81,18.49,No,No,No,No,No,No Dementia
+5687,77,Male,Caucasian,19.41,2.309486777354759,4,Yes,12.42,No,223.03,6,5.2,26.48,No,No,No,No,No,No Dementia
+6150,72,Female,Caucasian,18.25,0.6964013072433362,2,Yes,6.92,No,244.63,7,7.76,24.87,No,No,No,No,Yes,No Dementia
+6342,81,Male,African American,38.19,4.019143652721331,1,Yes,13.44,No,157.32,8,5.08,29.15,No,No,No,Yes,Yes,No Dementia
+5830,81,Female,Caucasian,25.85,9.809090646146414,5,No,3.81,No,152.37,5,9.57,14.84,No,No,No,No,No,No Dementia
+6699,76,Female,Caucasian,31.39,8.934141960120641,9,No,13.95,No,254.01,5,9.54,7.27,No,No,No,No,Yes,No Dementia
+5882,67,Female,Caucasian,15.5,5.736075780167644,0,Yes,14.01,No,228.34,5,8.46,13.44,Yes,No,No,No,No,No Dementia
+5692,86,Male,Caucasian,33.93,9.812899217396671,7,No,13.8,No,286.69,4,4.67,9.64,No,No,Yes,Yes,No,Dementia
+6823,68,Male,Caucasian,34.24,4.616106865560836,0,Yes,3.45,Yes,261.48,7,0.04,20.17,No,No,No,No,No,No Dementia
+6421,90,Female,African American,30.68,8.072207588290375,8,No,1.88,No,201.26,0,1.51,19.09,No,No,Yes,No,Yes,Dementia
+5222,68,Male,Caucasian,20.59,7.916364522396313,8,Yes,14.61,No,265.88,8,8.12,11.0,No,No,No,No,No,No Dementia
+6212,87,Female,Caucasian,27.82,4.414864906896185,6,No,18.01,No,191.35,7,6.5,12.06,No,No,No,No,No,No Dementia
+6551,72,Female,Caucasian,36.09,5.456477101771807,5,No,19.31,No,158.65,2,7.73,11.48,No,No,No,No,No,No Dementia
+4762,78,Male,Caucasian,22.46,8.279189503998566,3,Yes,19.3,No,254.59,5,5.47,21.21,No,No,No,Yes,No,No Dementia
+6827,60,Female,Caucasian,34.21,3.3393071124734464,8,Yes,11.26,Yes,285.0,1,5.32,3.66,No,Yes,No,No,Yes,Dementia
+6218,69,Female,Other,30.69,5.858321051882864,9,Yes,15.32,Yes,271.27,0,9.5,3.6,No,No,No,No,Yes,No Dementia
+6529,64,Female,African American,20.97,2.726860576945,0,Yes,0.44,No,284.11,4,0.88,13.14,Yes,No,No,No,Yes,Dementia
+6242,67,Male,Caucasian,21.61,4.029593835593625,6,No,2.5,No,165.66,6,0.14,10.38,No,Yes,No,No,No,Dementia
+6895,61,Male,Caucasian,39.12,6.555306177849998,4,No,1.56,No,280.48,0,4.49,1.2,No,No,No,No,No,Dementia
+6304,67,Male,African American,26.39,0.9996417350980537,2,No,16.02,No,176.48,0,4.46,27.46,No,No,No,Yes,No,No Dementia
+6691,89,Male,Caucasian,15.65,6.903792327092097,9,No,5.67,No,203.52,1,0.45,6.44,No,No,No,No,No,Dementia
+5917,89,Male,Caucasian,19.7,4.981097767356496,7,No,9.9,No,188.17,8,7.29,24.17,No,No,No,No,No,No Dementia
+6877,75,Female,African American,35.83,4.278959556290383,2,No,13.04,No,212.01,3,2.18,10.64,No,Yes,No,No,No,Dementia
+4984,85,Female,Caucasian,29.93,2.0270891153965485,8,Yes,3.9,No,150.46,1,5.02,26.76,No,No,No,No,No,No Dementia
+5203,60,Female,Other,24.33,9.476242180033744,9,No,13.81,Yes,172.44,0,9.43,20.05,No,Yes,No,No,No,Dementia
+5066,80,Female,Caucasian,29.09,9.723905901113955,2,No,10.33,No,229.07,0,4.86,3.12,Yes,Yes,No,No,No,Dementia
+5481,90,Female,Caucasian,15.39,7.696666183940265,6,No,4.14,No,195.05,6,7.6,1.03,Yes,No,No,No,No,No Dementia
+5501,70,Male,African American,38.79,1.1802848562067925,4,No,8.33,No,242.81,5,6.23,20.1,No,Yes,Yes,No,No,No Dementia
+6664,64,Male,Caucasian,24.28,5.476109034128606,6,No,19.53,No,260.61,7,5.92,4.41,No,No,No,No,No,No Dementia
+5675,77,Female,Asian,25.98,9.73007666246428,9,Yes,12.84,No,214.6,7,1.63,2.78,Yes,No,No,Yes,Yes,Dementia
+5819,62,Male,African American,29.71,6.978589224544018,4,Yes,15.64,No,204.69,2,6.7,4.43,Yes,No,No,No,No,No Dementia
+6801,62,Male,Caucasian,24.25,8.265085067662651,8,Yes,8.15,No,197.16,1,7.54,10.21,No,No,No,No,No,Dementia
+5959,61,Female,Caucasian,28.06,4.058210792685899,2,No,12.69,No,270.94,5,0.44,24.47,No,No,No,No,No,No Dementia
+5631,67,Male,African American,29.73,7.871526460892586,4,Yes,15.64,No,152.97,6,9.11,26.25,Yes,No,No,No,No,No Dementia
+6819,73,Female,African American,23.03,1.354325712142529,8,No,4.59,No,156.25,8,2.39,9.96,No,No,No,No,No,No Dementia
+6498,83,Female,Caucasian,38.01,0.0289737362890929,6,Yes,8.98,No,256.49,6,3.39,27.62,No,No,No,No,No,No Dementia
+5446,90,Female,Asian,32.97,6.636221498302236,0,No,17.66,No,235.45,7,2.56,4.76,Yes,No,No,No,No,Dementia
+5971,61,Male,African American,15.45,7.121458377759645,4,No,10.34,No,237.25,7,1.35,18.25,No,No,No,No,No,No Dementia
+4937,90,Male,Caucasian,39.66,7.169251841499995,5,Yes,6.96,No,245.06,7,6.53,7.91,No,No,No,No,No,No Dementia
+5717,72,Male,Asian,32.28,3.819780733223314,2,No,5.05,No,274.24,4,6.35,8.71,No,No,No,No,No,No Dementia
+5915,90,Male,Caucasian,23.23,8.449564457516503,8,Yes,14.37,No,218.6,0,3.8,3.53,Yes,No,No,No,No,Dementia
+6528,77,Female,Caucasian,28.08,9.227941673364278,2,No,8.22,No,197.72,6,7.86,3.15,Yes,No,No,Yes,No,No Dementia
+5179,71,Male,Other,31.02,0.2457241652356379,9,No,6.74,Yes,177.94,4,1.23,28.68,Yes,No,No,Yes,No,No Dementia
+4752,89,Male,Caucasian,26.83,0.5187671386507053,7,No,4.54,No,231.16,7,2.59,20.61,No,No,No,No,No,No Dementia
+5006,82,Male,Other,35.35,8.718569896073072,8,No,15.39,No,257.47,2,1.83,14.59,Yes,No,No,No,No,Dementia
+4859,83,Female,Caucasian,29.89,1.7813292806462189,6,No,19.46,No,288.56,3,0.21,12.77,No,No,No,No,Yes,Dementia
+5055,69,Female,Caucasian,26.81,6.922993131404262,6,Yes,11.33,No,253.24,8,5.05,3.87,Yes,No,No,No,No,No Dementia
+6885,62,Female,Caucasian,23.92,0.5309174344849632,3,Yes,10.33,No,219.94,9,1.16,1.29,Yes,No,No,Yes,No,No Dementia
+5638,84,Female,Caucasian,34.22,2.8048903458082783,2,No,18.35,No,201.41,9,8.81,11.21,Yes,No,Yes,Yes,No,No Dementia
+5483,89,Male,Caucasian,24.89,9.202607511840895,7,No,16.39,No,160.35,2,5.53,13.76,No,No,No,No,Yes,No Dementia
+5177,72,Female,Caucasian,23.31,8.75080329406061,3,No,2.35,No,269.88,4,9.43,15.43,No,Yes,No,No,No,Dementia
+5068,82,Male,African American,37.05,3.900656473333941,7,No,14.59,No,299.06,2,4.05,2.04,No,No,No,No,Yes,Dementia
+6019,88,Female,Other,27.92,5.853472741632229,6,No,6.48,No,244.58,2,9.56,6.41,No,No,No,No,No,No Dementia
+4782,67,Male,Other,37.21,6.433890340028459,7,No,12.22,No,270.17,9,6.01,0.69,Yes,No,No,Yes,No,No Dementia
+5363,76,Female,Caucasian,19.1,4.60854571856814,7,Yes,19.03,No,295.48,1,4.03,8.0,No,Yes,Yes,No,Yes,Dementia
+5900,76,Male,Caucasian,28.23,3.2533978845079634,5,No,9.09,Yes,239.27,8,6.72,1.14,No,No,Yes,Yes,No,No Dementia
+6624,76,Male,Asian,25.02,6.4295021561902015,8,No,13.4,No,255.04,1,5.12,19.47,Yes,No,No,No,No,Dementia
+5633,82,Female,Caucasian,38.79,1.5282071392323304,9,Yes,3.84,No,265.89,2,7.86,23.91,No,No,No,No,No,No Dementia
+6429,90,Male,Caucasian,21.29,4.910991460495572,6,No,6.28,No,268.55,9,6.02,8.01,Yes,No,No,No,Yes,No Dementia
+6604,79,Male,Asian,37.98,4.348422626748123,6,No,18.22,No,251.2,7,1.76,12.09,Yes,No,Yes,No,Yes,Dementia
+5912,79,Female,Caucasian,21.76,5.793956691154203,4,No,11.36,No,215.48,6,3.77,9.86,No,No,No,No,No,No Dementia
+6749,63,Female,Other,32.33,0.9161588014316424,9,No,18.13,No,199.7,6,1.09,25.72,No,No,No,No,Yes,No Dementia
+6392,67,Female,Caucasian,37.45,9.43514688404955,4,Yes,14.86,No,253.53,1,1.19,11.06,No,No,Yes,Yes,No,Dementia
+5340,72,Male,Asian,18.52,5.25348079377485,7,No,17.68,No,202.38,0,9.46,1.6,No,No,No,No,No,No Dementia
+5667,65,Male,Caucasian,29.03,9.871203035671478,8,No,7.24,No,162.7,9,1.29,26.42,No,No,No,No,No,No Dementia
+6717,85,Female,Asian,25.71,6.152909728565534,8,No,18.35,No,183.57,9,9.12,18.69,Yes,No,No,Yes,Yes,No Dementia
+5095,72,Male,African American,26.88,3.7580314417515375,6,No,4.4,No,279.4,0,1.88,28.38,No,No,No,No,No,No Dementia
+5490,88,Female,Caucasian,23.94,7.937101153967956,9,No,16.87,No,289.61,4,2.23,22.01,No,No,No,No,No,Dementia
+5411,80,Female,Caucasian,18.33,1.026630181065521,0,Yes,13.17,No,220.44,7,7.09,9.4,No,No,No,No,No,No Dementia
+4846,90,Female,Caucasian,32.72,7.504739741699511,3,No,16.57,No,178.11,1,4.68,26.09,No,No,Yes,No,No,No Dementia
+5372,84,Male,Caucasian,23.47,3.3840274201599883,7,No,15.92,No,232.09,3,6.83,9.12,No,No,No,No,Yes,No Dementia
+6614,66,Female,Caucasian,25.38,5.267741684593069,1,No,19.45,No,151.14,3,8.83,20.17,No,No,Yes,Yes,No,No Dementia
+5333,72,Male,Caucasian,28.25,3.424856248334155,7,No,17.2,No,236.63,5,4.03,5.1,Yes,Yes,No,No,No,Dementia
+5731,75,Male,African American,21.35,0.0143323378742976,9,Yes,5.93,No,173.81,7,1.95,25.87,No,No,No,Yes,No,No Dementia
+5316,77,Female,African American,28.74,0.079588510495272,3,Yes,8.18,No,188.07,6,2.6,7.94,No,No,No,No,No,No Dementia
+6826,68,Male,Caucasian,17.91,6.074755971736755,6,No,18.49,No,249.8,7,9.45,3.79,No,No,No,No,No,No Dementia
+5579,71,Female,Caucasian,39.68,2.107593698690557,8,Yes,11.34,No,225.2,5,3.91,9.17,No,No,No,No,No,No Dementia
+5632,67,Female,Caucasian,16.75,1.0396233863961468,6,No,3.62,No,272.73,8,0.45,16.47,No,No,No,No,Yes,No Dementia
+5693,85,Female,Asian,25.39,0.3527327879810404,4,Yes,18.84,No,188.59,7,3.4,27.87,No,Yes,No,No,No,No Dementia
+4962,73,Male,Caucasian,33.01,6.053318453324019,3,Yes,14.05,No,200.98,9,6.79,0.02,No,No,No,No,No,No Dementia
+6283,62,Male,Caucasian,26.56,7.698786098949468,7,No,9.37,No,226.84,8,7.91,2.13,No,No,No,No,No,No Dementia
+4852,79,Female,African American,18.56,3.5035105567365843,0,No,19.27,No,154.33,3,5.07,25.99,No,Yes,No,No,No,No Dementia
+4811,82,Female,Other,39.34,0.4711509840914751,6,No,13.35,No,183.76,7,4.07,11.86,No,No,No,No,No,No Dementia
+5977,83,Female,Caucasian,27.72,9.95487934191606,1,No,1.84,No,224.39,3,0.18,13.32,Yes,Yes,No,No,No,Dementia
+5120,87,Male,Caucasian,31.75,0.3843707045934319,3,Yes,8.33,No,236.92,0,2.19,21.46,No,No,No,No,Yes,Dementia
+6473,83,Male,Asian,18.91,2.0795847882790905,7,Yes,8.8,Yes,151.71,3,6.64,27.23,No,No,No,No,No,No Dementia
+5756,84,Female,African American,19.15,8.622826587509884,6,No,1.3,No,271.82,4,8.44,5.09,No,No,No,No,No,No Dementia
+5099,83,Male,Caucasian,36.57,4.480990400711703,3,No,6.6,No,276.23,1,3.42,21.67,No,No,Yes,No,No,Dementia
+6468,60,Male,Caucasian,23.95,0.157156754015757,3,No,15.87,No,191.64,9,4.57,3.8,No,No,No,No,No,No Dementia
+6120,86,Female,African American,32.54,4.320510505579247,3,No,13.53,No,200.75,5,6.54,19.93,No,No,No,Yes,No,No Dementia
+6792,62,Female,Caucasian,36.5,7.601505004444661,4,No,19.33,No,235.71,5,7.84,23.22,Yes,No,No,No,No,No Dementia
+6079,81,Male,African American,39.47,2.9916893641687947,4,Yes,19.93,No,280.82,8,5.53,6.98,No,Yes,No,No,No,No Dementia
+6681,84,Male,Caucasian,16.61,0.2936993066733673,4,Yes,18.2,No,159.85,7,8.01,6.25,Yes,Yes,No,No,No,Dementia
+6786,62,Female,Other,22.76,9.899023653934728,9,Yes,8.0,No,211.95,3,6.09,21.1,Yes,No,Yes,No,No,Dementia
+5696,88,Female,African American,17.62,9.95183644249738,3,No,14.26,No,184.54,7,8.5,6.11,No,No,No,No,Yes,No Dementia
+4780,79,Male,Caucasian,18.81,5.367774441778151,5,No,8.04,Yes,151.45,2,9.93,20.37,No,No,No,No,No,No Dementia
+6732,61,Male,Caucasian,20.67,4.114269571312201,0,Yes,8.4,No,221.1,4,4.35,0.78,No,No,No,No,No,Dementia
+4894,72,Male,Caucasian,21.81,4.513798916201567,3,No,3.7,Yes,231.55,6,0.67,8.66,Yes,No,No,No,No,Dementia
+5058,82,Female,Caucasian,23.61,6.561918941255712,0,No,4.26,No,268.26,9,8.84,10.77,Yes,No,No,No,No,No Dementia
+5124,61,Female,Caucasian,26.35,8.477359551461149,2,No,4.5,No,189.0,9,0.1,14.78,Yes,No,No,No,No,Dementia
+4838,75,Male,Caucasian,31.82,6.320741827715956,5,No,13.3,No,156.7,9,2.38,0.91,No,No,No,Yes,Yes,No Dementia
+6428,68,Male,Caucasian,37.22,4.111681966236558,7,No,19.96,No,221.74,4,8.12,6.59,Yes,No,No,No,No,Dementia
+5647,64,Female,Caucasian,35.69,7.8086021426320755,3,Yes,16.67,No,277.0,6,0.12,20.58,No,No,Yes,No,No,No Dementia
+6634,75,Female,Other,15.37,0.6737895293310692,5,No,16.82,Yes,208.48,9,3.01,24.03,No,No,No,No,No,No Dementia
+4971,70,Male,African American,21.78,9.240717694086175,4,No,11.7,No,164.36,2,8.5,15.02,No,No,No,No,No,No Dementia
+5792,79,Male,Asian,16.45,2.941492478823311,5,Yes,15.65,No,255.11,8,5.62,12.59,No,Yes,No,No,No,No Dementia
+6437,60,Female,Asian,38.64,1.1876598440549635,3,Yes,3.94,No,175.17,6,0.13,11.7,No,Yes,Yes,No,No,Dementia
+5261,90,Male,African American,33.0,5.529074860136526,6,Yes,16.68,No,203.35,8,6.06,6.37,No,Yes,No,No,No,No Dementia
+6897,77,Male,Caucasian,15.48,8.120024549170605,9,No,4.59,No,237.02,1,5.04,17.01,No,No,No,No,No,Dementia
+4964,86,Female,Asian,26.89,9.665525640919125,1,Yes,2.11,No,295.99,3,3.24,21.01,No,No,No,No,No,Dementia
+5100,81,Male,Caucasian,29.26,2.619197845458946,9,No,5.8,No,187.38,3,0.35,5.42,No,No,Yes,Yes,No,Dementia
+5806,85,Male,African American,30.52,5.733514998410217,0,No,11.64,No,262.03,5,5.81,1.01,No,No,No,No,No,No Dementia
+5572,69,Male,Asian,21.45,8.94705523958584,2,No,7.25,No,257.83,9,2.61,21.56,No,No,No,Yes,No,No Dementia
+5290,84,Male,Caucasian,15.79,4.376103776529499,5,No,7.82,No,220.42,6,9.02,11.18,No,No,No,Yes,No,No Dementia
+5593,63,Female,African American,33.83,1.8055863207762424,8,No,13.72,No,268.23,3,3.2,5.83,No,No,No,No,No,No Dementia
+5086,68,Female,Asian,37.38,0.2306342808612216,0,No,10.85,No,221.85,6,7.48,5.67,No,Yes,No,No,No,No Dementia
+4775,64,Female,Caucasian,15.46,6.217547835258514,7,Yes,9.78,No,239.26,2,0.37,12.99,Yes,Yes,No,No,No,Dementia
+5028,60,Male,Caucasian,23.02,8.826863724408241,9,No,10.44,No,264.92,0,7.33,2.7,No,No,Yes,No,Yes,No Dementia
+6582,74,Female,African American,16.68,2.704589889880955,0,No,1.93,Yes,155.35,5,0.24,21.29,No,Yes,No,Yes,No,Dementia
+5118,68,Male,Other,27.51,7.866581274923201,9,Yes,14.41,No,173.75,7,6.6,26.06,No,No,No,No,No,No Dementia
+5482,64,Female,Caucasian,39.57,7.245799620697197,2,Yes,7.43,No,246.94,1,4.88,2.5,Yes,No,No,No,No,Dementia
+5459,65,Female,African American,26.31,4.02741950350614,8,No,8.06,No,197.73,7,9.12,3.77,No,No,Yes,No,No,No Dementia
+4874,75,Male,Other,21.57,6.335718318377928,2,No,6.68,No,289.12,2,7.96,13.91,Yes,No,No,No,No,Dementia
+5454,76,Female,Caucasian,17.81,4.604706888232291,5,No,8.44,No,202.86,9,0.8,19.88,Yes,No,No,No,No,Dementia
+4986,90,Male,African American,17.36,9.240281193680518,9,Yes,3.54,No,277.97,0,9.56,1.49,Yes,Yes,No,No,No,Dementia
+4815,83,Female,Caucasian,29.86,6.080361921242039,3,No,5.35,No,251.1,2,9.53,6.09,Yes,No,No,No,No,Dementia
+6460,76,Male,Caucasian,28.99,0.228407749196654,6,Yes,10.49,No,192.05,7,0.34,19.1,No,No,No,No,No,No Dementia
+6470,66,Female,Caucasian,16.67,6.968652563319406,8,No,1.87,Yes,188.52,4,1.06,1.5,No,No,No,No,No,Dementia
+5906,78,Male,Other,26.88,0.6768388530824554,4,No,8.98,No,209.22,0,5.04,19.56,No,Yes,No,No,No,Dementia
+6350,82,Female,African American,37.13,5.322372085796782,4,No,7.76,No,179.37,8,1.81,16.05,No,No,No,Yes,No,No Dementia
+4755,89,Male,Caucasian,20.72,0.7954975089177474,6,No,18.45,No,237.6,6,0.01,13.52,No,No,Yes,Yes,No,No Dementia
+6247,63,Male,Caucasian,30.6,5.08899523193867,6,Yes,0.41,No,281.84,6,3.27,20.94,Yes,No,No,No,No,Dementia
+6008,71,Female,African American,27.24,4.35387415390967,1,No,0.24,Yes,243.49,4,9.94,22.3,No,No,No,No,No,No Dementia
+5354,70,Female,African American,26.53,7.102001130937285,3,No,4.4,No,269.9,5,7.77,21.29,No,No,No,No,No,No Dementia
+5440,62,Male,Caucasian,38.42,6.040048346488272,5,No,2.51,No,295.23,0,8.95,1.51,No,Yes,No,No,No,Dementia
+6083,85,Male,African American,32.47,0.7260082027837,7,No,10.0,No,274.5,9,0.58,26.23,No,No,No,No,No,No Dementia
+6100,76,Male,Caucasian,31.37,9.767748265806746,5,No,8.25,No,234.35,7,3.43,26.16,Yes,Yes,No,No,No,No Dementia
+5458,80,Male,Caucasian,21.3,9.382042906788795,1,No,2.36,No,211.95,0,3.78,28.02,Yes,No,Yes,No,No,No Dementia
+5318,60,Male,Asian,29.14,1.0825798944993226,1,No,14.8,No,168.5,1,3.66,27.64,Yes,No,No,No,Yes,No Dementia
+6580,80,Female,Asian,35.56,0.6806915391294244,7,No,7.12,No,246.97,6,8.89,4.7,No,No,No,Yes,Yes,No Dementia
+6060,85,Male,Caucasian,36.7,8.833748124691539,0,No,17.34,No,182.4,1,4.25,6.9,No,Yes,No,Yes,No,Dementia
+6798,63,Female,Caucasian,23.33,6.333042695377879,7,No,13.82,No,227.35,8,5.12,27.76,No,No,Yes,No,Yes,No Dementia
+6837,69,Male,African American,31.89,1.958730646803366,9,No,17.06,No,235.65,3,0.55,11.38,No,No,No,No,No,No Dementia
+6348,83,Male,African American,17.97,1.4955207154973016,0,No,17.2,No,247.64,7,9.63,19.69,No,No,No,Yes,No,No Dementia
+6250,88,Female,Caucasian,27.91,7.531944456384857,0,No,10.32,Yes,262.77,9,1.25,6.86,No,No,No,No,No,No Dementia
+6682,70,Female,Caucasian,34.93,5.056104727936644,8,No,8.89,No,195.86,0,6.13,15.15,No,No,No,No,No,No Dementia
+6321,90,Female,Other,23.09,1.8087474145548943,2,Yes,16.69,No,222.35,7,3.19,2.04,No,No,Yes,Yes,Yes,No Dementia
+6533,70,Female,Caucasian,25.5,9.529067218966018,6,No,16.93,No,292.76,9,1.34,9.99,No,No,No,No,No,No Dementia
+5904,70,Male,Caucasian,31.93,3.3077945201885783,2,No,17.63,No,199.51,9,0.27,2.26,No,No,No,No,No,No Dementia
+6248,61,Male,Asian,37.95,7.374352045522617,2,No,17.95,No,287.14,3,0.43,19.74,Yes,No,No,No,No,Dementia
+5330,88,Male,Asian,28.03,4.633675129376705,5,No,13.05,No,178.01,3,3.58,7.62,No,No,Yes,No,No,Dementia
+6616,87,Female,African American,30.52,3.5532723259053767,3,No,17.7,No,251.64,9,6.64,17.61,No,No,Yes,No,Yes,No Dementia
+6004,82,Female,Caucasian,21.34,8.480279715035495,7,Yes,5.96,No,183.88,5,9.72,11.51,No,No,No,No,No,No Dementia
+5442,67,Male,Caucasian,23.91,1.5254750032803277,5,No,1.05,No,171.98,9,1.87,24.06,Yes,No,No,No,No,No Dementia
+5863,72,Female,African American,16.93,7.519703538946365,1,No,8.47,No,220.9,7,8.65,11.52,No,No,No,No,No,No Dementia
+6671,81,Male,Asian,20.77,1.46740837504461,2,No,7.25,No,159.67,5,0.96,18.56,No,No,Yes,No,No,No Dementia
+6669,89,Male,Caucasian,22.71,9.37268051560284,5,No,8.55,No,186.88,3,9.44,10.58,No,Yes,No,No,No,Dementia
+6316,90,Female,African American,15.33,2.753553463474056,6,Yes,11.95,No,243.92,0,3.03,26.46,No,No,Yes,No,No,No Dementia
+5630,80,Female,Caucasian,34.96,7.294891901072061,8,Yes,8.94,No,265.62,0,1.69,8.41,No,Yes,No,No,No,Dementia
+6467,86,Male,Other,24.07,3.625058678861652,7,No,12.01,No,280.79,9,9.62,23.63,No,No,Yes,No,No,No Dementia
+5288,84,Female,Other,37.04,3.859935744423729,5,No,1.65,No,199.1,4,4.88,13.32,Yes,No,No,No,No,Dementia
+5258,74,Male,Caucasian,22.29,5.493093386027174,4,No,11.28,No,156.54,3,0.56,21.67,No,Yes,No,No,No,Dementia
+6035,70,Female,Caucasian,25.6,6.587116987000046,2,No,17.4,No,296.96,4,8.35,21.64,No,Yes,Yes,No,No,Dementia
+6462,63,Female,Caucasian,35.6,2.154994958963928,6,No,6.06,No,214.71,0,2.28,23.53,No,No,No,No,No,Dementia
+6773,61,Male,Caucasian,18.65,0.2653784847376084,5,No,5.7,No,248.1,4,9.59,18.38,No,No,No,No,No,Dementia
+6560,88,Female,Caucasian,18.65,2.5343263190826937,5,Yes,6.57,Yes,264.39,4,8.37,19.6,No,Yes,No,No,No,Dementia
+5909,88,Male,Caucasian,15.62,8.361073481673419,4,No,13.97,No,280.78,4,3.32,22.7,Yes,No,No,No,No,Dementia
+6667,81,Female,Other,29.27,8.261725560256357,0,No,18.38,No,294.69,4,7.05,6.18,No,No,No,No,Yes,No Dementia
+6306,63,Female,Asian,27.07,4.732912839271737,4,No,9.56,No,254.87,1,7.18,28.59,No,No,No,No,No,No Dementia
+5605,71,Male,African American,39.34,6.707847192417318,3,No,17.55,No,289.63,3,7.04,8.84,No,No,No,Yes,No,No Dementia
+6182,79,Male,African American,22.82,4.450732371016191,0,Yes,4.04,No,170.33,6,7.38,6.92,No,No,No,No,No,No Dementia
+5495,73,Female,African American,30.01,4.345578711931015,5,No,12.54,No,203.18,8,7.83,23.17,Yes,No,No,No,Yes,No Dementia
+5417,78,Female,African American,29.02,8.121660186731148,4,No,17.22,No,151.16,0,0.42,21.84,Yes,No,Yes,No,No,Dementia
+6183,71,Female,Caucasian,28.33,7.801620757124215,3,No,13.34,Yes,289.91,2,6.6,0.34,Yes,No,No,No,No,Dementia
+5562,85,Male,Caucasian,28.99,3.10047018999416,2,No,10.82,No,198.42,6,7.63,6.5,No,No,Yes,No,No,No Dementia
+4969,81,Male,Caucasian,18.65,7.262113581088433,9,No,2.44,No,203.09,5,4.13,27.95,No,Yes,No,No,No,No Dementia
+6361,77,Female,Other,15.31,2.544640756940824,8,No,5.32,No,240.87,7,2.9,20.55,No,No,No,Yes,No,No Dementia
+5344,76,Female,Caucasian,38.77,7.892595430087677,8,Yes,9.01,No,155.85,8,9.41,25.41,No,No,No,No,No,No Dementia
+5583,66,Male,Caucasian,39.16,9.351431268666962,7,No,9.9,No,248.79,9,3.66,7.99,Yes,No,No,No,Yes,Dementia
+6203,66,Male,Caucasian,29.19,5.43429928546489,5,Yes,9.54,No,236.9,7,3.39,9.92,No,No,No,No,No,No Dementia
+6315,77,Male,Caucasian,20.02,3.311358690588744,9,No,10.24,No,168.13,7,4.57,3.85,No,No,No,No,No,No Dementia
+5733,85,Female,Caucasian,34.02,1.8460914717369348,0,No,8.94,Yes,180.19,4,2.17,29.5,Yes,Yes,No,No,No,Dementia
+4825,71,Female,Caucasian,18.49,3.4258558219707345,4,No,9.79,No,190.07,4,1.81,26.14,No,No,No,No,No,No Dementia
+4798,69,Female,Other,16.48,8.951569609585077,0,Yes,17.95,No,240.15,8,8.05,14.2,No,Yes,No,No,No,No Dementia
+5741,68,Male,Other,37.66,4.0800881892605645,2,Yes,19.92,No,255.76,2,1.16,20.84,Yes,Yes,No,No,No,Dementia
+6475,75,Male,African American,15.19,7.383941750234255,7,Yes,1.87,No,208.38,3,6.1,17.83,Yes,No,No,No,No,Dementia
+6051,78,Female,Caucasian,35.71,6.765033580676677,0,No,14.96,Yes,164.72,9,8.97,28.36,No,No,No,No,No,No Dementia
+5649,83,Female,Caucasian,33.72,5.315590134474535,2,No,5.33,No,293.05,3,7.25,14.92,Yes,No,No,No,No,Dementia
+5414,63,Female,Caucasian,24.69,4.98502622057094,0,No,15.59,No,262.64,1,8.84,26.5,No,No,No,No,No,No Dementia
+5359,67,Male,Caucasian,39.75,2.594078278923603,4,No,6.16,No,263.17,6,8.8,3.09,Yes,Yes,No,Yes,No,Dementia
+4830,89,Male,Asian,38.05,1.2144674357551457,5,No,18.07,No,152.35,1,1.95,5.83,No,No,No,No,No,Dementia
+6416,63,Male,Caucasian,39.96,3.5252950686592843,3,No,13.59,Yes,157.7,0,9.14,28.85,No,No,No,No,No,No Dementia
+5746,70,Male,Caucasian,34.18,9.14090882920515,6,Yes,1.2,No,159.05,5,9.16,15.68,No,No,Yes,No,No,No Dementia
+6635,74,Female,Caucasian,23.04,7.33649037640784,5,No,15.55,No,269.87,3,4.47,15.24,Yes,No,No,No,No,Dementia
+6566,83,Male,Caucasian,24.29,4.618067785698815,1,No,7.96,No,160.89,7,2.76,1.05,Yes,No,No,No,No,Dementia
+4807,66,Female,Caucasian,22.31,1.4349144378627643,8,No,14.43,No,192.21,3,5.22,10.64,No,No,No,No,Yes,No Dementia
+6530,64,Male,Caucasian,17.94,1.1326702856132742,3,Yes,2.31,No,218.69,1,1.92,29.18,No,No,Yes,No,Yes,No Dementia
+4993,85,Female,African American,26.65,7.266543119513992,4,No,1.61,No,256.04,4,9.89,26.44,No,No,No,No,No,No Dementia
+5992,78,Female,Caucasian,39.17,8.093385305038613,4,No,12.83,No,168.4,8,0.81,23.2,No,No,No,No,Yes,No Dementia
+4799,87,Male,African American,33.48,9.648614359042613,9,Yes,15.81,No,264.43,2,2.6,25.83,Yes,Yes,No,No,No,Dementia
+6494,75,Female,Caucasian,32.52,9.789645835573284,7,No,15.29,No,270.31,7,5.24,24.08,No,No,No,No,No,No Dementia
+5085,83,Female,Other,21.92,3.290571270308279,5,No,0.2,No,213.76,7,9.83,17.84,No,Yes,No,No,Yes,No Dementia
+6222,68,Male,Caucasian,38.57,8.830054987096354,5,No,11.05,No,196.67,1,3.65,5.2,No,No,No,No,No,Dementia
+5263,66,Male,African American,27.1,8.501715473209385,7,No,17.99,No,155.49,6,7.34,5.85,No,No,No,No,No,No Dementia
+6053,90,Female,Caucasian,24.77,0.9608881086998056,6,No,17.43,No,199.06,7,9.22,10.5,No,No,No,No,Yes,No Dementia
+4857,89,Male,Caucasian,34.85,0.1534744423201306,0,No,7.01,No,243.92,3,8.04,8.18,Yes,No,No,No,No,Dementia
+6701,74,Female,Caucasian,21.89,5.653982487284315,6,Yes,8.28,No,291.99,3,3.23,27.41,No,No,No,No,Yes,No Dementia
+5644,63,Female,African American,37.66,1.4959806519708996,4,No,6.7,No,251.35,8,9.11,22.34,No,No,No,No,No,No Dementia
+5264,84,Female,Caucasian,27.95,5.770028311705103,3,No,0.91,No,285.88,7,8.63,3.16,No,No,No,No,No,No Dementia
+4853,71,Female,Caucasian,21.91,7.641307921794725,8,No,0.96,No,168.98,8,0.53,22.99,No,No,No,No,No,No Dementia
+6291,78,Female,Caucasian,33.52,4.246073430302429,3,Yes,17.45,No,234.19,3,4.32,5.93,No,No,No,No,No,Dementia
+6275,63,Female,African American,32.3,2.866168547108761,0,No,0.99,No,196.85,9,9.96,26.86,No,No,No,No,No,No Dementia
+5476,83,Female,Asian,27.42,3.109888694326134,3,Yes,5.21,No,159.99,6,1.27,25.43,No,Yes,No,No,No,No Dementia
+5018,67,Male,Other,36.16,6.621345517752278,6,No,11.61,No,206.2,1,0.88,0.36,Yes,No,No,Yes,No,Dementia
+5191,74,Female,Asian,17.88,7.1832426147590525,5,No,8.8,No,282.6,9,8.97,18.72,No,No,No,No,No,No Dementia
+6854,90,Female,Caucasian,35.13,6.096416611489703,4,Yes,10.42,No,253.54,4,1.97,21.45,No,No,No,No,No,No Dementia
+5673,67,Female,Caucasian,18.61,6.123152041451986,4,No,9.74,No,243.24,2,1.11,10.01,No,No,No,No,No,Dementia
+6574,88,Male,African American,25.26,6.691215862754465,1,Yes,8.76,Yes,165.61,0,6.8,10.35,No,No,No,No,No,No Dementia
+5760,65,Male,African American,22.32,3.329025802580884,3,No,18.67,No,247.79,3,9.45,10.51,No,No,No,No,No,No Dementia
+5535,62,Male,Asian,37.2,7.408433461195386,0,Yes,15.87,No,218.9,7,7.95,0.59,No,No,No,Yes,No,No Dementia
+6355,89,Female,Caucasian,21.41,8.093647767454225,5,No,15.13,No,289.46,7,0.02,19.34,No,No,No,Yes,Yes,No Dementia
+5025,82,Male,Caucasian,39.99,4.846949894835292,1,No,5.76,No,180.1,6,0.15,15.19,No,No,No,No,No,No Dementia
+4956,83,Female,Caucasian,26.66,8.772172861883533,3,Yes,5.93,No,289.01,4,5.24,24.03,No,No,Yes,No,No,No Dementia
+6058,83,Male,Caucasian,37.49,0.8966804556669117,8,No,0.75,No,224.14,8,7.3,0.05,No,No,No,No,No,No Dementia
+4995,90,Male,Caucasian,31.02,2.5968690422244145,9,No,8.86,No,242.95,9,1.28,21.84,Yes,No,Yes,No,No,Dementia
+6201,70,Male,Other,31.0,3.1623986569696108,8,No,1.24,No,195.33,6,2.31,23.59,No,No,No,No,No,No Dementia
+6143,65,Female,Other,23.97,8.221101401041231,2,Yes,17.28,No,194.89,6,6.76,22.16,No,No,No,No,No,No Dementia

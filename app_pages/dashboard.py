@@ -5,10 +5,47 @@ import plotly.express as px
 import plotly.graph_objects as go
 import numpy as np
 import scipy.stats as stats
+import os
 from app_pages.shared_styles import apply_shared_css
 
 # Load processed data (already cleaned and transformed)
-df = pd.read_csv("outputs/processed_alzheimers_disease_data_unscaled_and_unencoded.csv")
+# Use relative path that works both locally and on Streamlit Cloud
+@st.cache_data
+def load_data():
+    """Load the processed dataset with error handling for deployment."""
+    try:
+        # Try the standard path first
+        file_path = os.path.join("outputs", "processed_alzheimers_disease_data_unscaled_and_unencoded.csv")
+        if os.path.exists(file_path):
+            return pd.read_csv(file_path)
+        
+        # Fallback: try different possible locations
+        fallback_paths = [
+            "processed_alzheimers_disease_data_unscaled_and_unencoded.csv",
+            os.path.join("..", "outputs", "processed_alzheimers_disease_data_unscaled_and_unencoded.csv"),
+            os.path.join("data", "processed_alzheimers_disease_data_unscaled_and_unencoded.csv")
+        ]
+        
+        for path in fallback_paths:
+            if os.path.exists(path):
+                return pd.read_csv(path)
+        
+        # If no file found, show error message
+        st.error("⚠️ **Data file not found!** Please ensure 'processed_alzheimers_disease_data_unscaled_and_unencoded.csv' is available in the outputs folder.")
+        st.info("💡 **For developers:** Make sure the data file is included in your repository and not excluded by .gitignore")
+        return None
+        
+    except Exception as e:
+        st.error(f"⚠️ **Error loading data:** {str(e)}")
+        st.info("💡 **Troubleshooting:** Check that the data file exists and is properly formatted.")
+        return None
+
+# Load the dataset
+df = load_data()
+
+# Exit early if data loading failed
+if df is None:
+    st.stop()
 
 # Risk Assessment Functions
 def calculate_risk_score(row):
