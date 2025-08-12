@@ -73,7 +73,7 @@ def risk_assessment_dashboard():
     """
     Interactive Risk Assessment & Early Detection Dashboard
     """
-    st.header("🏥 Risk Assessment & Early Detection Dashboard")
+    st.header("🏥 **Risk Assessment & Early Detection Dashboard**")
     
     # Business need explanation
     with st.expander("📋 Business Need & Dashboard Components"):
@@ -124,7 +124,7 @@ def risk_assessment_dashboard():
         st.metric("Average Risk Score", f"{avg_risk_score:.2f}")
     
     # Risk distribution
-    st.subheader("📊 Risk Category Distribution")
+    st.markdown('<h3 style="color: #000000; margin-top: 0; font-weight: bold;">📊 <span style="text-decoration: underline; text-decoration-color: #000000; text-decoration-thickness: 2px;">Risk Category Distribution</span></h3>', unsafe_allow_html=True)
     risk_distribution = df["Risk_Category"].value_counts()
     
     col1, col2 = st.columns([1, 1])
@@ -160,7 +160,7 @@ def risk_assessment_dashboard():
         st.plotly_chart(fig_bar, use_container_width=True)
     
     # Interactive 3D Risk Assessment
-    st.subheader("🎯 Interactive 3D Risk Assessment Matrix")
+    st.markdown('<h3 style="color: #000000; margin-top: 0; font-weight: bold;">🎯 <span style="text-decoration: underline; text-decoration-color: #000000; text-decoration-thickness: 2px;">Interactive 3D Risk Assessment Matrix</span></h3>', unsafe_allow_html=True)
     
     fig_3d = px.scatter_3d(df, 
                           x="Patient_Age", y="MMSE", z="BMI",
@@ -197,7 +197,7 @@ def risk_assessment_dashboard():
     st.plotly_chart(fig_3d, use_container_width=True)
     
     # Risk factor correlation heatmap
-    st.subheader("🔥 Risk Factor Correlation Analysis")
+    st.subheader("🔥 **Risk Factor Correlation Analysis**")
     
     risk_variables = ["Patient_Age", "MMSE", "BMI", "Cholesterol_Total", 
                      "Functional_Assessment", "Physical_Activity", 
@@ -229,7 +229,7 @@ def risk_assessment_dashboard():
     st.plotly_chart(fig_heatmap, use_container_width=True)
     
     # Clinical insights by risk category
-    st.subheader("🏥 Clinical Insights by Risk Category")
+    st.subheader("🏥 **Clinical Insights by Risk Category**")
     
     for risk_cat in ["High Risk", "Medium Risk", "Low Risk"]:
         subset = df[df["Risk_Category"] == risk_cat]
@@ -250,7 +250,7 @@ def risk_assessment_dashboard():
                     st.metric("Early Detection Flags", f"{subset['Early_Detection_Flag'].sum()}")
     
     # Patient risk table
-    st.subheader("📋 High-Risk Patient Details")
+    st.subheader("📋 **High-Risk Patient Details**")
     
     high_risk_patients = df[df["Risk_Category"] == "High Risk"].copy()
     if len(high_risk_patients) > 0:
