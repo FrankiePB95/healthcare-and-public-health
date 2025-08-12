@@ -237,38 +237,241 @@ def risk_assessment_dashboard():
     return df
 
 def dashboard_body():
-    st.title("Healthcare Analytics Dashboard")
+    # Custom CSS for enhanced visual appeal and consistent theme
+    st.markdown("""
+    <style>
+    /* Main background and theme */
+    .stApp {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background-attachment: fixed;
+    }
     
-    # Usage Instructions
-    st.markdown("### 📋 How to Use This Dashboard")
-    with st.expander("Click here for detailed usage instructions", expanded=False):
+    /* Content container styling */
+    .main .block-container {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 15px;
+        padding: 2rem;
+        margin-top: 2rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+    }
+    
+    /* Header styling */
+    h1 {
+        color: #2c3e50;
+        text-align: center;
+        font-family: 'Arial Black', sans-serif;
+        font-size: 3rem !important;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    /* Subheader styling */
+    h2, h3 {
+        color: #34495e;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 0.5rem;
+        margin-top: 2rem;
+    }
+    
+    /* Tab styling */
+    .stTabs [data-baseweb="tab-list"] {
+        gap: 2px;
+        background: linear-gradient(90deg, #667eea, #764ba2);
+        border-radius: 10px;
+        padding: 0.5rem;
+    }
+    
+    .stTabs [data-baseweb="tab"] {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        color: white !important;
+        font-weight: bold;
+        border: none;
+        padding: 0.8rem 1.5rem;
+        transition: all 0.3s ease;
+    }
+    
+    .stTabs [aria-selected="true"] {
+        background: white !important;
+        color: #2c3e50 !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Info box styling */
+    .stAlert > div {
+        background: linear-gradient(135deg, #74b9ff, #0984e3);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-weight: bold;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Expander styling */
+    .streamlit-expanderHeader {
+        background: linear-gradient(90deg, #74b9ff, #0984e3);
+        color: white !important;
+        border-radius: 8px;
+        font-weight: bold;
+    }
+    
+    .streamlit-expanderContent {
+        background: rgba(116, 185, 255, 0.1);
+        border-radius: 8px;
+        border: 1px solid #74b9ff;
+    }
+    
+    /* DataFrame styling */
+    .stDataFrame {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+    
+    /* Success/Warning/Error message styling */
+    .stSuccess {
+        background: linear-gradient(135deg, #00b894, #00a085);
+        border-radius: 10px;
+        color: white;
+    }
+    
+    .stWarning {
+        background: linear-gradient(135deg, #fdcb6e, #e17055);
+        border-radius: 10px;
+        color: white;
+    }
+    
+    /* Metric cards styling */
+    [data-testid="metric-container"] {
+        background: linear-gradient(135deg, #74b9ff, #0984e3);
+        border: none;
+        padding: 1rem;
+        border-radius: 10px;
+        color: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Sidebar styling */
+    .css-1d391kg {
+        background: linear-gradient(180deg, #667eea, #764ba2);
+    }
+    
+    /* Custom card styling */
+    .custom-card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        margin: 1rem 0;
+        border-left: 5px solid #3498db;
+    }
+    
+    /* Text styling improvements */
+    .stMarkdown {
+        text-align: justify;
+        line-height: 1.6;
+    }
+    
+    /* Button styling */
+    .stButton > button {
+        background: linear-gradient(135deg, #74b9ff, #0984e3);
+        color: white;
+        border: none;
+        border-radius: 25px;
+        padding: 0.5rem 2rem;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .stButton > button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+    </style>
+    """, unsafe_allow_html=True)
+    
+    # Enhanced title with styling
+    st.markdown("""
+    <div style="text-align: center; padding: 2rem 0;">
+        <h1>🏥 Healthcare Analytics Dashboard</h1>
+        <p style="font-size: 1.2rem; color: #7f8c8d; margin-top: 0;">
+            Advanced Alzheimer's Disease Risk Assessment & Clinical Insights
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Enhanced Usage Instructions with custom styling
+    st.markdown("""
+    <div class="custom-card">
+        <h3 style="color: #2c3e50; margin-top: 0;">📋 Dashboard Navigation Guide</h3>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    with st.expander("🔍 Click here for comprehensive usage instructions", expanded=False):
         st.markdown("""
-        #### 📊 **General Analytics Tab**
-        - **Dataset Overview**: View basic information about the Alzheimer's disease dataset
-        - **Data Preview**: Examine the first few rows of patient data
-        - **Basic Statistics**: Review statistical summaries of key health metrics
+        <div style="background: linear-gradient(135deg, rgba(116, 185, 255, 0.1), rgba(9, 132, 227, 0.1)); 
+                    padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
         
-        #### 🏥 **Risk Assessment & Early Detection Tab**
-        - **Risk Distribution**: See how patients are categorized by risk levels
-        - **Interactive Charts**: Hover over visualizations for detailed patient information
-        - **3D Analysis**: Explore relationships between age, risk, cholesterol, and functional assessment
-        - **Correlation Matrix**: Understand how different health factors relate to each other
+        ### 📊 **General Analytics Tab**
+        <div style="margin-left: 1rem; margin-bottom: 1rem;">
+        • <strong style="color: #3498db;">Dataset Overview</strong>: Comprehensive view of the Alzheimer's disease research dataset<br>
+        • <strong style="color: #3498db;">Data Preview</strong>: Interactive exploration of patient demographics and clinical data<br>
+        • <strong style="color: #3498db;">Statistical Insights</strong>: Key metrics and distributions across patient populations
+        </div>
         
-        #### 🎯 **Key Features**
-        - **Risk Categories**: 🟢 Low Risk | 🟠 Medium Risk | 🔴 High Risk
-        - **Clinical Thresholds**: 
-          - MMSE < 18: Cognitive impairment concern
-          - Age > 75: Increased risk factor  
-          - BMI > 35: High obesity risk
-        - **Interactive Elements**: All charts support zooming, panning, and detailed tooltips
+        ### 🏥 **Risk Assessment & Early Detection Tab**
+        <div style="margin-left: 1rem; margin-bottom: 1rem;">
+        • <strong style="color: #e74c3c;">Risk Stratification</strong>: AI-powered patient categorization system<br>
+        • <strong style="color: #e74c3c;">Interactive Visualizations</strong>: Dynamic charts with real-time data insights<br>
+        • <strong style="color: #e74c3c;">3D Clinical Analysis</strong>: Multi-dimensional risk factor relationships<br>
+        • <strong style="color: #e74c3c;">Correlation Matrix</strong>: Statistical dependencies between health variables
+        </div>
         
-        #### 💡 **Tips for Best Use**
-        1. Start with the General Analytics tab to understand the dataset
-        2. Use the Risk Assessment tab for clinical insights
-        3. Hover over charts to see patient-specific details
-        4. Look for patterns in the correlation heatmap
-        5. Use the 3D scatter plot to identify patient clusters
-        """)
+        ### 🎯 **Risk Classification System**
+        <div style="display: flex; justify-content: space-around; margin: 1rem 0;">
+            <div style="text-align: center; padding: 0.5rem;">
+                <span style="font-size: 2rem;">🟢</span><br>
+                <strong style="color: #27ae60;">Low Risk</strong><br>
+                <small>Routine monitoring</small>
+            </div>
+            <div style="text-align: center; padding: 0.5rem;">
+                <span style="font-size: 2rem;">🟠</span><br>
+                <strong style="color: #f39c12;">Medium Risk</strong><br>
+                <small>Enhanced screening</small>
+            </div>
+            <div style="text-align: center; padding: 0.5rem;">
+                <span style="font-size: 2rem;">🔴</span><br>
+                <strong style="color: #e74c3c;">High Risk</strong><br>
+                <small>Immediate attention</small>
+            </div>
+        </div>
+        
+        ### 🏥 **Clinical Decision Thresholds**
+        <div style="background: rgba(52, 73, 94, 0.1); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+        • <strong>MMSE Score < 18</strong>: Significant cognitive impairment indicator<br>
+        • <strong>Age > 75 years</strong>: Increased neurodegeneration risk factor<br>
+        • <strong>BMI > 35 kg/m²</strong>: Severe obesity-related complications<br>
+        • <strong>Functional Assessment ≤ 2</strong>: Activities of daily living impairment
+        </div>
+        
+        ### 💡 **Optimization Tips**
+        <div style="margin-left: 1rem;">
+        1. <strong>Sequential Analysis</strong>: Begin with General Analytics for dataset familiarization<br>
+        2. <strong>Interactive Exploration</strong>: Utilize hover functionality for detailed patient profiles<br>
+        3. <strong>Pattern Recognition</strong>: Examine correlation heatmaps for clinical insights<br>
+        4. <strong>Risk Prioritization</strong>: Focus on high-risk patient clusters in 3D visualizations<br>
+        5. <strong>Clinical Integration</strong>: Cross-reference findings with established medical guidelines
+        </div>
+        
+        </div>
+        """, unsafe_allow_html=True)
     
     st.markdown("---")
     
@@ -276,40 +479,80 @@ def dashboard_body():
     tab1, tab2 = st.tabs(["📊 General Analytics", "🏥 Risk Assessment & Early Detection"])
     
     with tab1:
-        st.header("Alzheimer's Disease Dashboard")
-        st.subheader("Dataset Overview")
-        st.write("This dashboard provides insights into Alzheimer's disease.")
-        st.info("Dataset shape: 537 rows × 23 columns")
+        # Enhanced General Analytics Tab
+        st.markdown("""
+        <div class="custom-card">
+            <h2 style="color: #2c3e50; margin-top: 0;">📊 Alzheimer's Disease Research Analytics</h2>
+            <p style="font-size: 1.1rem; color: #7f8c8d; margin-bottom: 0;">
+                Comprehensive clinical dataset analysis for cognitive health research
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        # Dataset overview with enhanced styling
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            st.metric(
+                label="📋 Total Patients", 
+                value="537",
+                delta="Research Cohort"
+            )
+        with col2:
+            st.metric(
+                label="📊 Clinical Features", 
+                value="23",
+                delta="Biomarkers"
+            )
+        with col3:
+            st.metric(
+                label="🎯 Analysis Focus", 
+                value="Risk Assessment",
+                delta="Early Detection"
+            )
 
-        # Show first few rows
-        st.subheader("Data Preview")
+        st.markdown("---")
+
+        # Enhanced Data Preview Section
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(155, 89, 182, 0.1)); 
+                    padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
+            <h3 style="color: #2c3e50; margin-top: 0;">🔍 Clinical Data Preview</h3>
+            <p style="color: #7f8c8d;">Sample patient records showing key demographic and clinical parameters</p>
+        </div>
+        """, unsafe_allow_html=True)
+        
         df_display = df.head().copy()
         df_display.columns = df_display.columns.str.replace('_', ' ')
-        st.dataframe(df_display)
+        st.dataframe(df_display, use_container_width=True)
         
-        # Basic statistics
-        st.subheader("Basic Statistics")
+        # Enhanced Statistics Section
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(26, 188, 156, 0.1)); 
+                    padding: 1.5rem; border-radius: 10px; margin: 1rem 0;">
+            <h3 style="color: #2c3e50; margin-top: 0;">📈 Statistical Summary</h3>
+            <p style="color: #7f8c8d;">Descriptive statistics for numerical clinical variables</p>
+        </div>
+        """, unsafe_allow_html=True)
+        
         df_stats = df.describe().copy()
         if 'Patient_ID' in df_stats.columns:
             df_stats = df_stats.drop('Patient_ID', axis=1)
         df_stats.columns = df_stats.columns.str.replace('_', ' ')
-        st.dataframe(df_stats)
+        st.dataframe(df_stats, use_container_width=True)
     
     with tab2:
-        # Risk Assessment Dashboard
-        risk_df = risk_assessment_dashboard()
-        
-        st.markdown("---")
-        st.markdown("### 📈 Dashboard Usage Instructions")
+        # Enhanced Risk Assessment Tab
         st.markdown("""
-        1. **Risk Categories**: Green (Low), Orange (Medium), Red (High)
-        2. **Interactive Elements**: Hover over charts for detailed information
-        3. **Clinical Thresholds**: 
-           - MMSE < 18: Cognitive impairment concern
-           - Age > 75: Increased risk factor
-           - BMI > 35: High obesity risk
-        4. **Early Detection**: Patients flagged for immediate clinical review
-        """) 
+        <div class="custom-card">
+            <h2 style="color: #2c3e50; margin-top: 0;">🏥 Advanced Risk Assessment & Clinical Decision Support</h2>
+            <p style="font-size: 1.1rem; color: #7f8c8d; margin-bottom: 0;">
+                AI-powered patient stratification and early detection system
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        # Risk Assessment Dashboard
+        risk_df = risk_assessment_dashboard() 
 
 
 
