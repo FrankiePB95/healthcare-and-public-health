@@ -88,14 +88,14 @@ def page_summary_body():
             padding: 1.5rem;
             border-radius: 15px;
             margin: 1rem 0;
-            color: white;
+            color: black;
         }
         .blue-box h4 {
-            color: white !important;
+            color: black !important;
             margin-top: 0;
         }
         .blue-box p, .blue-box li {
-            color: white !important;
+            color: black !important;
         }
         </style>
         
