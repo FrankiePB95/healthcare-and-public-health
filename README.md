@@ -137,6 +137,9 @@ Clone the repository and navigate to the project directory:
 git clone https://github.com/frankiepb95/health-care-and-public-health.git
 cd health-care-and-public-health
 
+### Streamlit
+* The App live link is: https://frankiepb95-healthcare-and-public-health-app-d5u5oa.streamlit.app/
+
 ### Heroku
 
 * The App live link is: https://healthcare-and-public-health-7e119d1e6a3c.herokuapp.com/ 
