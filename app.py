@@ -7,13 +7,26 @@ from app_pages.shared_styles import apply_shared_css
 from app_pages.page_summary import page_summary_body
 from app_pages.dashboard import dashboard_body
 
-# Configure the Streamlit page
+# Configure the Streamlit page with enhanced session management
 st.set_page_config(
     page_title="Healthcare and Public Health Dashboard",
     page_icon="🏥",
     layout="wide",
     initial_sidebar_state="expanded"
 )
+
+# Initialize session state for enhanced page persistence
+if 'app_initialized' not in st.session_state:
+    st.session_state.app_initialized = True
+    # Check for URL parameters to restore page state
+    query_params = st.experimental_get_query_params()
+    if 'page' in query_params:
+        try:
+            page_index = int(query_params['page'][0])
+            if 0 <= page_index < 4:  # We have 4 pages total
+                st.session_state.current_page_index = page_index
+        except (ValueError, IndexError):
+            pass  # Use default if invalid parameter
 
 # Create instance of the app
 app = MultiPage()
