@@ -28,7 +28,7 @@ def apply_shared_css():
     h1 {
         color: #000000 !important;
         text-align: center;
-        font-family: 'Arial Black', sans-serif;
+        font-family: "Arial Black", sans-serif;
         font-size: 3rem !important;
         margin-bottom: 1rem;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
