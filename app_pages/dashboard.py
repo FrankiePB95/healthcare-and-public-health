@@ -867,6 +867,109 @@ def dashboard_body():
         </div>
         """, unsafe_allow_html=True)
     
+    # Key Insights and Findings Narrative
+    st.markdown('<h2 style="color: #000000; margin-top: 2rem; font-weight: bold;"><strong>📈 Key Healthcare Insights & Clinical Findings</strong></h2>', unsafe_allow_html=True)
+    
+    # Calculate key statistics for insights
+    high_risk_count = len(df[df.apply(lambda row: categorize_risk(calculate_risk_score(row)), axis=1) == "High Risk"])
+    total_patients = len(df)
+    high_risk_percentage = (high_risk_count / total_patients) * 100
+    avg_age = df['Patient_Age'].mean()
+    mmse_critical = len(df[df['MMSE'] < 18])
+    
+    # Create insight cards
+    insights_col1, insights_col2 = st.columns(2)
+    
+    with insights_col1:
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, rgba(220, 53, 69, 0.1), rgba(255, 193, 7, 0.1)); 
+                    padding: 1.5rem; border-radius: 10px; border-left: 5px solid #dc3545; margin-bottom: 1rem;">
+        <h4 style="color: #000000; margin-top: 0; font-weight: bold;">🚨 Critical Risk Population</h4>
+        <p style="color: #000000; font-weight: bold; font-size: 1.1rem;">
+        Our analysis reveals that <strong>""" + f"{high_risk_percentage:.1f}%" + """</strong> of patients fall into the high-risk category, 
+        representing <strong>""" + f"{high_risk_count}" + """</strong> individuals who require immediate clinical attention and enhanced monitoring protocols.
+        </p>
+        <p style="color: #000000; margin-bottom: 0;">
+        <strong>Clinical Implication:</strong> This significant proportion suggests the need for proactive intervention strategies 
+        and resource allocation for early detection programs.
+        </p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, rgba(13, 110, 253, 0.1), rgba(111, 66, 193, 0.1)); 
+                    padding: 1.5rem; border-radius: 10px; border-left: 5px solid #0d6efd; margin-bottom: 1rem;">
+        <h4 style="color: #000000; margin-top: 0; font-weight: bold;">🧠 Cognitive Assessment Findings</h4>
+        <p style="color: #000000; font-weight: bold; font-size: 1.1rem;">
+        MMSE scores indicate that <strong>""" + f"{mmse_critical}" + """</strong> patients show significant cognitive impairment 
+        (MMSE < 18), representing a critical population requiring specialized care protocols.
+        </p>
+        <p style="color: #000000; margin-bottom: 0;">
+        <strong>Research Insight:</strong> The MMSE threshold of 18 serves as a key biomarker for identifying patients 
+        at risk of progression to moderate-to-severe cognitive decline.
+        </p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with insights_col2:
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, rgba(25, 135, 84, 0.1), rgba(32, 201, 151, 0.1)); 
+                    padding: 1.5rem; border-radius: 10px; border-left: 5px solid #198754; margin-bottom: 1rem;">
+        <h4 style="color: #000000; margin-top: 0; font-weight: bold;">👥 Demographics & Age Distribution</h4>
+        <p style="color: #000000; font-weight: bold; font-size: 1.1rem;">
+        The study population shows an average age of <strong>""" + f"{avg_age:.1f}" + """ years</strong>, with age serving as a 
+        primary risk factor in our predictive model, accounting for 25% of the total risk assessment weight.
+        </p>
+        <p style="color: #000000; margin-bottom: 0;">
+        <strong>Clinical Significance:</strong> Age-stratified analysis enables targeted screening protocols, 
+        with patients over 75 years requiring enhanced monitoring frequency.
+        </p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(253, 126, 20, 0.1)); 
+                    padding: 1.5rem; border-radius: 10px; border-left: 5px solid #ffc107; margin-bottom: 1rem;">
+        <h4 style="color: #000000; margin-top: 0; font-weight: bold;">🔬 Multi-Factor Risk Analysis</h4>
+        <p style="color: #000000; font-weight: bold; font-size: 1.1rem;">
+        Our comprehensive risk algorithm integrates <strong>10+ clinical biomarkers</strong> including cognitive assessment, 
+        lifestyle factors, and physiological measurements to provide personalized risk stratification.
+        </p>
+        <p style="color: #000000; margin-bottom: 0;">
+        <strong>Innovation Impact:</strong> This multi-dimensional approach enables precision medicine strategies 
+        tailored to individual patient risk profiles and clinical presentations.
+        </p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    # Data Story Navigation Guide
+    st.markdown("""
+    <div style="background: linear-gradient(135deg, rgba(108, 117, 125, 0.1), rgba(173, 181, 189, 0.1)); 
+                padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0; border: 2px solid #6c757d;">
+    <h4 style="color: #000000; margin-top: 0; font-weight: bold;">📖 Data Story Navigation</h4>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+        <div>
+            <p style="color: #000000; font-weight: bold; margin-bottom: 0.5rem;">
+            📊 <strong>General Analytics Tab</strong>
+            </p>
+            <p style="color: #000000; margin-bottom: 0; font-size: 0.95rem;">
+            Explore foundational dataset characteristics, demographic distributions, and statistical summaries 
+            that form the basis of our clinical insights and risk assessment methodology.
+            </p>
+        </div>
+        <div>
+            <p style="color: #000000; font-weight: bold; margin-bottom: 0.5rem;">
+            🏥 <strong>Risk Assessment Tab</strong>
+            </p>
+            <p style="color: #000000; margin-bottom: 0; font-size: 0.95rem;">
+            Discover advanced predictive analytics, 3D risk visualizations, and correlation patterns 
+            that drive clinical decision-making and early intervention strategies.
+            </p>
+        </div>
+    </div>
+    </div>
+    """, unsafe_allow_html=True)
+
     st.markdown("---")
     
     # Create tabs for different dashboard sections
