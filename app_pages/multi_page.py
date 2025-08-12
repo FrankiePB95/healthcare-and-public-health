@@ -34,11 +34,11 @@ class MultiPage:
         apply_shared_css()
         
         # Initialize session state for page persistence
-        if 'current_page_index' not in st.session_state:
+        if "current_page_index" not in st.session_state:
             st.session_state.current_page_index = 0  # Default to first page (Home)
         
         # Create sidebar for page navigation
-        st.sidebar.title('🏥 Navigation')
+        st.sidebar.title("🏥 Navigation")
         st.sidebar.markdown("""
         <div style="background: rgba(52, 98, 171, 0.85); padding: 1rem; border-radius: 10px; margin: 1rem 0; border: 2px solid rgba(100, 100, 120, 0.8);">
             <p style="color: #000000; font-weight: bold; text-align: center; margin: 0;">
@@ -58,16 +58,16 @@ class MultiPage:
         
         # Create selectbox with session state persistence
         selected_page = st.sidebar.selectbox(
-            '📋 Select a page:',
+            "📋 Select a page:",
             self.pages,
             index=st.session_state.current_page_index,
-            format_func=lambda page: page['title'],
-            key='page_selector'
+            format_func=lambda page: page["title"],
+            key="page_selector"
         )
         
         # Update session state when page changes
         for i, page in enumerate(self.pages):
-            if page['title'] == selected_page['title']:
+            if page["title"] == selected_page["title"]:
                 if st.session_state.current_page_index != i:
                     st.session_state.current_page_index = i
                     # Update URL parameters for bookmarking and sharing
@@ -79,10 +79,10 @@ class MultiPage:
         <div style="background: rgba(13, 110, 253, 0.1); padding: 0.8rem; border-radius: 8px; margin: 1rem 0; border: 2px solid #0d6efd;">
             <p style="color: #000000; font-weight: bold; text-align: center; margin: 0; font-size: 0.9rem;">
                 📍 Current Page:<br>
-                <strong>{selected_page['title']}</strong>
+                <strong>{selected_page["title"]}</strong>
             </p>
         </div>
         """, unsafe_allow_html=True)
         
         # Run the selected page function
-        selected_page['function']()
+        selected_page["function"]()
